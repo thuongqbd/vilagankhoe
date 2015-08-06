@@ -93,7 +93,7 @@
                     $val = esc_url($val);
                     
                 }
-                else if($key=='post_submission_message' || $key=='login_message')
+                else if($key=='post_submission_message' || $key=='login_message' || $key=='admin_notification_message')
                 {
                     $val = $this->sanitize_escaping_linebreaks($val);//for changing the line breaks into <br /> tags
                 }
@@ -149,6 +149,8 @@ $ap_settings['post_submit_label'] = $post_submit_label;
 $ap_settings['editor_type'] = $editor_type;
 $ap_settings['editor_size'] = $editor_size;
 $ap_settings['post_type'] = $post_type;
+$ap_settings['admin_notification_message'] = $admin_notification_message;
+$ap_settings['admin_notification_subject'] = $admin_notification_subject;
 
 $taxonomies_array = explode(',',$taxonomy_reference);
 foreach($taxonomies_array as $tax)

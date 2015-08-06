@@ -279,6 +279,30 @@ function qafp_admin_init(){
 	);
 	
 	add_settings_field(
+		'qa_fp_send_answer',
+		__( 'Send answer for asker', 'qa-focus-plus' ) . ' <span class="vtip" title="' . __('Send answer for asker.', 'qa-focus-plus' ) . '">?</span>',
+		'qa_fp_send_answer',
+		'qa_fp',
+		'qa_fp_general_settings'
+	);
+	
+	add_settings_field(
+		'qa_fp_send_answer_subject',
+		__( 'Subject for mail answer', 'qa-focus-plus' ) . ' <span class="vtip" title="' . __('Subject for mail answer.', 'qa-focus-plus' ) . '">?</span>',
+		'qa_fp_send_answer_subject',
+		'qa_fp',
+		'qa_fp_general_settings'
+	);
+	
+	add_settings_field(
+		'qa_fp_send_answer_message',
+		__( 'Message for mail answer', 'qa-focus-plus' ) . ' <span class="vtip" title="' . __('Message for mail answer.', 'qa-focus-plus' ) . '">?</span>',
+		'qa_fp_send_answer_message',
+		'qa_fp',
+		'qa_fp_general_settings'
+	);
+	
+	add_settings_field(
 		'qa_fp_show_permalinks',
 		__( 'Show permalinks', 'qa-focus-plus' ) . ' <span class="vtip" title="' . __('Add a permalink to each FAQ entry.', 'qa-focus-plus' ) . '">?</span>',
 		'qa_fp_show_permalinks_input',
@@ -705,6 +729,18 @@ function qa_fp_validate_options( $input ) {
 		$input['enablecomment'] = null;
 	$input['enablecomment'] = ( $input['enablecomment'] == true ? true : false );
 	
+	if ( ! isset( $input['send_answer'] ) )
+		$input['send_answer'] = null;
+	$input['send_answer'] = ( $input['send_answer'] == true ? true : false );
+	
+	if ( ! isset( $input['send_answer_subject'] ) )
+		$input['send_answer_subject'] = '';
+	$input['send_answer_subject'] = ( $input['send_answer_subject'] != '' ? wp_filter_nohtml_kses($input['send_answer_subject']) : '' );
+	
+	if ( ! isset( $input['send_answer_message'] ) )
+		$input['send_answer_message'] = '';
+	$input['send_answer_message'] = ( $input['send_answer_message'] != '' ? implode( "<br \>", array_map( 'sanitize_text_field', explode( "\n", $input['send_answer_message']))) : '' );
+	
 	if ( ! isset( $input['accordion'] ) )
 		$input['accordion'] = null;
 	$input['accordion'] = ( $input['accordion'] == true ? true : false );
@@ -776,3 +812,137 @@ function qa_fp_enable_comment() {
 	$qafp_options = get_option( 'qafp_options' ); ?>
 	<input type="checkbox" name="qafp_options[enablecomment]" value="true" <?php checked( $qafp_options['enablecomment'] ); ?> />
 <?php }
+
+function qa_fp_send_answer() {
+	$qafp_options = get_option( 'qafp_options' ); ?>
+	<input type="checkbox" name="qafp_options[send_answer]" value="true" <?php checked( $qafp_options['send_answer'] ); ?> />
+<?php }
+
+function qa_fp_send_answer_subject() {
+	$qafp_options = get_option( 'qafp_options' );?>
+	<input type="text" id="send_answer_subject" name="qafp_options[send_answer_subject]" size="54" maxlength="100" value="<?php echo $qafp_options['send_answer_subject']; ?>" />
+<?php }
+
+function qa_fp_send_answer_message() {
+	$qafp_options = get_option( 'qafp_options' );?>
+	<textarea name="qafp_options[send_answer_message]" rows="10" cols="41"><?php echo implode( "\n", array_map( 'sanitize_text_field', explode( "<br \>", $qafp_options['send_answer_message']))); ?></textarea><br/>
+	<span>You can use #question,#answer,#post_url,#asker_name,#asker_email codes in the above message to get the respective values in the email.</span>
+<?php }
+
+function send_answer_for_asker( $post_id ) {
+	 global $post_type;
+	 
+	 // If this is just a revision, don't send the email.
+	if ( wp_is_post_revision( $post_id ) )
+		return;
+	
+	 if( 'qa_faqs' == $post_type){
+		 $qafp_options = get_option( 'qafp_options' );
+		 if($qafp_options['send_answer']){
+			$send_answer = get_field( "send_answer", $post_id );
+			$asker_name = get_post_meta($post_id,'ap_author_name',true);
+			$asker_email = get_post_meta($post_id,'ap_author_email',true);
+			$content_post = get_post($post_id);
+			 
+			 if($asker_email != '' && $qafp_options['send_answer_message'] != '' && $qafp_options['send_answer_subject'] != '' && $send_answer == 1){
+				 update_field("send_answer", 2, $post_id);
+
+				$post_url = get_permalink( $post_id );
+				$blogname = get_option('blogname');
+				$email = get_option('admin_email');
+				
+				$headers = "MIME-Version: 1.0\r\n" . "From: ".$blogname." "."<".$email.">\n" . "Content-Type: text/HTML; charset=\"" . get_option('blog_charset') . "\"\r\n";
+
+				$message = $qafp_options['send_answer_message'];
+
+				$search = array("#question", "#answer", "#post_url", "#asker_name","#asker_email");
+				$replace   = array($content_post->post_title,$content_post->post_content,  $post_url, $asker_name,$asker_email);
+
+				$message = str_replace($search, $replace, $message);
+
+				$subject = $qafp_options['send_answer_subject'];
+
+				wp_mail($email,$subject,$message,$headers);
+			 }
+		 }
+	 }	
+}
+add_action( 'save_post', 'send_answer_for_asker' );
+
+add_filter( 'manage_edit-qa_faqs_columns', 'my_edit_qa_faqs_columns' ) ;
+
+function my_edit_qa_faqs_columns( $columns ) {
+
+	$columns = array(
+		'cb' => '<input type="checkbox" />',
+		'title' => __( 'Câu hỏi' ),
+		'ap_author_name' => __( 'Họ và Tên' ),
+		'ap_author_email' => __( 'Email' ),
+		'send_answer' => __( 'Gửi câu trả lời' ),
+		'date' => __('Date')
+	);
+
+	return $columns;
+}
+
+add_action( 'manage_qa_faqs_posts_custom_column', 'my_manage_qa_faqs_columns', 10, 2 );
+
+function my_manage_qa_faqs_columns( $column, $post_id ) {
+	global $post;
+
+	switch( $column ) {
+
+		case 'ap_author_name' :
+
+			/* Get the post meta. */
+			$ap_author_name = get_post_meta( $post_id, 'ap_author_name', true );
+			echo $ap_author_name;
+			break;
+
+		case 'ap_author_email' :
+
+			$ap_author_email = get_post_meta( $post_id, 'ap_author_email', true );
+			echo $ap_author_email;
+
+			break;
+
+		case 'send_answer' :
+
+			$send_answer = get_post_meta( $post_id, 'send_answer', true );
+			if($send_answer == 0){
+				echo 'Chưa gửi';
+			}elseif($send_answer == 2){
+				echo 'Đã gửi';
+			}
+
+			break;
+		default :
+			break;
+	}
+}
+
+add_filter( 'manage_edit-qa_faqs_sortable_columns', 'my_qa_faqs_sortable_columns' );
+
+function my_qa_faqs_sortable_columns( $columns ) {
+
+	$columns['send_answer'] = 'send_answer';
+
+	return $columns;
+}
+
+function custom_admin_css() {
+	 global $post_type;
+	
+    if( 'qa_faqs' == $post_type){
+		$css = <<<EOD
+				<style>
+					.column-send_answer, .column-ap_author_email, .column-ap_author_name{
+						width: 150px;
+					} 
+				</style>
+EOD;
+		echo $css;
+	}
+}
+add_action('admin_footer', 'custom_admin_css');
+?>

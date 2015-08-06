@@ -291,31 +291,47 @@ defined('ABSPATH') or die("No script kiddies please!");
        {
           	$blogname = get_option('blogname');
 		    $email = get_option('admin_email');
+			$post_author_name = get_post_meta($post_id,'ap_author_name',true);
+            $post_author_email = get_post_meta($post_id,'ap_author_email',true);
+            $post_author_url = get_post_meta($post_id,'ap_author_url',true);
+			$post_admin_link = admin_url().'post.php?post='.$post_id.'&action=edit';
+					
             $headers = "MIME-Version: 1.0\r\n" . "From: ".$blogname." "."<".$email.">\n" . "Content-Type: text/HTML; charset=\"" . get_option('blog_charset') . "\"\r\n";
-            $message = __('Hello there,','anonymous-post').'<br/><br/>'. 
+            
+			if($this->ap_settings['admin_notification_message'] != ''){
+				$message = $this->ap_settings['admin_notification_message'];
+
+				$search = array("#post_title", "#post_admin_link", "#post_author_name","#post_author_email","#post_author_url");
+				$replace   = array($post_title, $post_admin_link, $post_author_name,$post_author_email,$post_author_url);
+
+				$message = str_replace($search, $replace, $message);
+			}else{
+				$message = __('Hello there,','anonymous-post').'<br/><br/>'. 
                         __('A new post has been submitted via AccessPress Anonymous Post plugin in ','anonymous-post').$blogname.' site.'.__(' Please find details below:','anonymous-post').'<br/><br/>'.
                         
                         'Post title: '.$post_title.'<br/><br/>';
-            $post_author_name = get_post_meta($post_id,'ap_author_name',true);
-            $post_author_email = get_post_meta($post_id,'ap_author_email',true);
-            $post_author_url = get_post_meta($post_id,'ap_author_url',true);
-            if($post_author_name!=''){
-                $message .= 'Post Author Name: '.$post_author_name.'<br/><br/>';
-            }
-            if($post_author_email!=''){
-                $message .= 'Post Author Email: '.$post_author_email.'<br/><br/>';
-            }
-            if($post_author_url!=''){
-                $message .= 'Post Author URL: '.$post_author_url.'<br/><br/>';
-            }
-      
-                        
-            $message .= '____<br/><br/>
-                        '.__('To take action (approve/reject)- please go here:','anonymous-post').'<br/>'
-                        .admin_url().'post.php?post='.$post_id.'&action=edit <br/><br/>
-                        
-                        '.__('Thank You','anonymous-post');
-            $subject = __('New Post Submission - via AccessPress Anonymous Post','anonymous-post');
+            
+				if($post_author_name!=''){
+					$message .= 'Post Author Name: '.$post_author_name.'<br/><br/>';
+				}
+				if($post_author_email!=''){
+					$message .= 'Post Author Email: '.$post_author_email.'<br/><br/>';
+				}
+				if($post_author_url!=''){
+					$message .= 'Post Author URL: '.$post_author_url.'<br/><br/>';
+				}                              
+				$message .= '____<br/><br/>
+							'.__('To take action (approve/reject)- please go here:','anonymous-post').'<br/>'
+							.$post_admin_link.' <br/><br/>                        
+							'.__('Thank You','anonymous-post');
+			}
+			
+			if($this->ap_settings['admin_notification_subject'] != ''){
+				$subject = $this->ap_settings['admin_notification_subject'];
+			}else{
+				$subject = __('New Post Submission - via AccessPress Anonymous Post','anonymous-post');
+			}
+            
             wp_mail($email,$subject,$message,$headers);
                         
                         
