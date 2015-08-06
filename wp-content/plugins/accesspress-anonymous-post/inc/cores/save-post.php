@@ -103,8 +103,8 @@ if($error_flag==0)
         {
             $author = $ap_settings['post_author'];
         }
-        
-        $post_arguments = array('post_type'=>'post',
+		
+        $post_arguments = array('post_type'=>$ap_settings['post_type']!=''?$ap_settings['post_type']:'post',
                                 'post_title'=>$ap_form_post_title,
                                 'post_content'=>$ap_form_content,
                                 'post_status'=>$publish_status,
@@ -149,12 +149,7 @@ if($error_flag==0)
                 $post_category = esc_attr($ap_settings['post_category']);
                 wp_set_post_categories( $post_id, array($post_category));
             }
-        }
-		if($ap_settings['post_type']!='')
-		{
-			set_post_type( $post_id, $ap_settings['post_type'] );
-		}
-        
+        }      
     if($post_id)
     {
         //adding author name as post meta field

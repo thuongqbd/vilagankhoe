@@ -101,3 +101,25 @@ function qafp_show_columns($name) {
 			break;	
 	}
 }
+
+function custom_admin_js() {
+	 global $post_type;
+	
+    if( 'qa_faqs' == $post_type){
+		$js = <<<EOD
+				<script type="text/javascript">
+				jQuery(document).ready(function(){
+					var title = jQuery("#titlewrap input").val();
+					jQuery("#titlewrap input").hide();
+					jQuery("#titlewrap").append("<textarea rows='5' style='width: 100%;'>"+title+"</textarea>");
+					jQuery("#titlewrap").val(jQuery("#titlewrap input").val());
+					jQuery("#titlewrap").change(function(){
+						jQuery("#titlewrap input").val(jQuery("#titlewrap textarea").val());
+					});
+				}); 
+			</script>
+EOD;
+		echo $js;
+	}
+}
+add_action('admin_footer', 'custom_admin_js');

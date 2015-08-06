@@ -49,10 +49,11 @@ if(isset($_SESSION['ap_form_success_msg']) && $ap_settings['redirect_url']=='')
 $form .='<form method="post" action="" enctype="multipart/form-data" class="ap-form-wrapper" onsubmit="return check_form_submittable()">
                 <div class="ap-form-field-wrapper">
                   <label>'.$post_title_label.'</label>
-                  <div class="ap-form-field"><input type="text" name="ap_form_post_title" class="ap-required-field" data-required-message="'.$post_title_required_message.'"/></div>';
+                  <div class="ap-form-field">
+				  <textarea name="ap_form_post_title" class="ap-required-field" data-required-message="'.$post_title_required_message.'"/>'.(isset($_POST['ap_form_post_title'])?$_POST['ap_form_post_title']:'').'</textarea></div>';
 $error_title = isset($error->title)?$error->title:'';
 $form .= '<div class="ap-form-error-message">'.$error_title.'</div>';    
-
+$form .= '</div><!--ap-form-field-wrapper-->';
 
 
 //for including post content
@@ -145,7 +146,7 @@ if(in_array('author_name',$ap_settings['form_included_fields']))
     $form .='<div class="ap-form-field-wrapper">
                 <label>'.$author_name_label.'</label>
                 <div class="ap-form-field">
-                   <input type="text" name="ap_author_name" '.$required.' data-required-message="'.$author_name_required_message.'"/> 
+                   <input type="text" name="ap_author_name" '.$required.' data-required-message="'.$author_name_required_message.'" value="'.(isset($_POST['ap_author_name'])?$_POST['ap_author_name']:'').'"/> 
                 </div><!--ap-form-field-->
                 <div class="ap-form-error-message"></div>
              </div><!--ap-form-field-wrapper-->';
@@ -169,7 +170,7 @@ if(in_array('author_email',$ap_settings['form_included_fields']))
     $form .='<div class="ap-form-field-wrapper">
                 <label>'.$author_email_label.'</label>
                 <div class="ap-form-field">
-                   <input type="email" name="ap_author_email" '.$required.' data-required-message="'.$author_email_required_message.'"/> 
+                   <input type="email" name="ap_author_email" '.$required.' data-required-message="'.$author_email_required_message.'" value="'.(isset($_POST['ap_author_email'])?$_POST['ap_author_email']:'').'"/> 
                 </div><!--ap-form-field-->
                 <div class="ap-form-error-message"></div>
              </div><!--ap-form-field-wrapper-->';
