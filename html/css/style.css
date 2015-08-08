@@ -7,7 +7,9 @@ and open the template in the editor.
     Created on : Aug 4, 2015, 11:05:06 PM
     Author     : hoangduyen
 */
-/*common*/
+/*=======================================================
+COMMON
+=======================================================*/
 body{	
 	background-image: url(../images/background.png);
     background-size: 100% 100%;
@@ -24,7 +26,9 @@ body{
 img{
 	max-width: 100%;
 }
-/*header*/
+/*=======================================================
+PAGE section:  Header
+=======================================================*/
 header .top{
 	height: 179px;
 	margin-top: 20px
@@ -79,7 +83,9 @@ header form#search input{
     width: 210px;
 	height: 33px;
 }
-/* footer */
+/*=======================================================
+PAGE section:  footer
+=======================================================*/
 footer{
 	margin-top: 81px;
 }
@@ -143,8 +149,9 @@ footer .copyright{
 	height: 118px;
 	width: 100%
 }
-/*---------------------------------------------------------*/
-/* index page */
+/*=======================================================
+PAGE: trang chu
+=======================================================*/
 #tamsoat{
 	font-family: Myriad Pro;
 	font-size: 39.5px;
@@ -215,8 +222,9 @@ footer .copyright{
     height: 301px;
     background-repeat: no-repeat;
 }
-/*---------------------------------------------------------*/
-/*page hoi dap*/
+/*=======================================================
+PAGE: hoi dap
+=======================================================*/
 #hoidap{
 	font-size: 15px;
     line-height: 2;
@@ -246,6 +254,9 @@ footer .copyright{
     margin-left: 51px;
     height: 23px;
 }
+/*=======================================================
+PAGE: tintuc
+=======================================================*/
 .tintuc-list, .paging{
 	clear: both;
     height: auto;
@@ -331,34 +342,63 @@ footer .copyright{
 	text-decoration: none;
 	text-transform: uppercase;
 }
+/*=======================================================
+PAGE: dang ky test
+=======================================================*/
 #dangky-test{
-	background-color: #756db2;
-	padding-left: 16px;
-	padding-right: 17px;
-	padding-top: 5px;
-	padding-bottom: 15px;
+	/*background-color: #756db2;*/
+    padding-left: 16px;
+    padding-right: 17px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    background-image: url(../images/bg-dktest.png);
+    width: 889px;
+    height: 350px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 #dangky-test form input,
 #dangky-test form select{
 	width: 214px;
 	height: 33px;
-	margin-left: 33px;
+	margin-left: 54px;
+	margin-bottom: 0;
 }
 #dangky-test form input:first-child{
-	margin-left: 33px;
+	margin-left: 0;
 }
-#dangky-test form button[type="submit"]{
+#dangky-test form input[type="submit"]{
 	background-image: url(../images/btn-dktest.png);
-	background-repeat: no-repeat;
-	height: 49px;
-	width: 149px;
-	
+    background-repeat: no-repeat;
+    height: 49px;
+    width: 195px;
+    border: none;
+    float: right;
+	margin-top: 30px;
 }
-#dangky-test form p{
-	margin-left: 108px;
+#form-dangky-test #logo-slogan img{
+	display: block;
+	margin: 0 auto;
+}
+#dangky-test form #form-dkt p{	
+	margin-bottom: 5px;
+}
+#dangky-test form #form-dkt p:first-child{
+	margin-top: 43px;
 }
 #form-dangky-test #logo-slogan p{
 	font-family: Myriad Pro, Tahoma, sans-serif;
 	font-size: 13px;
-	color: #d9d4ea;
+	color: #d9d4ea;	
+	width: 100%;
+	text-align: center;
+	margin: 0;
+}
+#form-dkt .line{
+	border-bottom: 2px solid #e5e4e6;
+	width: 390px;
+	margin-top: 13px;
+	margin-right: auto;
+	margint-bottom:16px;
+	margin-left: auto;
 }
