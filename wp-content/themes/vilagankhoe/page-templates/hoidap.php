@@ -14,11 +14,11 @@
  * @since Twenty Fifteen 1.0
  */
 global $post;
-wp_enqueue_style( 'scrollbar',
-        get_stylesheet_directory_uri() . '/libs/jquery.scrollbar/jquery.scrollbar.css',
-        array(  )
-    );
-wp_enqueue_script( 'scrollbar', get_stylesheet_directory_uri().'/libs/jquery.scrollbar/jquery.scrollbar.min.js',array('jquery'));
+//wp_enqueue_style( 'scrollbar',
+//        get_stylesheet_directory_uri() . '/libs/jquery.scrollbar/jquery.scrollbar.css',
+//        array(  )
+//    );
+//wp_enqueue_script( 'scrollbar', get_stylesheet_directory_uri().'/libs/jquery.scrollbar/jquery.scrollbar.min.js',array('jquery'));
 get_header(); ?>
 
 <div id="main-content" class="main-content">
@@ -37,4 +37,25 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 </div><!-- #main-content -->
+<script type="text/javascript">	
+//	$ = jQuery;
+//	$(function(){
+//		$('.qafp-faq').each(function(){
+//			that = this;
+//			$(that).find('.hoi').on('click',function(){
+//
+//				if($(that).find('.dap').is(":hidden")){			
+//					$(this).addClass('active');
+//					console.log($(that).find('.dap').is(":hidden"));
+//				}else{
+//					$(this).addClass('active');
+//					$(this).removeClass('active');
+//				}
+//
+//			});
+//		});
+//	})
+
+
+</script>
 <?php get_footer(); ?>
