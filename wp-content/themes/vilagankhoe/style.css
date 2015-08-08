@@ -255,9 +255,19 @@ footer .copyright{
 		font-style: italic;
 		font-size: 12px;*/
 }
+#hoidap .item .hoi{
+	background-image: url(images/icon-faq-1.png);
+	background-repeat: no-repeat;
+	background-position: 99% 5px;
+}
+#hoidap .item .hoi.active{
+	background-image: url(images/icon-faq-2.png);	
+}
 #hoidap .item .hoi,
 #hoidap .item .dap{
-	padding: 5px 5px 5px 15px;
+	padding: 5px 40px 5px 10px;
+    text-align: justify;
+	
 }
 #hoidap .item .line{
 	border-bottom: 1px dashed #000;
