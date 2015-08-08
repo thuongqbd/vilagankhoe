@@ -1,0 +1,344 @@
+/*
+ Theme Name:   Vi la gan khoe
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Twenty Fifteen Child Theme
+ Author:       John Doe
+ Author URI:   http://example.com
+ Template:     twentyfifteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  vilagankhoe
+*/
+/*common*/
+body{	
+	background-image: url(images/background.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+	font-family: Myriad Pro, tahoma, sans-serif;
+	font-size: 13px;
+}
+.left{
+	float: left !important;	
+}
+.right{
+	float: right !important;	
+}
+img{
+	max-width: 100%;
+}
+/*header*/
+header .top{
+	height: 179px;
+	margin-top: 20px
+}
+header #logo{
+	position: relative;
+    height: 179px;
+
+}
+header #logo img{
+	position: absolute;
+    left: -63px;
+}
+header #search-nav{
+	padding-top: 99px;
+}
+header nav{
+	clear: both;
+}
+header nav #menu{
+	list-style: none;
+    background-image: url(images/bg-top-menu.png);
+    background-repeat: no-repeat;
+    width: 631px;
+    height: 30px;
+	margin: 0;
+}
+header nav #menu li{
+	float: left;
+	padding-left: 100px;
+	line-height: 2;
+	margin: 0;
+}
+header nav #menu li:first-child{
+	padding-left: 0;
+}
+header nav #menu li a{
+	text-decoration: none;
+}
+header form#search{
+	width: 210px;
+    float: right;
+    margin: 0;
+}
+header form#search input{
+	background-image: url('images/bg-search.png');
+    background-repeat: no-repeat;
+    padding-left: 36px;
+    background-color: transparent;
+    border: none;
+    width: 210px;
+	height: 33px;
+}
+/* footer */
+footer{
+	margin-top: 81px;
+}
+footer #gioithieu {
+
+}
+footer #gioithieu h4 {
+	font-family: Myriad Pro, sans-serif;
+	font-size: 22px;
+	color: #78acd4;
+}
+footer #gioithieu .routine{
+	height: 111px;
+    box-sizing: border-box;
+    margin-left: 33px;
+    margin-right: 93px;
+    width: auto;
+    margin-top: 74px;
+    margin-bottom: 44px;
+    position: relative;
+}
+footer #gioithieu .routine .line{
+	border-bottom: 4px dashed #94a9cb;
+	height: 55px;
+	width: 100%;
+	z-index: 1;
+}
+footer #gioithieu .routine img{
+	z-index: 2;	
+	position: absolute;
+    top: 0;
+}
+footer #gioithieu .routine img.haytamsoat{
+	left: 356px;	
+}
+footer #gioithieu .routine img.haychuatri{
+	left: 110px;
+	display: block;
+    background-color: #fff;
+}
+footer #gioithieu .routine img.cunghanhdong{	
+	right: 148px;
+}
+footer .dvtctc{
+	width: 480px;
+	margin: 0 auto;
+	height: 60px;
+	line-height: 60px;
+}
+footer .dvtctc *{
+	float: left;
+	color: #c376b1;
+	font-size: 20px;
+	font-weight: bold;
+}
+footer .dvtctc .left{
+	margin-right: 20px;
+}
+footer .copyright{
+	background: #fff;
+	height: 118px;
+	width: 100%
+}
+/*---------------------------------------------------------*/
+/* index page */
+#tamsoat{
+	font-family: Myriad Pro;
+	font-size: 39.5px;
+	color: #ed1b57;
+	height: 178px;
+	line-height: 178px;
+	
+}
+#huongung #video-lagan{
+	width: 545px;
+	margin-right: 21px;
+}
+#huongung #toihuongung{
+	width: 321px;
+    height: auto;
+}
+#huongung #toihuongung .top{
+	padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom-width: 1px;
+    border-bottom-color: #fff;
+    border-bottom-style: dashed;
+    padding-left: 16px;
+    padding-top: 4px; 
+}
+#huongung #btn-toihuongung{
+	background-image: url(images/btn-toihuongung.png);
+    background-repeat: no-repeat;
+    width: 286px;
+    height: 97px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 18px;
+}
+#huongung #sohuongung{
+    background-repeat: no-repeat;
+    width: 270px;
+    height: 95px;
+    display: block;
+    border: 3px solid #9EC0E5;
+    border-radius: 27px;
+	margin-left: 25px;
+}
+#huongung #sohuongung strong{
+	font-family: Myriad Pro;
+    font-size: 74.9px;
+    color: #ffffff;
+    display: block;
+    text-align: center;
+    line-height: 1;
+    padding: 5px 0;
+}
+#huongung #sohuongung span{
+	display: block;
+    background-color: #C376B1;
+    width: 180px;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    line-height: 1;
+    margin: 0 auto;
+}
+#huongung .next{
+	width: 73px;
+    background-image: url(images/icon-next.png);
+    background-position: 50% 44%;
+    height: 301px;
+    background-repeat: no-repeat;
+}
+/*---------------------------------------------------------*/
+/*page hoi dap*/
+#hoidap{
+	font-size: 15px;
+    line-height: 2;
+	margin: 0 12px;
+	height: 500px;
+	overflow: auto;
+}
+#hoidap .item .hoi{
+	background-color: #f9cde0;
+
+}
+.author, .bs{
+	font-weight: bold;
+}
+#hoidap .item .hoi .author{	
+	/*    display: inline-block;
+		padding-left: 5px;
+		font-style: italic;
+		font-size: 12px;*/
+}
+#hoidap .item .hoi,
+#hoidap .item .dap{
+	padding: 5px 5px 5px 15px;
+}
+#hoidap .item .line{
+	border-bottom: 1px dashed #000;
+    margin-left: 51px;
+    height: 23px;
+}
+.tintuc-list, .paging{
+	clear: both;
+    height: auto;
+    overflow: hidden;
+}
+.tintuc-list .item{
+	margin-bottom: 44px;
+}
+.tintuc-list .item:nth-child(3n+1){
+	margin-left: 0;
+}
+.tintuc-list .item a{
+	position: relative;
+    display: block;
+    width: 294px;
+    height: 196px;
+}
+.tintuc-list .item a img{
+	max-width: 100%;
+}
+.tintuc-list .item a span{
+	color: #fff;
+    font-family: Myriad Hebrew;
+    font-size: 15px;
+    position: absolute;
+    bottom: 0;
+    padding: 8px;
+    background-color: rgba(134, 137, 142, 0.64);
+    width: 100%;
+    text-align: center;
+    height: 56px;
+    box-sizing: border-box;
+}
+#paging{
+	text-align: center;
+}
+#paging a,
+#paging span{
+	font-family: Myriad Hebrew, Tahoma, sans-serif;
+	font-size: 13px;
+	color: #b0afb0;
+	text-decoration: none;
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+}
+#paging span{
+	color: #646565;
+}
+.post-title, .post-excerpt, .post-content{
+	font-family: Minion Pro, Tahoma, sans-serif;
+    font-size: 19px;
+    color: #000000;
+}
+.post-excerpt, .post-content{
+	font-size: 13px;
+}
+.post-content img{
+	max-width: 100%;
+    display: block;
+    margin: 10px;
+}
+#tintuc-khac{
+	margin-top: 20px;
+}
+
+#tintuc-khac p{
+	margin: 0;
+}
+#tintuc-khac p a{
+	text-decoration: none;
+	color: #655E5E;
+}
+#timhieubenh .one-third p{
+	border-bottom: 2px dashed #000;
+	padding-bottom: 10px;
+	margin-bottom: 5px;
+}
+#timhieubenh .one-third p a{
+	font-size: 19.3px;
+	font-family: Myriad Pro, Tahoma, sans-serif;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#timhieubenh{
+	height: 500px;	
+	overflow: hidden;
+}
+#timhieubenh div{
+	height: 500px;
+	overflow: auto;
+}
