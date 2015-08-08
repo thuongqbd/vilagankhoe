@@ -45,31 +45,31 @@ img{
 }
 select option{
     color: #dcdcd7;  
-   font-size: 13px;
-   font-family: Myriad Pro, Tahoma, sans-serif;
+	font-size: 13px;
+	font-family: Myriad Pro, Tahoma, sans-serif;
 }
 ::-webkit-input-placeholder {
-   color: #dcdcd7;  
-   font-size: 13px;
-   font-family: Myriad Pro, Tahoma, sans-serif;
+	color: #dcdcd7;  
+	font-size: 13px;
+	font-family: Myriad Pro, Tahoma, sans-serif;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #dcdcd7;  
-   font-size: 13px;
-   font-family: Myriad Pro, Tahoma, sans-serif;
+	color: #dcdcd7;  
+	font-size: 13px;
+	font-family: Myriad Pro, Tahoma, sans-serif;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #dcdcd7;  
-   font-size: 13px;
-   font-family: Myriad Pro, Tahoma, sans-serif;  
+	color: #dcdcd7;  
+	font-size: 13px;
+	font-family: Myriad Pro, Tahoma, sans-serif;  
 }
 
 :-ms-input-placeholder {  
-   color: #dcdcd7;  
-   font-size: 13px;
-   font-family: Myriad Pro, Tahoma, sans-serif;
+	color: #dcdcd7;  
+	font-size: 13px;
+	font-family: Myriad Pro, Tahoma, sans-serif;
 }
 /*=======================================================
 PAGE section:  Header
@@ -103,18 +103,26 @@ header nav #menu{
 }
 header nav #menu li{
 	float: left;
-	padding-left: 70px;
-	line-height: 1.8;
-	margin: 0;
+    margin-left: 63px;
+    height: 30px;
+	margin-bottom: 0;
 }
 header nav #menu li:first-child{
-	padding-left: 0;
-	
+	margin-left: 52px;	
 }
 header nav #menu li a{
 	text-decoration: none;
-    font-size: 20px;
-    color: #9dc1e6;
+    font-size: 15px;
+    color: #9dc1e6;    
+    padding: 0 11px;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    margin: 2px 0;    
+}
+header nav #menu li.current-menu-item a{
+	background-color: #fde6eb;
+    border-radius: 15px;
 }
 header form#search{
 	width: 210px;
@@ -313,7 +321,7 @@ PAGE: hoi dap
 #hoidap .item .dap{
 	padding: 5px 40px 5px 10px;
     text-align: justify;
-	
+
 }
 #hoidap .item .line{
 	border-bottom: 1px dashed #000;
