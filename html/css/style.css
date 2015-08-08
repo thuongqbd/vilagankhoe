@@ -26,6 +26,34 @@ body{
 img{
 	max-width: 100%;
 }
+select option{
+    color: #dcdcd7;  
+   font-size: 13px;
+   font-family: Myriad Pro, Tahoma, sans-serif;
+}
+::-webkit-input-placeholder {
+   color: #dcdcd7;  
+   font-size: 13px;
+   font-family: Myriad Pro, Tahoma, sans-serif;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #dcdcd7;  
+   font-size: 13px;
+   font-family: Myriad Pro, Tahoma, sans-serif;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #dcdcd7;  
+   font-size: 13px;
+   font-family: Myriad Pro, Tahoma, sans-serif;  
+}
+
+:-ms-input-placeholder {  
+   color: #dcdcd7;  
+   font-size: 13px;
+   font-family: Myriad Pro, Tahoma, sans-serif;
+}
 /*=======================================================
 PAGE section:  Header
 =======================================================*/
@@ -59,15 +87,18 @@ header nav #menu{
 }
 header nav #menu li{
 	float: left;
-	padding-left: 100px;
-	line-height: 2;
+	padding-left: 70px;
+	line-height: 1.8;
 	margin: 0;
 }
 header nav #menu li:first-child{
 	padding-left: 0;
+	
 }
 header nav #menu li a{
 	text-decoration: none;
+    font-size: 20px;
+    color: #9dc1e6;
 }
 header form#search{
 	width: 210px;
@@ -345,7 +376,7 @@ PAGE: tintuc
 /*=======================================================
 PAGE: dang ky test
 =======================================================*/
-#dangky-test{
+.lagan-form{
 	/*background-color: #756db2;*/
     padding-left: 16px;
     padding-right: 17px;
@@ -357,12 +388,28 @@ PAGE: dang ky test
     margin: 0 auto;
     box-sizing: border-box;
 }
-#dangky-test form input,
-#dangky-test form select{
+.lagan-form form input,
+.lagan-form form select{
 	width: 214px;
 	height: 33px;
 	margin-left: 54px;
 	margin-bottom: 0;
+	border-radius: 15px;
+}
+.lagan-form #logo-slogan img{
+	display: block;
+	margin: 0 auto;
+}
+.lagan-form #logo-slogan p{
+	font-family: Myriad Pro, Tahoma, sans-serif;
+	font-size: 13px;
+	color: #d9d4ea;	
+	width: 100%;
+	text-align: center;
+	margin: 0;
+}
+.lagan-form form p:first-child{
+	margin-top: 43px;
 }
 #dangky-test form input:first-child{
 	margin-left: 0;
@@ -376,24 +423,14 @@ PAGE: dang ky test
     float: right;
 	margin-top: 30px;
 }
-#form-dangky-test #logo-slogan img{
-	display: block;
-	margin: 0 auto;
-}
+
 #dangky-test form #form-dkt p{	
 	margin-bottom: 5px;
 }
 #dangky-test form #form-dkt p:first-child{
 	margin-top: 43px;
 }
-#form-dangky-test #logo-slogan p{
-	font-family: Myriad Pro, Tahoma, sans-serif;
-	font-size: 13px;
-	color: #d9d4ea;	
-	width: 100%;
-	text-align: center;
-	margin: 0;
-}
+
 #form-dkt .line{
 	border-bottom: 2px solid #e5e4e6;
 	width: 390px;
@@ -401,4 +438,38 @@ PAGE: dang ky test
 	margin-right: auto;
 	margint-bottom:16px;
 	margin-left: auto;
+}
+/*=======================================================
+PAGE: dat cau hoi
+=======================================================*/
+#datcauhoi form input[type="submit"]{
+	background-image: url(../images/btn-guicauhoi.png);
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 194px;
+    border: none;
+    float: right;
+}
+#datcauhoi form textarea{
+	background-image: url(../images/bg-datcauhoi.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 124px;
+    width: 100%;
+    border: none;
+    display: block;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+	padding-left: 40px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#datcauhoi form input:first-child{
+	margin-top: 43px;
+}
+#datcauhoi form input[type='text']{
+	margin-bottom: 5px;
+    margin-left: 27px;
+    display: block;
 }
