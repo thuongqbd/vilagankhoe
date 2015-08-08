@@ -41,6 +41,7 @@
 						<div class="two-thirds column" id="search-nav">
 							<form id="search" class="column offset-by-four">
 								<input type="text" name="s" value="" placeholder="Nhập từ khóa" />
+								<input type="submit" name="submit" value=""/>
 							</form>						
 							<nav >
 								<?php

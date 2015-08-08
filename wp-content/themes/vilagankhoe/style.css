@@ -72,15 +72,25 @@ header form#search{
 	width: 210px;
     float: right;
     margin: 0;
+	position: relative;
 }
-header form#search input{
-	background-image: url('images/bg-search.png');
+header form#search input[type="text"]{
     background-repeat: no-repeat;
     padding-left: 36px;
-    background-color: transparent;
-    border: none;
+    background-color: #fff;
+    border-radius: 20px;
     width: 210px;
-	height: 33px;
+    height: 33px;
+    color: #333;
+    background-position: 5px 5px;
+}
+header form#search input[type="submit"] {
+    position: absolute;
+    top: 0px;
+    background: url('images/search.png') no-repeat;
+    border: 0;
+	background-position: 10px 7px;
+    background-size: 20px;
 }
 /* footer */
 footer{

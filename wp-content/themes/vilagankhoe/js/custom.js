@@ -1,3 +1,4 @@
 jQuery(document).ready(function(){
-    jQuery('.scrollbar-inner').scrollbar();
+	if(jQuery('.scrollbar-inner').length)
+		jQuery('.scrollbar-inner').scrollbar();
 });
