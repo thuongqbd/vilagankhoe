@@ -11,7 +11,18 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  vilagankhoe
 */
-/*common*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 4, 2015, 11:05:06 PM
+    Author     : hoangduyen
+*/
+/*=======================================================
+COMMON
+=======================================================*/
 body{	
 	background-image: url(images/background.png);
     background-size: 100% 100%;
@@ -28,12 +39,41 @@ body{
 img{
 	max-width: 100%;
 }
-
 .entry-content{
 	overflow: auto;
 	height: 500px;
 }
-/*header*/
+select option{
+    color: #dcdcd7;  
+   font-size: 13px;
+   font-family: Myriad Pro, Tahoma, sans-serif;
+}
+::-webkit-input-placeholder {
+   color: #dcdcd7;  
+   font-size: 13px;
+   font-family: Myriad Pro, Tahoma, sans-serif;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #dcdcd7;  
+   font-size: 13px;
+   font-family: Myriad Pro, Tahoma, sans-serif;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #dcdcd7;  
+   font-size: 13px;
+   font-family: Myriad Pro, Tahoma, sans-serif;  
+}
+
+:-ms-input-placeholder {  
+   color: #dcdcd7;  
+   font-size: 13px;
+   font-family: Myriad Pro, Tahoma, sans-serif;
+}
+/*=======================================================
+PAGE section:  Header
+=======================================================*/
 header .top{
 	height: 179px;
 	margin-top: 20px
@@ -63,15 +103,18 @@ header nav #menu{
 }
 header nav #menu li{
 	float: left;
-	padding-left: 100px;
-	line-height: 2;
+	padding-left: 70px;
+	line-height: 1.8;
 	margin: 0;
 }
 header nav #menu li:first-child{
 	padding-left: 0;
+	
 }
 header nav #menu li a{
 	text-decoration: none;
+    font-size: 20px;
+    color: #9dc1e6;
 }
 header form#search{
 	width: 210px;
@@ -97,7 +140,9 @@ header form#search input[type="submit"] {
 	background-position: 10px 7px;
     background-size: 20px;
 }
-/* footer */
+/*=======================================================
+PAGE section:  footer
+=======================================================*/
 footer{
 	margin-top: 81px;
 }
@@ -161,15 +206,15 @@ footer .copyright{
 	height: 118px;
 	width: 100%
 }
-/*---------------------------------------------------------*/
-/* index page */
+/*=======================================================
+PAGE: trang chu
+=======================================================*/
 #tamsoat{
 	font-family: Myriad Pro;
 	font-size: 39.5px;
 	color: #ed1b57;
 	height: 178px;
 	line-height: 178px;
-	
 }
 #huongung #video-lagan{
 	width: 545px;
@@ -233,8 +278,9 @@ footer .copyright{
     height: 301px;
     background-repeat: no-repeat;
 }
-/*---------------------------------------------------------*/
-/*page hoi dap*/
+/*=======================================================
+PAGE: hoi dap
+=======================================================*/
 #hoidap{
 	font-size: 15px;
     line-height: 2;
@@ -277,6 +323,9 @@ footer .copyright{
 #hoidap .qafp-faq-title{
     cursor: pointer;
 }
+/*=======================================================
+PAGE: tintuc
+=======================================================*/
 .tintuc-list, .paging{
 	clear: both;
     height: auto;
@@ -317,7 +366,7 @@ footer .copyright{
 }
 #paging li{
 	font-family: Myriad Hebrew, Tahoma, sans-serif;
-	font-size: 13px;
+	font-size: 13px;	
 	display: inline-block;
 	width: 100px;
 	text-align: center;
@@ -372,4 +421,104 @@ footer .copyright{
 #timhieubenh div{
 	height: 500px;
 	overflow: auto;
+}
+/*=======================================================
+PAGE: dang ky test
+=======================================================*/
+.lagan-form{
+	/*background-color: #756db2;*/
+    padding-left: 16px;
+    padding-right: 17px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    background-image: url(images/bg-dktest.png);
+    width: 889px;
+    height: 350px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.lagan-form form input,
+.lagan-form form select{
+	width: 214px;
+	height: 33px;
+	margin-left: 54px;
+	margin-bottom: 0;
+	border-radius: 15px;
+}
+.lagan-form #logo-slogan img{
+	display: block;
+	margin: 0 auto;
+}
+.lagan-form #logo-slogan p{
+	font-family: Myriad Pro, Tahoma, sans-serif;
+	font-size: 13px;
+	color: #d9d4ea;	
+	width: 100%;
+	text-align: center;
+	margin: 0;
+}
+.lagan-form form p:first-child{
+	margin-top: 43px;
+}
+#dangky-test form input:first-child{
+	margin-left: 0;
+}
+#dangky-test form input[type="submit"]{
+	background-image: url(images/btn-dktest.png);
+    background-repeat: no-repeat;
+    height: 49px;
+    width: 195px;
+    border: none;
+    float: right;
+	margin-top: 30px;
+}
+
+#dangky-test form #form-dkt p{	
+	margin-bottom: 5px;
+}
+#dangky-test form #form-dkt p:first-child{
+	margin-top: 43px;
+}
+
+#form-dkt .line{
+	border-bottom: 2px solid #e5e4e6;
+	width: 390px;
+	margin-top: 13px;
+	margin-right: auto;
+	margint-bottom:16px;
+	margin-left: auto;
+}
+/*=======================================================
+PAGE: dat cau hoi
+=======================================================*/
+#datcauhoi form input[type="submit"]{
+	background-image: url(images/btn-guicauhoi.png);
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 194px;
+    border: none;
+    float: right;
+}
+#datcauhoi form textarea{
+	background-image: url(images/bg-datcauhoi.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 124px;
+    width: 100%;
+    border: none;
+    display: block;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+	padding-left: 40px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#datcauhoi form input:first-child{
+	margin-top: 43px;
+}
+#datcauhoi form input[type='text']{
+	margin-bottom: 5px;
+    margin-left: 27px;
+    display: block;
 }
