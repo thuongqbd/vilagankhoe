@@ -28,6 +28,11 @@ body{
 img{
 	max-width: 100%;
 }
+
+.entry-content{
+	overflow: auto;
+	height: 500px;
+}
 /*header*/
 header .top{
 	height: 179px;
@@ -278,9 +283,11 @@ footer .copyright{
     display: block;
     width: 294px;
     height: 196px;
+	overflow: hidden;
 }
 .tintuc-list .item a img{
 	max-width: 100%;
+	height: auto;
 }
 .tintuc-list .item a span{
 	color: #fff;
@@ -298,15 +305,16 @@ footer .copyright{
 #paging{
 	text-align: center;
 }
-#paging a,
-#paging span{
+#paging li{
 	font-family: Myriad Hebrew, Tahoma, sans-serif;
 	font-size: 13px;
-	color: #b0afb0;
-	text-decoration: none;
 	display: inline-block;
 	width: 100px;
 	text-align: center;
+}
+#paging a{
+	color: #b0afb0;
+	text-decoration: none;
 }
 #paging span{
 	color: #646565;

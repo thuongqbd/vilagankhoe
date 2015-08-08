@@ -12,22 +12,11 @@
 get_header(); ?>
 
 	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+		<div id="content" class="site-content container" role="main">
 
 			<?php if ( have_posts() ) : ?>
-
-			<header class="archive-header">
-				<!--<h1 class="archive-title"><?php // printf( __( 'Category Archives: %s', 'twentyfourteen' ), single_cat_title( '', false ) ); ?></h1>-->
-
-				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
-				?>
-			</header><!-- .archive-header -->
-<div class="tintuc-list">
+			
+			<div class="tintuc-list">
 			<?php
 					// Start the Loop.
 					while ( have_posts() ) : the_post();
@@ -41,7 +30,7 @@ get_header(); ?>
 					?>
 			
 					<div class="item one-third column">
-						<a href="tintuc-chitiet.html">
+						<a href="<?php the_permalink()?>" title="<?php the_title();?>">
 							<?php the_post_thumbnail(297,198);?>
 							<!--<img src="images/img-tintuc.jpg" alt=""/>-->
 							<span><?php the_title();?></span>
@@ -55,13 +44,13 @@ get_header(); ?>
 					// Previous/next page navigation.
 					?>
 	</div>
-				<div id="paging">
-					<span>1</span>
-					<a href="#">2</a>
-					<a href="#">3</a>
-					<a href="#">4</a>
-					<a href="#">5</a>
-				</div>
+				<?php if(function_exists('wp_paginate')) {
+    wp_paginate();
+}
+else {
+    twentythirteen_paging_nav( 'nav-below' );
+}
+?> 
 	<?php
 
 				else :
