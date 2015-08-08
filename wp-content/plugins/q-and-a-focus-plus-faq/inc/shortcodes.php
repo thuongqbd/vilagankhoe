@@ -522,10 +522,14 @@ function qafphome_shortcode( $atts ) {
 				<div class="qafp-faq-title hoi" style="' . $qafp_options['titlecss'] . '">';
 				$qafp_shortcode_output .= '<p class="qafp-faq-anchor"><span class="author">'.get_post_meta( $post->ID, 'ap_author_name', true ).'</span>: <span>'.get_the_title().'</span></p></div>';
 				
+				$content = apply_filters( 'the_content', get_the_excerpt() );
+				$content = $content?$content:'Đang cập nhật';
+				$respondent = get_post_meta( $post->ID, 'respondent', true );
+				$respondent = $respondent?'<span class="bs">'.$respondent.'</span> :':'';
 				if ( $excerpts === true ) {
-					$qafp_shortcode_output .= '<div class="qafp-faq-answer dap"' . $answermargin . '><span class="bs">'.get_post_meta( $post->ID, 'respondent', true ).'</span>: <div>' . apply_filters( 'the_content', get_the_excerpt() ).'</div>';
+					$qafp_shortcode_output .= '<div class="qafp-faq-answer dap"' . $answermargin . '>'.$respondent.'<div>' . $content.'</div>';
 				} else { 
-					$qafp_shortcode_output .= '<div class="qafp-faq-answer dap"' . $answermargin . '><span class="bs">'.get_post_meta( $post->ID, 'respondent', true ).'</span>: <div>' . apply_filters( 'the_content', get_the_content() ).'</div>';
+					$qafp_shortcode_output .= '<div class="qafp-faq-answer dap"' . $answermargin . '>'.$respondent.'<div>' . $content.'</div>';
 				}
 
 				// Start permalinks and ratings code
