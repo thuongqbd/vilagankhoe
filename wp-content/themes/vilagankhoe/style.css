@@ -249,6 +249,9 @@ footer .copyright{
     margin-left: 51px;
     height: 23px;
 }
+#hoidap .qafp-faq-title{
+    cursor: pointer;
+}
 .tintuc-list, .paging{
 	clear: both;
     height: auto;

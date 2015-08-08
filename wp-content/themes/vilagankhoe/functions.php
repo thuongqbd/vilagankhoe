@@ -18,6 +18,7 @@ function theme_enqueue_styles() {
         get_stylesheet_directory_uri() . '/style.css',
         array(  )
     );
+	wp_enqueue_script( 'custom', get_stylesheet_directory_uri().'/js/custom.js',array('jquery'));
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 

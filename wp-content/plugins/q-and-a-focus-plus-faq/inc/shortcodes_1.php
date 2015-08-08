@@ -114,7 +114,7 @@ function qafphome_shortcode( $atts ) {
 			
 			global $post;
 			$qafp_shortcode_output .= '<div id="qafp-faq' . $i . '" class="qafp-faq"' . $faqmargin . '>
-			<div class="qafp-faq-title hoi" style="' . $qafp_options['titlecss'] . '"><a class="qafp-faq-anchor" href="' . get_permalink() . '">';
+			<div class="qafp-faq-title" style="' . $qafp_options['titlecss'] . '"><a class="qafp-faq-anchor" href="' . get_permalink() . '">';
 			if ( $showplusminus === true ) { $qafp_shortcode_output .= '<span class="qafp-fa-caret-right"></span>'; }
 			$qafp_shortcode_output .= get_the_title() . '</a></div>
 			<div class="qafp-faq-answer"' . $answermargin . '>' . apply_filters( 'the_content', get_the_content() );
@@ -229,7 +229,7 @@ function qafphome_shortcode( $atts ) {
 			}
 			
 			$qafp_shortcode_output .= '<div id="qafp-faq' . $i . '" class="qafp-faq"' . $faqmargin . '>
-			<div class="qafp-faq-title hoi" style="' . $qafp_options['titlecss'] . '"><a class="qafp-faq-anchor" href="' . get_permalink() . '">';
+			<div class="qafp-faq-title" style="' . $qafp_options['titlecss'] . '"><a class="qafp-faq-anchor" href="' . get_permalink() . '">';
 			if ( $showplusminus === true ) { $qafp_shortcode_output .= '<span class="qafp-fa-caret-right"></span>'; }
 			$qafp_shortcode_output .= get_the_title() . '</a></div>
 			<div class="qafp-faq-answer"' . $answermargin . '>' . apply_filters( 'the_content', get_the_content() );
@@ -391,8 +391,8 @@ function qafphome_shortcode( $atts ) {
 						}
 					}
 					
-					$qafp_shortcode_output .= '<div id="qafp-faq' . $i . '" class="qafp-faq cf item"' . $faqmargin . '>
-					<div class="qafp-faq-title hoi" style="' . $qafp_options['titlecss'] . '"><a class="qafp-faq-anchor" href="' . get_permalink() . '">';
+					$qafp_shortcode_output .= '<div id="qafp-faq' . $i . '" class="qafp-faq cf"' . $faqmargin . '>
+					<div class="qafp-faq-title" style="' . $qafp_options['titlecss'] . '"><a class="qafp-faq-anchor" href="' . get_permalink() . '">';
 					if ( $showplusminus === true ) { $qafp_shortcode_output .= '<span class="qafp-fa-caret-right"></span>'; }
 					$qafp_shortcode_output .= get_the_title() . '</a></div>
 					';
@@ -518,14 +518,16 @@ function qafphome_shortcode( $atts ) {
 					}
 				}
 			
-				$qafp_shortcode_output .= '<div id="qafp-faq' . $i . '" class="qafp-faq cf item"' . $faqmargin . '>
-				<div class="qafp-faq-title hoi" style="' . $qafp_options['titlecss'] . '">';
-				$qafp_shortcode_output .= '<p class="qafp-faq-anchor"><span class="author">'.get_post_meta( $post->ID, 'ap_author_name', true ).'</span>: <span>'.get_the_title().'</span></p></div>';
+				$qafp_shortcode_output .= '<div id="qafp-faq' . $i . '" class="qafp-faq cf"' . $faqmargin . '>
+				<div class="qafp-faq-title" style="' . $qafp_options['titlecss'] . '"><a class="qafp-faq-anchor" href="' . get_permalink() . '">';
+					if ( $showplusminus === true ) { $qafp_shortcode_output .= '<span class="qafp-fa-caret-right"></span>'; }
+					$qafp_shortcode_output .= get_the_title() . '</a></div>
+				';
 				
 				if ( $excerpts === true ) {
-					$qafp_shortcode_output .= '<div class="qafp-faq-answer dap"' . $answermargin . '><span class="bs">'.get_post_meta( $post->ID, 'respondent', true ).'</span>: <div>' . apply_filters( 'the_content', get_the_excerpt() ).'</div>';
+					$qafp_shortcode_output .= '<div class="qafp-faq-answer"' . $answermargin . '>' . apply_filters( 'the_content', get_the_excerpt() );
 				} else { 
-					$qafp_shortcode_output .= '<div class="qafp-faq-answer dap"' . $answermargin . '><span class="bs">'.get_post_meta( $post->ID, 'respondent', true ).'</span>: <div>' . apply_filters( 'the_content', get_the_content() ).'</div>';
+					$qafp_shortcode_output .= '<div class="qafp-faq-answer"' . $answermargin . '>' . apply_filters( 'the_content', get_the_content() );
 				}
 
 				// Start permalinks and ratings code
@@ -550,7 +552,7 @@ function qafphome_shortcode( $atts ) {
 				if ( $hr === true ) $qafp_shortcode_output .= '<hr' . $hrmargin . ' />
 				';
 
-				$qafp_shortcode_output .= '</div><div class="line"></div><!-- .qafp-faq-answer --></div><!-- .qafp-faq -->
+				$qafp_shortcode_output .= '</div><!-- .qafp-faq-answer --></div><!-- .qafp-faq -->
 				'; // .qafp-faq-answer .qafp-faq
 
 				$i++;
