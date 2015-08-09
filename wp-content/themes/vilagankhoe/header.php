@@ -28,7 +28,7 @@
 					<div class="row top">
 						<div class="one-third column " id="logo">
 							<div class="site-branding">
-								<?php if (is_front_page() && is_home()) : ?>
+								<?php if (is_front_page() || is_home()) : ?>
 									<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo.png" alt=""/></a></h1>
 								<?php else : ?>
 									<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo.png" alt=""/></a></p>
@@ -54,7 +54,13 @@
 						</div>
 					</div>
 					<div class="row slogan">
-						<h1 id="tamsoat">TẦM SOÁT & HÀNH ĐỘNG NGAY</h1>
+						<?php if (is_front_page() || is_home()) : ?>
+							<h1 id="tamsoat">TẦM SOÁT & HÀNH ĐỘNG NGAY</h1>
+						<?php else : ?>
+							<h2 id="tamsoat">TẦM SOÁT & HÀNH ĐỘNG NGAY</h2>
+						<?php endif;
+						?>
+						
 					</div>
 				</div>
 			</header>

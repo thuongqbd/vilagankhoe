@@ -11,9 +11,9 @@ function theme_enqueue_styles() {
         get_stylesheet_directory_uri() . '/css/skeleton.css',
         array(  )
     );
-    $parent_style = 'parent-style';
+//    $parent_style = 'parent-style';
 
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+//    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'child-style',
         get_stylesheet_directory_uri() . '/style.css',
         array(  )
@@ -83,3 +83,20 @@ function twentythirteen_paging_nav() {
 	<?php
 }
 endif;
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function vilagankhoe_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Right sidebar',
+		'id'            => 'sidebar-1',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+}
+add_action( 'widgets_init', 'vilagankhoe_widgets_init' );

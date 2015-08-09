@@ -27,7 +27,7 @@ img{
 	max-width: 100%;
 }
 select option{
-    color: #dcdcd7;  
+   color: #dcdcd7;  
    font-size: 13px;
    font-family: Myriad Pro, Tahoma, sans-serif;
 }
@@ -79,11 +79,11 @@ header #logo{
 }
 header #logo img{
 	position: absolute;
-    left: -84px;
+	left: -63px;
+    top: 0;
 }
 header #search-nav{
-	height: 179px;
-    padding-top: 59px;
+	padding-top: 61px;
 }
 header nav{
 	clear: both;
@@ -129,9 +129,13 @@ header form#search input{
 	font-family: Myriad Pro;
 	font-size: 39.5px;
 	color: #ed1b57;
-	height: 178px;
-	line-height: 178px;
-	padding-left: 12px;
+	/*height: 178px;*/
+	line-height: 3;
+/*	padding-left: 12px;*/
+}
+h2#tamsoat{
+	font-size: 30px;
+	line-height: 1.5;
 }
 /*=======================================================
 PAGE section:  footer
@@ -202,7 +206,6 @@ footer .copyright{
 /*=======================================================
 PAGE: trang chu
 =======================================================*/
-
 #huongung #video-lagan{
 	width: 545px;
 	margin-right: 21px;

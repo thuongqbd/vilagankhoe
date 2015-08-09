@@ -13,8 +13,12 @@
 	</div><!-- .site-content -->
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container" id="gioithieu">
-			<div class="row">				
-				<!--<h4>Giới thiệu chương trình “ Đồng hành cùng bệnh nhân viêm gan ”</h4>-->				
+			<div class="row">	
+				<?php if (is_front_page() || is_home()) : ?>
+					<h4>Giới thiệu chương trình “ Đồng hành cùng bệnh nhân viêm gan ”</h4>								
+				<?php endif;
+				?>
+				
 				<div class="routine">
 					<div class="line"></div>
 					<a href="<?= get_permalink(68)?>"><img class="haytamsoat" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/img-haytoansoat.png" alt=""/></a>
