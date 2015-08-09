@@ -17,10 +17,19 @@ jQuery(document).ready(function(){
 			width: 960,
 			modal: true
 		});
-
-		$("#btn-toihuongung").button().on("click", function() {
+		jQuery('#btn-toihuongung').click(function(){
+			var data = {
+				action: 'huong_ung',
+				security : MyAjax.security
+			};
 			dialog.dialog("open");
+			jQuery.post(MyAjax.ajaxurl, data, function(response) {
+				jQuery('#concurred_count').text(numeral(response).format('0,0'));
+			});
 		});
+//		$("#btn-toihuongung").button().on("click", function() {
+//			dialog.dialog("open");
+//		});
 		$('.btn-close').click(function() {
 			dialog.dialog("close");
 		});
@@ -56,16 +65,5 @@ jQuery(document).ready(function(){
 		$('.btn-close').click(function() {			
 			dialog3.dialog("close");
 		});
-	}
-	jQuery('#btn-toihuongung').click(function(){
-		var data = {
-			action: 'huong_ung',
-			security : MyAjax.security
-		};
-
-		jQuery.post(MyAjax.ajaxurl, data, function(response) {
-			jQuery('#concurred_count').text(numeral(response).format('0,0'));
-			alert('Got this from the server: ' + response);
-		});
-	});
+	}	
 });
