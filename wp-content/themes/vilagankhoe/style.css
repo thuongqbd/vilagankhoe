@@ -199,6 +199,7 @@ footer .dvtctc{
 	margin: 0 auto;
 	height: 60px;
 	line-height: 60px;
+	margin-bottom: 50px;
 }
 footer .dvtctc *{
 	float: left;
@@ -551,4 +552,118 @@ PAGE: dat cau hoi
 }
 #datcauhoi form .ap-form-error-message {
     display: inline-block;
+}
+
+/*=======================================================
+PAGE: cam on BV & NS
+=======================================================*/
+#camon-bv-ns h1{
+	font-family: Myriad Pro, Tahoma, sans-serif;
+	font-size: 41.4px;
+	color: #c82890;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0 80px 90px 80px;
+	
+}
+#camon-bv-ns .camon-bv,
+#camon-bv-ns .camon-ns{
+	background-image: url(images/bg-camon-bv.png);
+    background-repeat: no-repeat;    
+    height: 206px;
+    line-height: 206px;
+    background-size: 100% 100%;
+	text-align: center;
+}
+#camon-bv-ns .camon-ns{
+	background-image: url(images/bg-camon-ns.png);
+}
+#camon-bv-ns .camon-bv a,
+#camon-bv-ns .camon-ns a{	
+    font-family: Myriad Pro, Tahoma, sans-serif;
+    font-size: 20px;
+    color: #fff;    
+    text-transform: uppercase;
+	text-decoration: none;
+}
+/*=======================================================
+PAGE: cam on BV
+=======================================================*/
+#camon-bv h1{
+	font-family: Myriad Pro, Tahoma, sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	color: #c82890;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 26px;
+}
+#camon-bv img,
+#camon-bv a{
+	display: block;
+	margin: 0 auto;
+}
+#camon-bv img{
+	max-height: 128px;
+	margin-bottom: 30px;
+}
+#camon-bv a{
+	background-image: url(images/bg-ten-bv.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-family: Myriad Pro, Tahoma, sans-serif;
+    font-size: 24px;
+    color: #f066a6;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 56px;
+    font-weight: bold;
+    padding: 5px;
+	line-height: 1.4;
+	width: 65%;
+}
+#camon-bv .bv-nhietdoi a,
+#camon-bv .bv-choray a,
+#camon-bv .bv-tudu a{
+	width: 187px;
+}
+#camon-bv .bv-yduochn a{
+	width: 50%;
+}
+#camon-bv .logo-bv{
+	margin-bottom: 60px;
+}
+#camon-dk{
+	background-image: url(images/bg-camon-dk.png);
+    background-repeat: no-repeat;
+    font-family: Myriad Pro, Tahoma, sans-serif;
+    color: #fff;
+    width: 316px;
+    height: 290px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#camon-dk h1{	
+	font-size: 24px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+#camon-dk p{
+	font-size: 18px;
+	margin: 0;
+}
+#camon-dk button{
+	float: right;
+    color: #1b1b1b;
+    font-size: 12px;
+    background-image: url(images/btn-dong.png);
+    background-repeat: no-repeat;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 92px;
+    height: 29px;
+	line-height: 2;
 }
