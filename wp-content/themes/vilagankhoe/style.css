@@ -41,7 +41,9 @@ img{
 }
 .entry-content{
 	overflow: auto;
-	height: 500px;
+    height: 500px;
+    font-size: 15px;
+    font-weight: normal;
 }
 select option{
     color: #dcdcd7;  
@@ -71,24 +73,33 @@ select option{
 	font-size: 13px;
 	font-family: Myriad Pro, Tahoma, sans-serif;
 }
+.ui-widget-header,
+.ui-widget-content{
+	border:none;
+	background:none;
+}
+.ui-draggable .ui-dialog-titlebar{
+	display: none;
+}
+/*.ui-widget-overlay{
+	background: #dedddc;
+}*/
 /*=======================================================
 PAGE section:  Header
 =======================================================*/
 header .top{
-	height: 179px;
-	margin-top: 20px
+	height: 140px;	
 }
 header #logo{
-	position: relative;
-    height: 179px;
-
+	position: relative;    
 }
 header #logo img{
 	position: absolute;
-    left: -63px;
+	left: -63px;
+    top: 0;
 }
 header #search-nav{
-	padding-top: 99px;
+	padding-top: 61px;
 }
 header nav{
 	clear: both;
@@ -148,11 +159,23 @@ header form#search input[type="submit"] {
 	background-position: 10px 7px;
     background-size: 20px;
 }
+#tamsoat{
+	font-family: Myriad Pro;
+	font-size: 39.5px;
+	color: #ed1b57;
+	/*height: 178px;*/
+	line-height: 3;
+	/*	padding-left: 12px;*/
+}
+h2#tamsoat{
+	font-size: 30px;
+	line-height: 1.5;
+}
 /*=======================================================
 PAGE section:  footer
 =======================================================*/
 footer{
-	margin-top: 81px;
+	margin-top: 71px;
 }
 footer #gioithieu {
 
@@ -168,8 +191,8 @@ footer #gioithieu .routine{
     margin-left: 33px;
     margin-right: 93px;
     width: auto;
-    margin-top: 74px;
-    margin-bottom: 44px;
+    margin-top: 0;
+    margin-bottom: 20px;
     position: relative;
 }
 footer #gioithieu .routine .line{
@@ -197,9 +220,9 @@ footer #gioithieu .routine img.cunghanhdong{
 footer .dvtctc{
 	width: 480px;
 	margin: 0 auto;
-	height: 60px;
+	/*height: 60px;*/
 	line-height: 60px;
-	margin-bottom: 50px;
+	/*margin-bottom: 50px;*/
 }
 footer .dvtctc *{
 	float: left;
@@ -218,13 +241,6 @@ footer .copyright{
 /*=======================================================
 PAGE: trang chu
 =======================================================*/
-#tamsoat{
-	font-family: Myriad Pro;
-	font-size: 39.5px;
-	color: #ed1b57;
-	height: 178px;
-	line-height: 178px;
-}
 #huongung #video-lagan{
 	width: 545px;
 	margin-right: 21px;
@@ -286,6 +302,33 @@ PAGE: trang chu
     background-position: 50% 44%;
     height: 301px;
     background-repeat: no-repeat;
+}
+#camon-fb{
+	font-family: Myriad Pro, Tahoma, sans-serif;
+	background-color: #fff;
+	padding: 6px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	text-align: center;
+}
+#camon-fb h1{	
+	font-size: 36px;
+	color: #9cc0e6;
+	text-transform: uppercase;
+	margin-top: 20px;
+}
+#camon-fb p{
+	color: #f6bdd6;
+	font-size: 28px;
+}
+#camon-fb p a{
+	text-decoration: none;
+}
+#camon-fb p .btn-share img{	
+	float: right;
+}
+#camon-fb p .btn-dont-share img{	
+	float: left;
 }
 /*=======================================================
 PAGE: hoi dap
@@ -403,21 +446,49 @@ PAGE: tintuc
 #tintuc-khac{
 	margin-top: 20px;
 }
-
+#tintuc-khac h4{
+	margin: 0;
+}
 #tintuc-khac p{
 	margin: 0;
+	margin-left: 15px;
 }
 #tintuc-khac p a{
 	text-decoration: none;
 	color: #655E5E;
 }
+#tintuc-khac p a:hover{
+	text-decoration: underline;
+}
+#widget-area h4{
+	color: #303393;
+}
+#widget-area li{
+	list-style: none;
+/*	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: inherit;*/
+}
+#widget-area a{
+	color: rgba(0, 0, 0, 0.57);
+	/*color: #303393;*/
+	text-decoration: none;		
+	font-size: 13px;
+}
+#widget-area a:hover{
+	text-decoration: underline;
+}
+/*=======================================================
+PAGE: timhieubenh
+=======================================================*/
 #timhieubenh .one-third p{
-	border-bottom: 2px dashed #000;
-	padding-bottom: 10px;
+	border-bottom: 1px dashed #000;
+	padding-bottom: 5px;
 	margin-bottom: 5px;
 }
 #timhieubenh .one-third p a{
-	font-size: 19.3px;
+	font-size: 14px;
 	font-family: Myriad Pro, Tahoma, sans-serif;
 	color: #000;
 	text-decoration: none;
@@ -472,6 +543,7 @@ PAGE: dang ky test
 #dangky-test form input:first-child{
 	margin-left: 0;
 }
+#dangky-test form input[type="button"],
 #dangky-test form input[type="submit"]{
 	background-image: url(images/btn-dktest.png);
     background-repeat: no-repeat;
@@ -515,10 +587,48 @@ PAGE: dang ky test
     left: 0;
     bottom: -30px;
 }
+#camon-dk,
+#camon-dch{
+	background-image: url(../images/bg-camon-dk.png);
+    background-repeat: no-repeat;
+    font-family: Myriad Pro, Tahoma, sans-serif;
+    color: #fff;
+    width: 316px;
+    height: 290px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#camon-dk h1,
+#camon-dch h1{	
+	font-size: 24px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+#camon-dk p,
+#camon-dch p{
+	font-size: 18px;
+	margin: 0;
+	color: #dbdada;
+}
+#camon-dk button,
+#camon-dch button{
+	float: right;
+    color: #1b1b1b;
+    font-size: 12px;
+    background-image: url(../images/btn-dong.png);
+    background-repeat: no-repeat;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 92px;
+    height: 29px;
+	line-height: 2;
+}
 /*=======================================================
 PAGE: dat cau hoi
 =======================================================*/
-#datcauhoi form input[type="submit"]{
+#datcauhoi form input[type="submit"],
+#datcauhoi form input[type="button"]{
 	background-image: url(images/btn-guicauhoi.png);
     background-repeat: no-repeat;
     height: 50px;
@@ -554,6 +664,36 @@ PAGE: dat cau hoi
     display: inline-block;
 }
 
+#camon-dch p.form-button{
+	margin-top: 60px;
+}
+#camon-dch a{
+	background-image: url(../images/bg-ten-bv.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 185px;
+    height: 25px;
+    display: block;
+    background-size: 100% 100%;
+    text-align: center;
+    text-decoration: none;
+	border:none;	
+    color: #1b1b1b;
+    font-size: 13px;
+    line-height: 25px;
+	float: left;	
+
+}
+#camon-dch button{
+	float: right;	
+	margin-left: 3px;	
+	font-size: 13px;
+	color: #1b1b1b;
+	line-height: 25px;
+	width: 79px;
+	height: 25px;
+	font-weight: normal;
+}
 /*=======================================================
 PAGE: cam on BV & NS
 =======================================================*/
@@ -564,7 +704,7 @@ PAGE: cam on BV & NS
 	text-align: center;
 	text-transform: uppercase;
 	margin: 0 80px 90px 80px;
-	
+
 }
 #camon-bv-ns .camon-bv,
 #camon-bv-ns .camon-ns{
@@ -589,7 +729,8 @@ PAGE: cam on BV & NS
 /*=======================================================
 PAGE: cam on BV
 =======================================================*/
-#camon-bv h1{
+#camon-bv h1,
+#camon-ns h1{
 	font-family: Myriad Pro, Tahoma, sans-serif;
 	font-size: 30px;
 	font-weight: bold;
@@ -607,7 +748,8 @@ PAGE: cam on BV
 	max-height: 128px;
 	margin-bottom: 30px;
 }
-#camon-bv a{
+#camon-bv span,
+#camon-ns span{
 	background-image: url(images/bg-ten-bv.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -635,35 +777,14 @@ PAGE: cam on BV
 #camon-bv .logo-bv{
 	margin-bottom: 60px;
 }
-#camon-dk{
-	background-image: url(images/bg-camon-dk.png);
-    background-repeat: no-repeat;
-    font-family: Myriad Pro, Tahoma, sans-serif;
-    color: #fff;
-    width: 316px;
-    height: 290px;
-    padding: 10px;
-    box-sizing: border-box;
+/*=======================================================
+PAGE: cam on Nghe si
+=======================================================*/
+#camon-ns span{
+	line-height: 1.3;
+	background-size: 100% 50%;
 }
-#camon-dk h1{	
-	font-size: 24px;
-    margin: 0;
-    margin-bottom: 15px;
+#camon-ns img{	
+	margin-bottom: 30px;
 }
-#camon-dk p{
-	font-size: 18px;
-	margin: 0;
-}
-#camon-dk button{
-	float: right;
-    color: #1b1b1b;
-    font-size: 12px;
-    background-image: url(images/btn-dong.png);
-    background-repeat: no-repeat;
-    border: none;
-    padding: 0;
-    margin: 0;
-    width: 92px;
-    height: 29px;
-	line-height: 2;
-}
+
