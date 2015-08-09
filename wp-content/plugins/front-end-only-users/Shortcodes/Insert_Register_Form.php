@@ -41,7 +41,17 @@ function Insert_Register_Form($atts) {
 	
 	if (!isset($ConfirmationSuccess)) {	
 		$ReturnString .= "<div id='ewd-feup-register-form-div'>";
-		if (isset($user_message['Message'])) {$ReturnString .= '<div class="error">'.$user_message['Message'].'</div>';}
+		if (isset($user_message['Message'])) {
+			if($user_message['Message'] == 1){
+				$ReturnString .= '<div class="error success"><h3>Cảm ơn bạn đã đăng ký!</h3><p>Chúng tôi sẽ liên lạc qua điện thoại và hộp thư điện tử để 
+						xác nhận lịch hẹn để được tầm soát miễn phí viêm gan vi-rút C. 
+						Vui lòng để điện thoại của bạn ở chế độ nghe tốt nhất 
+						và kiểm tra hộp thư điện tử thường xuyên. 
+					</p></div>';
+			}else{
+				$ReturnString .= '<div class="error"><h3>Vui lòng sửa lại một số lỗi sau:</h3><p>'.$user_message['Message'].'</p></div>';	
+			}
+		}
 		$ReturnString .= "<form action='#' method='post' id='ewd-feup-register-form' class='feup-pure-form feup-pure-form-aligned' enctype='multipart/form-data'>";
 		$ReturnString .= "<input type='hidden' name='ewd-feup-check' value='" . sha1(md5($Time.$Salt)) . "'>";
 		$ReturnString .= "<input type='hidden' name='ewd-feup-time' value='" . $Time . "'>";
