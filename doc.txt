@@ -1,3 +1,5 @@
 db name: vilagank_db
 db user: vilagank_db
 db pass: ao,{[JNO1Uol
+email: notify@vilagankhoe.vn
+email pass: cJyF;BkZWdLs

@@ -14,12 +14,12 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container" id="gioithieu">
 			<div class="row">				
-				<h4>Giới thiệu chương trình “ Đồng hành cùng bệnh nhân viêm gan ”</h4>				
+				<!--<h4>Giới thiệu chương trình “ Đồng hành cùng bệnh nhân viêm gan ”</h4>-->				
 				<div class="routine">
 					<div class="line"></div>
-					<img class="haytamsoat" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/img-haytoansoat.png" alt=""/>
-					<img class="haychuatri" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/img-haychuatri.png" alt=""/>
-					<img class="cunghanhdong" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/img-cunghanhdong.png" alt=""/>
+					<a href="<?= get_permalink(68)?>"><img class="haytamsoat" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/img-haytoansoat.png" alt=""/></a>
+					<a href="<?= get_permalink(7)?>"><img class="haychuatri" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/img-haychuatri.png" alt=""/></a>
+					<a href="<?= get_permalink(73)?>"><img class="cunghanhdong" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/img-cunghanhdong.png" alt=""/></a>
 				</div>
 			</div>
 			<div class="row " >
