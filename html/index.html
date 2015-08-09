@@ -22,6 +22,8 @@
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/skeleton.css">
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
 		<!-- Favicon
 		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 		<!--<link rel="icon" type="image/png" href="images/favicon.png">-->
@@ -67,7 +69,7 @@
 		</header>
 		<div class="main-content">
 			<div class="container">
-				
+
 				<div id="huongung" class="row">
 					<div class="left" id="video-lagan">
 						<img src="images/video.png" alt=""/>
@@ -83,6 +85,18 @@
 						</div>
 					</div>
 					<div class="next right"></div>
+				</div>
+				<div id="camon-fb" class="camon row">
+					<h1>  Cảm ơn bạn đã HƯỞNG ỨNG chương trình<br>
+						cùng hành động vì bệnh nhân viêm gan!</h1>
+					<p>
+						Hãy chia sẻ để chương trình lan tỏa và ý nghĩa hơn
+					</p>
+					<p class="row">
+						<a href="#" class="btn-share one-half column"><img src="images/btn-share.png" alt=""/></a>						
+						<a href="#" class="btn-dont-share one-half column" ><img src="images/btn-dont-share.png" alt=""/></a>
+						
+					</p>					
 				</div>
 			</div>
 		</div>
@@ -112,7 +126,33 @@
 				<!--<div class="row copyright"></div>-->
 			</div>
 		</footer>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var dialog, form,
+				dialog = $("#btn-toihuongung").dialog({
+					autoOpen: false,
+					height: 300,
+					width: 350,
+					modal: true,
+					buttons: {
+						"Share",
+						Cancel: function() {
+							dialog.dialog("close");
+						}
+					},
+					close: function() {
+						form[ 0 ].reset();
+						allFields.removeClass("ui-state-error");
+					}
+				});
 
+				$("#btn-toihuongung").button().on("click", function() {
+					dialog.dialog("open");
+				});
+			});
+		</script>
 
 		<!-- End Document
 		  –––––––––––––––––––––––––––––––––––––––––––––––––– -->

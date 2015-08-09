@@ -508,7 +508,8 @@ PAGE: cam on BV & NS
 /*=======================================================
 PAGE: cam on BV
 =======================================================*/
-#camon-bv h1{
+#camon-bv h1,
+#camon-ns h1{
 	font-family: Myriad Pro, Tahoma, sans-serif;
 	font-size: 30px;
 	font-weight: bold;
@@ -526,7 +527,8 @@ PAGE: cam on BV
 	max-height: 128px;
 	margin-bottom: 30px;
 }
-#camon-bv a{
+#camon-bv span,
+#camon-ns span{
 	background-image: url(../images/bg-ten-bv.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -554,6 +556,19 @@ PAGE: cam on BV
 #camon-bv .logo-bv{
 	margin-bottom: 60px;
 }
+/*=======================================================
+PAGE: cam on Nghe si
+=======================================================*/
+#camon-ns span{
+	line-height: 1.3;
+	background-size: 100% 50%;
+}
+#camon-ns img{	
+	margin-bottom: 30px;
+}
+/*=======================================================
+PAGE: cam on dang ky
+=======================================================*/
 #camon-dk{
 	background-image: url(../images/bg-camon-dk.png);
     background-repeat: no-repeat;
@@ -585,4 +600,31 @@ PAGE: cam on BV
     width: 92px;
     height: 29px;
 	line-height: 2;
+}
+/*=======================================================
+PAGE: cam on FB
+=======================================================*/
+#camon-fb{
+	font-family: Myriad Pro, Tahoma, sans-serif;
+	background-color: #fff;
+	padding: 6px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	text-align: center;
+}
+#camon-fb h1{	
+	font-size: 36px;
+	color: #9cc0e6;
+	text-transform: uppercase;
+	margin-top: 20px;
+}
+#camon-fb p{
+	color: #f6bdd6;
+	font-size: 28px;
+}
+#camon-fb p .btn-share img{	
+	float: right;
+}
+#camon-fb p .btn-dont-share img{	
+	float: left;
 }
