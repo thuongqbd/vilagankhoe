@@ -42,7 +42,7 @@ jQuery(document).ready(function() {
 			modal: true
 		});
 
-		if($("#ewd-feup-register-form-div").find(".error").length) {			
+		if($("#ewd-feup-register-form-div").find(".success").length) {			
 			dialog2.dialog("open");
 		};
 		$('.btn-close').click(function() {
