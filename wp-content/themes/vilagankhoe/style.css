@@ -165,7 +165,7 @@ header form#search input[type="submit"] {
 	color: #ed1b57;
 	/*height: 178px;*/
 	line-height: 3;
-/*	padding-left: 12px;*/
+	/*	padding-left: 12px;*/
 }
 h2#tamsoat{
 	font-size: 30px;
@@ -451,12 +451,32 @@ PAGE: tintuc
 }
 #tintuc-khac p{
 	margin: 0;
+	margin-left: 15px;
 }
 #tintuc-khac p a{
 	text-decoration: none;
 	color: #655E5E;
 }
 #tintuc-khac p a:hover{
+	text-decoration: underline;
+}
+#widget-area h4{
+	color: #303393;
+}
+#widget-area li{
+	list-style: none;
+/*	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: inherit;*/
+}
+#widget-area a{
+	color: rgba(0, 0, 0, 0.57);
+	/*color: #303393;*/
+	text-decoration: none;		
+	font-size: 13px;
+}
+#widget-area a:hover{
 	text-decoration: underline;
 }
 /*=======================================================
@@ -662,7 +682,7 @@ PAGE: dat cau hoi
     font-size: 13px;
     line-height: 25px;
 	float: left;	
-	
+
 }
 #camon-dch button{
 	float: right;	
@@ -684,7 +704,7 @@ PAGE: cam on BV & NS
 	text-align: center;
 	text-transform: uppercase;
 	margin: 0 80px 90px 80px;
-	
+
 }
 #camon-bv-ns .camon-bv,
 #camon-bv-ns .camon-ns{

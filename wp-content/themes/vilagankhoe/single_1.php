@@ -14,7 +14,7 @@ global $post;
 <div id="primary" class="content-area">
 	<main id="main" class="site-main container" role="main">
 		<div class="row">
-			<div class="column">
+			<div class="two-thirds column">
 
 				<?php
 				// Start the loop.
@@ -64,9 +64,9 @@ global $post;
 					
 				</div>				
 			</div>
-<!--			<div class="column one-third">
+			<div class="column one-third">
 				<?php echo get_sidebar(); ?>
-			</div>-->
+			</div>
 		</div>
 	</main><!-- .site-main -->
 </div><!-- .content-area -->
