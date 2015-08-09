@@ -39,18 +39,41 @@ global $error;
  * For grabbing the html of the nonce field
  * */
  $nonce_field = $this->get_nonce_field_html();
-$form = '<h2>'.$form_title.'</h2>';
+//$form = '<h2>'.$form_title.'</h2>';
+ $form = '';
 if(isset($_SESSION['ap_form_success_msg']) && $ap_settings['redirect_url']=='')
 {
     $success_msg = $_SESSION['ap_form_success_msg'];
     $form .='<div class="ap-post-submission-message">'.$success_msg.'</div>';
      unset($_SESSION['ap_form_success_msg']);
 }
-$form .='<form method="post" action="" enctype="multipart/form-data" class="ap-form-wrapper" onsubmit="return check_form_submittable()">
-                <div class="ap-form-field-wrapper">
-                  <label>'.$post_title_label.'</label>
+$form .='<form method="post" action="" enctype="multipart/form-data" class="ap-form-wrapper" onsubmit="return check_form_submittable()">';
+
+if(in_array('author_name',$ap_settings['form_included_fields']))
+{
+    $author_name_label = ($ap_settings['author_name_label']=='')?__('Author Name','anonymous-post'):esc_attr($ap_settings['author_name_label']);
+    $required = in_array('author_name',$form_required_fields)?'class="ap-required-field"':'';
+    $form .='<div class="ap-form-field-wrapper first">
+                <div class="ap-form-field">
+                   <input type="text" name="ap_author_name" placeholder="'.$author_name_label.'" '.$required.' data-required-message="'.$author_name_required_message.'" value="'.(isset($_POST['ap_author_name'])?$_POST['ap_author_name']:'').'"/> 
+					   <div class="ap-form-error-message"></div>
+				</div><!--ap-form-field-->               
+             </div><!--ap-form-field-wrapper-->';
+}
+if(in_array('author_email',$ap_settings['form_included_fields']))
+{
+    $author_email_label = ($ap_settings['author_email_label']=='')?__('Author Email','anonymous-post'):esc_attr($ap_settings['author_email_label']);
+    $required = in_array('author_email',$form_required_fields)?'class="ap-required-field"':'';
+    $form .='<div class="ap-form-field-wrapper">
+                <div class="ap-form-field">
+                   <input type="email" placeholder="'.$author_email_label.'" name="ap_author_email" '.$required.' data-required-message="'.$author_email_required_message.'" value="'.(isset($_POST['ap_author_email'])?$_POST['ap_author_email']:'').'"/> 
+					   <div class="ap-form-error-message"></div>
+				</div><!--ap-form-field-->
+             </div><!--ap-form-field-wrapper-->';
+}
+$form .='<div class="ap-form-field-wrapper">
                   <div class="ap-form-field">
-				  <textarea name="ap_form_post_title" class="ap-required-field" data-required-message="'.$post_title_required_message.'"/>'.(isset($_POST['ap_form_post_title'])?$_POST['ap_form_post_title']:'').'</textarea></div>';
+				  <textarea name="ap_form_post_title" placeholder="'.$post_title_label.'" class="ap-required-field" data-required-message="'.$post_title_required_message.'"/>'.(isset($_POST['ap_form_post_title'])?$_POST['ap_form_post_title']:'').'</textarea></div>';
 $error_title = isset($error->title)?$error->title:'';
 $form .= '<div class="ap-form-error-message">'.$error_title.'</div>';    
 $form .= '</div><!--ap-form-field-wrapper-->';
@@ -139,18 +162,7 @@ if(!empty($ap_settings['form_included_taxonomy']))
     }
     
 }
-if(in_array('author_name',$ap_settings['form_included_fields']))
-{
-    $author_name_label = ($ap_settings['author_name_label']=='')?__('Author Name','anonymous-post'):esc_attr($ap_settings['author_name_label']);
-    $required = in_array('author_name',$form_required_fields)?'class="ap-required-field"':'';
-    $form .='<div class="ap-form-field-wrapper">
-                <label>'.$author_name_label.'</label>
-                <div class="ap-form-field">
-                   <input type="text" name="ap_author_name" '.$required.' data-required-message="'.$author_name_required_message.'" value="'.(isset($_POST['ap_author_name'])?$_POST['ap_author_name']:'').'"/> 
-                </div><!--ap-form-field-->
-                <div class="ap-form-error-message"></div>
-             </div><!--ap-form-field-wrapper-->';
-}
+
 if(in_array('author_url',$ap_settings['form_included_fields']))
 {
     $author_url_label = ($ap_settings['author_url_label']=='')?__('Author URL','anonymous-post'):esc_attr($ap_settings['author_url_label']);
@@ -163,19 +175,6 @@ if(in_array('author_url',$ap_settings['form_included_fields']))
                 <div class="ap-form-error-message"></div>
              </div><!--ap-form-field-wrapper-->';
 }
-if(in_array('author_email',$ap_settings['form_included_fields']))
-{
-    $author_email_label = ($ap_settings['author_email_label']=='')?__('Author Email','anonymous-post'):esc_attr($ap_settings['author_email_label']);
-    $required = in_array('author_email',$form_required_fields)?'class="ap-required-field"':'';
-    $form .='<div class="ap-form-field-wrapper">
-                <label>'.$author_email_label.'</label>
-                <div class="ap-form-field">
-                   <input type="email" name="ap_author_email" '.$required.' data-required-message="'.$author_email_required_message.'" value="'.(isset($_POST['ap_author_email'])?$_POST['ap_author_email']:'').'"/> 
-                </div><!--ap-form-field-->
-                <div class="ap-form-error-message"></div>
-             </div><!--ap-form-field-wrapper-->';
-}
-
 
 if($ap_settings['captcha_settings']==1)
 {
@@ -195,7 +194,7 @@ if($ap_settings['captcha_settings']==1)
 }    
     
 
-$post_submit_label = ($ap_settings['post_submit_label']=='')?__('Submit Post','anonymous-post'):esc_attr($ap_settings['post_submit_label']);
+$post_submit_label = ($ap_settings['post_submit_label']=='')?'':esc_attr($ap_settings['post_submit_label']);
 $form .='<div class="ap-form-field-wrapper">
            <div class="ap-form-field ap-form-submit-wrapper">
              <input type="submit" class="ap-form-submit-button" value="'.$post_submit_label.'" name="ap_form_submit_btn"/>

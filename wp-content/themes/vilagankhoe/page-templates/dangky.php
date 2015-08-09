@@ -18,7 +18,7 @@ get_header(); ?>
 <div id="main-content" class="main-content">
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content container" role="main">
-			<div id="dangky-test" class="row">
+			<div id="dangky-test" class="row lagan-form">
 				<div class="prev left"></div>
 					<div class="row">
 

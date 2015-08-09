@@ -449,7 +449,7 @@ PAGE: dang ky test
 .lagan-form form select{
 	width: 214px;
 	height: 33px;
-	margin-left: 54px;
+	/*margin-left: 54px;*/
 	margin-bottom: 0;
 	border-radius: 15px;
 }
@@ -496,6 +496,24 @@ PAGE: dang ky test
 	margint-bottom:16px;
 	margin-left: auto;
 }
+#dangky-test .feup-pure-control-group {
+    margin-bottom: 5px;
+}
+#dangky-test .feup-pure-control-group.first {
+    margin-top: 43px;
+}
+#dangky-test .line.clearfix {
+    clear: both;
+	padding-top: 10px;
+}
+#dangky-test .row{
+	position: relative;
+}
+#dangky-test img.tip{
+	position: absolute;
+    left: 0;
+    bottom: -30px;
+}
 /*=======================================================
 PAGE: dat cau hoi
 =======================================================*/
@@ -521,12 +539,16 @@ PAGE: dat cau hoi
     padding-right: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
+	margin-bottom: 0;
 }
-#datcauhoi form input:first-child{
+#datcauhoi form .ap-form-field-wrapper.first{
 	margin-top: 43px;
 }
-#datcauhoi form input[type='text']{
+#datcauhoi form input[type='text'], #datcauhoi form input[type='email']{
 	margin-bottom: 5px;
     margin-left: 27px;
-    display: block;
+    /*display: block;*/
+}
+#datcauhoi form .ap-form-error-message {
+    display: inline-block;
 }
