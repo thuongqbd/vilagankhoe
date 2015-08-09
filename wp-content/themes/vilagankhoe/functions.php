@@ -19,6 +19,11 @@ function theme_enqueue_styles() {
         array(  )
     );
 	wp_enqueue_script( 'custom', get_stylesheet_directory_uri().'/js/custom.js',array('jquery'));
+	wp_localize_script( 'custom', 'MyAjax', array(
+    // URL to wp-admin/admin-ajax.php to process the request
+    'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	'security' => wp_create_nonce( 'vilagankhoe' )
+  ));
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
@@ -83,3 +88,15 @@ function twentythirteen_paging_nav() {
 	<?php
 }
 endif;
+
+// THE AJAX ADD ACTIONS
+add_action( 'wp_ajax_huong_ung', 'huong_ung_function' );
+add_action( 'wp_ajax_nopriv_huong_ung', 'huong_ung_function' ); // need this to serve non logged in users
+// THE FUNCTION
+function huong_ung_function(){
+	check_ajax_referer( 'vilagankhoe', 'security' );
+	$page_on_front = get_option('page_on_front');
+	$concurred_count = get_post_meta( $page_on_front, 'concurred_count', true );
+	update_post_meta($page_on_front, 'concurred_count', ++$concurred_count);
+	echo $concurred_count;die;
+}

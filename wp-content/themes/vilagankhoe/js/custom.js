@@ -9,4 +9,15 @@ jQuery(document).ready(function(){
 			jQuery(this).val(1);
 		}
 	});
+	jQuery('#btn-toihuongung').click(function(){
+		var data = {
+			action: 'huong_ung',
+			security : MyAjax.security
+		};
+
+		jQuery.post(MyAjax.ajaxurl, data, function(response) {
+			jQuery('#concurred_count').text(numeral(response).format('0,0'));
+			alert('Got this from the server: ' + response);
+		});
+	});
 });
