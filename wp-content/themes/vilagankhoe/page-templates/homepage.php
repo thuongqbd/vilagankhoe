@@ -34,6 +34,7 @@ get_header();
 					</div>
 					<div id="sohuongung">
 						<strong class="number"><?= number_format_i18n(get_post_meta(get_option('page_on_front'), 'concurred_count', true), 0); ?></strong>
+						<strong id="concurred_count" class="number"><?= number_format_i18n( get_post_meta( get_option('page_on_front'), 'concurred_count', true ), 0 );?></strong>
 						<span>người đã hưởng ứng</span>
 					</div>
 					<div id="camon-fb" class="camon " style="display:none;">
@@ -69,3 +70,4 @@ get_header();
 </div><!-- #main-content -->
 
 <?php get_footer(); ?>
+<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
