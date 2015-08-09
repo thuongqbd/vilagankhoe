@@ -373,3 +373,89 @@ footer .copyright{
 	height: 500px;
 	overflow: auto;
 }
+/*=======================================================
+PAGE: dang ky test
+=======================================================*/
+#dangky-test{
+	/*background-color: #756db2;*/
+    padding-left: 16px;
+    padding-right: 17px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    background-image: url(images/bg-dktest.png);
+    width: 889px;
+    height: 350px;
+    margin: 0 auto;
+    box-sizing: border-box;
+	position: relative;
+}
+#dangky-test form input,
+#dangky-test form select{
+	width: 214px;
+	height: 33px;
+	/*margin-left: 54px;*/
+	margin-bottom: 0;
+}
+#dangky-test form input:first-child{
+	margin-left: 0;
+}
+#dangky-test form div:first-child {
+	margin-top: 43px;
+}
+#dangky-test form input[type="submit"]{
+	background-image: url(images/btn-dktest.png);
+    background-repeat: no-repeat;
+    height: 49px;
+    width: 195px;
+    border: none;
+    float: right;
+	margin-top: 30px;
+}
+#dangky-test #logo-slogan img{
+	display: block;
+	margin: 0 auto;
+}
+#dangky-test form #form-dkt p{	
+	margin-bottom: 5px;
+}
+#dangky-test form #form-dkt p:first-child{
+	margin-top: 43px;
+}
+#dangky-test #logo-slogan p{
+	font-family: Myriad Pro, Tahoma, sans-serif;
+	font-size: 13px;
+	color: #d9d4ea;	
+	width: 100%;
+	text-align: center;
+	margin: 0;
+}
+#form-dkt .line{
+	border-bottom: 2px solid #e5e4e6;
+	width: 390px;
+	margin-top: 13px;
+	margin-right: auto;
+	margint-bottom:16px;
+	margin-left: auto;
+}
+#dangky-test .feup-pure-control-group.right {
+    padding-left: 20px;
+}
+#dangky-test .feup-pure-control-group.first {
+    margin-top: 43px;
+}
+#dangky-test .line.clearfix {
+    clear: both;
+    padding-top: 10px;
+}
+#dangky-test .feup-pure-form-aligned .feup-pure-control-group {
+    display: inline-block;
+	padding-bottom: 5px;
+}
+#dangky-test img.tip{
+	position: absolute;
+    left: 15px;
+    bottom: 30px;
+}
+#dangky-test .error {
+    position: absolute;
+}
