@@ -21,8 +21,8 @@
 		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/skeleton.css">
-		<link href="css/style.css" rel="stylesheet" type="text/css"/>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>		
 
 		<!-- Favicon
 		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -86,17 +86,29 @@
 					</div>
 					<div class="next right"></div>
 				</div>
-				<div id="camon-fb" class="camon row">
-					<h1>  Cảm ơn bạn đã HƯỞNG ỨNG chương trình<br>
-						cùng hành động vì bệnh nhân viêm gan!</h1>
-					<p>
-						Hãy chia sẻ để chương trình lan tỏa và ý nghĩa hơn
-					</p>
-					<p class="row">
-						<a href="#" class="btn-share one-half column"><img src="images/btn-share.png" alt=""/></a>						
-						<a href="#" class="btn-dont-share one-half column" ><img src="images/btn-dont-share.png" alt=""/></a>
-						
-					</p>					
+				<div id="camon-fb" class="camon " style="display:none;">
+					<div class="container">
+
+						<h1>  Cảm ơn bạn đã HƯỞNG ỨNG chương trình<br>
+							cùng hành động vì bệnh nhân viêm gan!</h1>
+						<p>
+							Hãy chia sẻ để chương trình lan tỏa và ý nghĩa hơn
+						</p>
+						<div class="row">
+							<div class="one-half column">
+								<a href="#" class="btn-share ">
+									<img src="images/btn-share.png" alt=""/>
+								</a>
+							</div>
+							<div class="one-half column">
+								<a href="#" class="btn-dont-share btn-close" >
+									<img src="images/btn-dont-share.png" alt=""/>
+								</a>
+							</div>
+						</div>
+
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -128,31 +140,8 @@
 		</footer>
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-		<script type="text/javascript">
-			$(function() {
-				var dialog, form,
-				dialog = $("#btn-toihuongung").dialog({
-					autoOpen: false,
-					height: 300,
-					width: 350,
-					modal: true,
-					buttons: {
-						"Share",
-						Cancel: function() {
-							dialog.dialog("close");
-						}
-					},
-					close: function() {
-						form[ 0 ].reset();
-						allFields.removeClass("ui-state-error");
-					}
-				});
-
-				$("#btn-toihuongung").button().on("click", function() {
-					dialog.dialog("open");
-				});
-			});
-		</script>
+		<script src="js/custom.js" type="text/javascript"></script>
+		
 
 		<!-- End Document
 		  –––––––––––––––––––––––––––––––––––––––––––––––––– -->

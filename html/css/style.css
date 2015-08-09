@@ -54,6 +54,17 @@ select option{
    font-size: 13px;
    font-family: Myriad Pro, Tahoma, sans-serif;
 }
+.ui-widget-header,
+.ui-widget-content{
+	border:none;
+	background:none;
+}
+.ui-draggable .ui-dialog-titlebar{
+	display: none;
+}
+/*.ui-widget-overlay{
+	background: #dedddc;
+}*/
 /*=======================================================
 PAGE section:  Header
 =======================================================*/
@@ -113,6 +124,14 @@ header form#search input{
     border: none;
     width: 210px;
 	height: 33px;
+}
+#tamsoat{
+	font-family: Myriad Pro;
+	font-size: 39.5px;
+	color: #ed1b57;
+	height: 178px;
+	line-height: 178px;
+	padding-left: 12px;
 }
 /*=======================================================
 PAGE section:  footer
@@ -183,14 +202,7 @@ footer .copyright{
 /*=======================================================
 PAGE: trang chu
 =======================================================*/
-#tamsoat{
-	font-family: Myriad Pro;
-	font-size: 39.5px;
-	color: #ed1b57;
-	height: 178px;
-	line-height: 178px;
-	padding-left: 12px;
-}
+
 #huongung #video-lagan{
 	width: 545px;
 	margin-right: 21px;
@@ -252,6 +264,33 @@ PAGE: trang chu
     background-position: 50% 44%;
     height: 301px;
     background-repeat: no-repeat;
+}
+#camon-fb{
+	font-family: Myriad Pro, Tahoma, sans-serif;
+	background-color: #fff;
+	padding: 6px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	text-align: center;
+}
+#camon-fb h1{	
+	font-size: 36px;
+	color: #9cc0e6;
+	text-transform: uppercase;
+	margin-top: 20px;
+}
+#camon-fb p{
+	color: #f6bdd6;
+	font-size: 28px;
+}
+#camon-fb p a{
+	text-decoration: none;
+}
+#camon-fb p .btn-share img{	
+	float: right;
+}
+#camon-fb p .btn-dont-share img{	
+	float: left;
 }
 /*=======================================================
 PAGE: hoi dap
@@ -414,6 +453,7 @@ PAGE: dang ky test
 #dangky-test form input:first-child{
 	margin-left: 0;
 }
+#dangky-test form input[type="button"],
 #dangky-test form input[type="submit"]{
 	background-image: url(../images/btn-dktest.png);
     background-repeat: no-repeat;
@@ -439,10 +479,48 @@ PAGE: dang ky test
 	margint-bottom:16px;
 	margin-left: auto;
 }
+#camon-dk,
+#camon-dch{
+	background-image: url(../images/bg-camon-dk.png);
+    background-repeat: no-repeat;
+    font-family: Myriad Pro, Tahoma, sans-serif;
+    color: #fff;
+    width: 316px;
+    height: 290px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#camon-dk h1,
+#camon-dch h1{	
+	font-size: 24px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+#camon-dk p,
+#camon-dch p{
+	font-size: 18px;
+	margin: 0;
+	color: #dbdada;
+}
+#camon-dk button,
+#camon-dch button{
+	float: right;
+    color: #1b1b1b;
+    font-size: 12px;
+    background-image: url(../images/btn-dong.png);
+    background-repeat: no-repeat;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 92px;
+    height: 29px;
+	line-height: 2;
+}
 /*=======================================================
 PAGE: dat cau hoi
 =======================================================*/
-#datcauhoi form input[type="submit"]{
+#datcauhoi form input[type="submit"],
+#datcauhoi form input[type="button"]{
 	background-image: url(../images/btn-guicauhoi.png);
     background-repeat: no-repeat;
     height: 50px;
@@ -472,6 +550,36 @@ PAGE: dat cau hoi
 	margin-bottom: 5px;
     margin-left: 27px;
     display: block;
+}
+#camon-dch p.form-button{
+	margin-top: 60px;
+}
+#camon-dch a{
+	background-image: url(../images/bg-ten-bv.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 185px;
+    height: 25px;
+    display: block;
+    background-size: 100% 100%;
+    text-align: center;
+    text-decoration: none;
+	border:none;	
+    color: #1b1b1b;
+    font-size: 13px;
+    line-height: 25px;
+	float: left;	
+	
+}
+#camon-dch button{
+	float: right;	
+	margin-left: 3px;	
+	font-size: 13px;
+	color: #1b1b1b;
+	line-height: 25px;
+	width: 79px;
+	height: 25px;
+	font-weight: normal;
 }
 /*=======================================================
 PAGE: cam on BV & NS
@@ -566,65 +674,4 @@ PAGE: cam on Nghe si
 #camon-ns img{	
 	margin-bottom: 30px;
 }
-/*=======================================================
-PAGE: cam on dang ky
-=======================================================*/
-#camon-dk{
-	background-image: url(../images/bg-camon-dk.png);
-    background-repeat: no-repeat;
-    font-family: Myriad Pro, Tahoma, sans-serif;
-    color: #fff;
-    width: 316px;
-    height: 290px;
-    padding: 10px;
-    box-sizing: border-box;
-}
-#camon-dk h1{	
-	font-size: 24px;
-    margin: 0;
-    margin-bottom: 15px;
-}
-#camon-dk p{
-	font-size: 18px;
-	margin: 0;
-}
-#camon-dk button{
-	float: right;
-    color: #1b1b1b;
-    font-size: 12px;
-    background-image: url(../images/btn-dong.png);
-    background-repeat: no-repeat;
-    border: none;
-    padding: 0;
-    margin: 0;
-    width: 92px;
-    height: 29px;
-	line-height: 2;
-}
-/*=======================================================
-PAGE: cam on FB
-=======================================================*/
-#camon-fb{
-	font-family: Myriad Pro, Tahoma, sans-serif;
-	background-color: #fff;
-	padding: 6px;
-	box-sizing: border-box;
-	border-radius: 10px;
-	text-align: center;
-}
-#camon-fb h1{	
-	font-size: 36px;
-	color: #9cc0e6;
-	text-transform: uppercase;
-	margin-top: 20px;
-}
-#camon-fb p{
-	color: #f6bdd6;
-	font-size: 28px;
-}
-#camon-fb p .btn-share img{	
-	float: right;
-}
-#camon-fb p .btn-dont-share img{	
-	float: left;
-}
+

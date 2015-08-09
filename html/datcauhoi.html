@@ -21,6 +21,7 @@
 		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/skeleton.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link href="css/style.css" rel="stylesheet" type="text/css"/>
 		<!-- Favicon
 		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -83,10 +84,19 @@
 								<input type="text" name="hoten" placeholder="Họ tên" />
 								<input type="text" name="email" placeholder="Email" />
 								<textarea name="cauhoi" placeholder="Hãy đặt câu hỏi ở đây..."></textarea>
-								<input type="submit" name="dangky" value=""/>
+								<input type="button" name="gui" id="btn-guicauhoi" value=""/>
 							</div>
 						</div>						
 					</form>					
+					<div id="camon-dch" class="camon" style="display:none;">
+						<h1>Cảm ơn bạn đã gửi câu hỏi!</h1>
+						<p>Chúng tôi sẽ gửi tư vấn vào hộp thư điện tử của bạn và công bố trên website của chương trình. Vui lòng kiểm tra hộp thư điện thường xuyên.
+
+						</p>
+						<p class="form-button">
+							<a href="hoidap.html">XEM NHỮNG THẮC MẮC KHÁC</a>
+							<button class="btn-close">Đóng</button></p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -116,7 +126,9 @@
 				<!--<div class="row copyright"></div>-->
 			</div>
 		</footer>
-
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="js/custom.js" type="text/javascript"></script>
 
 		<!-- End Document
 		  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
