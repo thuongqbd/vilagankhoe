@@ -554,3 +554,35 @@ PAGE: cam on BV
 #camon-bv .logo-bv{
 	margin-bottom: 60px;
 }
+#camon-dk{
+	background-image: url(../images/bg-camon-dk.png);
+    background-repeat: no-repeat;
+    font-family: Myriad Pro, Tahoma, sans-serif;
+    color: #fff;
+    width: 316px;
+    height: 290px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#camon-dk h1{	
+	font-size: 24px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+#camon-dk p{
+	font-size: 18px;
+	margin: 0;
+}
+#camon-dk button{
+	float: right;
+    color: #1b1b1b;
+    font-size: 12px;
+    background-image: url(../images/btn-dong.png);
+    background-repeat: no-repeat;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 92px;
+    height: 29px;
+	line-height: 2;
+}
