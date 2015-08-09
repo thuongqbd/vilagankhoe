@@ -32,7 +32,7 @@ get_header();
 					<div class="top">
 						<button value="" id="btn-toihuongung"></button>
 					</div>
-					<div id="sohuongung">						
+					<div id="sohuongung">
 						<strong id="concurred_count" class="number"><?= number_format_i18n( get_post_meta( get_option('page_on_front'), 'concurred_count', true ), 0 );?></strong>
 						<span>người đã hưởng ứng</span>
 					</div>

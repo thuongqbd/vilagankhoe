@@ -86,6 +86,10 @@ function huong_ung_function(){
 	check_ajax_referer( 'vilagankhoe', 'security' );
 	$page_on_front = get_option('page_on_front');
 	$concurred_count = get_post_meta( $page_on_front, 'concurred_count', true );
-	update_post_meta($page_on_front, 'concurred_count', ++$concurred_count);
+	if(!isset($_COOKIE['huong_ung'])) {		
+		update_post_meta($page_on_front, 'concurred_count', ++$concurred_count);
+		setcookie('huong_ung', $concurred_count, time() + (86400 * 30), "/");
+	}
+	
 	echo $concurred_count;die;
 }

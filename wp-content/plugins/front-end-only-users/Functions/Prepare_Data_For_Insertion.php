@@ -121,7 +121,8 @@ function Add_Edit_User() {
 				$user_update = Add_EWD_FEUP_User_Field($Field['Field_ID'], $User_ID, $Field['Field_Name'], $Field['Field_Value'], $date);
 			}
 			if ($_POST['ewd-feup-action'] == "register") {
-				$user_update = __("Your account has been succesfully created.", "EWD_FEUP");
+//				$user_update = __("Your account has been succesfully created.", "EWD_FEUP");
+				$user_update = 1;
 				if ($Sign_Up_Email == "Yes") {EWD_FEUP_Send_Email($User_Fields, $Additional_Fields_Array, $User_ID);}
 				if ($Admin_Email_On_Registration == "Yes") {EWD_FEUP_Send_Admin_Registration_Email($User_Fields, $Additional_Fields_Array, $User_ID);}
 				if ($Email_Confirmation != "Yes" and $Admin_Approval != "Yes") {
