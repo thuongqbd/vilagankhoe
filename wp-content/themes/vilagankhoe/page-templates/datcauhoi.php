@@ -37,6 +37,15 @@ get_header(); ?>
 						endwhile;
 						?>
 					</div>
+					<div id="camon-dch" class="camon" style="display:none;">
+						<h1>Cảm ơn bạn đã gửi câu hỏi!</h1>
+						<p>Chúng tôi sẽ gửi tư vấn vào hộp thư điện tử của bạn và công bố trên website của chương trình. Vui lòng kiểm tra hộp thư điện thường xuyên.
+
+						</p>
+						<p class="form-button">
+							<a href="<?php echo get_permalink(get_page_by_path('hoi-dap')->ID)?>">XEM NHỮNG THẮC MẮC KHÁC</a>
+							<button class="btn-close">Đóng</button></p>
+					</div>
 				</div>										
 			</div>
 		</div><!-- #content -->

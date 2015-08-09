@@ -32,8 +32,7 @@ get_header();
 					<div class="top">
 						<button value="" id="btn-toihuongung"></button>
 					</div>
-					<div id="sohuongung">
-						<strong class="number"><?= number_format_i18n(get_post_meta(get_option('page_on_front'), 'concurred_count', true), 0); ?></strong>
+					<div id="sohuongung">						
 						<strong id="concurred_count" class="number"><?= number_format_i18n( get_post_meta( get_option('page_on_front'), 'concurred_count', true ), 0 );?></strong>
 						<span>người đã hưởng ứng</span>
 					</div>
@@ -47,7 +46,7 @@ get_header();
 							</p>
 							<div class="row">
 								<div class="one-half column">
-									<a href="#" class="btn-share ">
+									<a href="javascript:fbshareCurrentPage()" class="btn-share ">
 										<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/btn-share.png" alt=""/>
 									</a>
 								</div>

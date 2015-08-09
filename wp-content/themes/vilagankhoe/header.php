@@ -21,7 +21,7 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?>>		
 		<div id="page" class="hfeed site">
 			<header id="masthead" class="site-header" role="banner">
 				<div class="container">
@@ -60,7 +60,7 @@
 							<h2 id="tamsoat">TẦM SOÁT & HÀNH ĐỘNG NGAY</h2>
 						<?php endif;
 						?>
-						
+
 					</div>
 				</div>
 			</header>
