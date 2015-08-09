@@ -45,7 +45,7 @@ function Insert_Register_Form($atts) {
 			if($user_message['Message'] == 1){
 				$ReturnString .= '<div class="error success">Bạn đã đăng ký thành công</div>';
 			}else{
-				$ReturnString .= '<div class="error"><h3>Vui lòng sửa lại một số lỗi sau:</h3><p>'.$user_message['Message'].'</p></div>';	
+				$ReturnString .= '<div class="error"><strong>Lỗi:</strong><p>'.$user_message['Message'].'</p></div>';	
 			}
 		}
 		$ReturnString .= "<form action='#' method='post' id='ewd-feup-register-form' class='feup-pure-form feup-pure-form-aligned' enctype='multipart/form-data'>";
