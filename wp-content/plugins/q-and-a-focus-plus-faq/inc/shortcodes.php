@@ -522,7 +522,7 @@ function qafphome_shortcode( $atts ) {
 				<div class="qafp-faq-title hoi" style="' . $qafp_options['titlecss'] . '">';
 				$qafp_shortcode_output .= '<p class="qafp-faq-anchor"><span class="author">'.get_post_meta( $post->ID, 'ap_author_name', true ).'</span>: <span>'.get_the_title().'</span></p></div>';
 				
-				$content = apply_filters( 'the_content', get_the_excerpt() );
+				$content = get_the_content();//apply_filters( 'the_content', get_the_excerpt() );
 				$content = $content?$content:'Đang cập nhật';
 				$respondent = get_post_meta( $post->ID, 'respondent', true );
 				$respondent = $respondent?'<span class="bs">'.$respondent.'</span> :':'';
