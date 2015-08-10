@@ -28,7 +28,15 @@ body{
     background-size: 100% 100%;
     background-repeat: no-repeat;
 	font-family: Myriad Pro, tahoma, sans-serif;
-	font-size: 13px;
+	font-size: 13px;	
+}
+#page{
+	width: 100%;
+	height: 768px;
+	overflow: hidden;
+}
+#content{
+	min-height: 414px;
 }
 .left{
 	float: left !important;	
@@ -38,6 +46,7 @@ body{
 }
 img{
 	max-width: 100%;
+	height: auto;
 }
 .entry-content{
 	overflow: auto;
@@ -90,19 +99,23 @@ select option{
 /*=======================================================
 PAGE section:  Header
 =======================================================*/
+header{
+	margin-bottom: 10px;
+}
 header .top{
-	height: 140px;	
+	height: 100px;	
 }
 header #logo{
 	position: relative;    
 }
 header #logo img{
 	position: absolute;
-	left: -63px;
+    left: -45px;
     top: 0;
+    max-width: 71%;
 }
 header #search-nav{
-	padding-top: 61px;
+	padding-top: 20px;
 }
 header nav{
 	clear: both;
@@ -167,9 +180,8 @@ header form#search input[type="submit"] {
 	font-family: Myriad Pro;
 	font-size: 39.5px;
 	color: #ed1b57;
-	/*height: 178px;*/
-	line-height: 3;
-	/*	padding-left: 12px;*/
+	line-height: 2;	
+	margin: 0;
 }
 h2#tamsoat{
 	font-size: 30px;
@@ -179,15 +191,13 @@ h2#tamsoat{
 PAGE section:  footer
 =======================================================*/
 footer{
-	margin-top: 71px;
-}
-footer #gioithieu {
-
+	margin-top: 10px;
 }
 footer #gioithieu h4 {
 	font-family: Myriad Pro, sans-serif;
 	font-size: 22px;
 	color: #78acd4;
+	margin-bottom: 10px;
 }
 footer #gioithieu .routine{
 	height: 111px;
@@ -469,10 +479,10 @@ PAGE: tintuc
 }
 #widget-area li{
 	list-style: none;
-/*	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	width: inherit;*/
+	/*	white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: inherit;*/
 }
 #widget-area a{
 	color: rgba(0, 0, 0, 0.57);
@@ -498,12 +508,14 @@ PAGE: timhieubenh
 	text-decoration: none;
 	text-transform: uppercase;
 }
-#timhieubenh{
-	height: 500px;	
+#timhieubenh,
+#timhieubenh div{
+	height: 414px;	
+}
+#timhieubenh{	
 	overflow: hidden;
 }
-#timhieubenh div{
-	height: 500px;
+#timhieubenh div{	
 	overflow: auto;
 }
 /*=======================================================
@@ -791,5 +803,7 @@ PAGE: cam on Nghe si
 }
 #camon-ns img{	
 	margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 

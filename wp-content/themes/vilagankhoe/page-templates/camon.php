@@ -82,9 +82,12 @@ get_header();
 									$img = wp_get_attachment_image_src($id, 'full');
 									$img_src = $img[0];
 									?>
-									<div class="">							
-										<img src="<?php echo $img_src; ?>" alt="<?php echo $post_obj->post_title; ?>"/>
-										<span><?php echo $post_obj->post_title; ?></span>
+									<div class="">	
+										<div>
+											<img src="<?php echo $img_src; ?>" alt="<?php echo $post_obj->post_title; ?>"/>
+											<span><?php echo $post_obj->post_title; ?></span>
+										</div>
+
 									</div>												
 									<?php
 								}
@@ -102,7 +105,9 @@ get_header();
 					$('.responsive').slick({
 						dots: false,
 						infinite: false,
-						speed: 300,
+						speed: 2000,
+						autoplay: true,
+						autoplaySpeed: 2000,
 						slidesToShow: 3,
 						slidesToScroll: 3,
 						responsive: [
