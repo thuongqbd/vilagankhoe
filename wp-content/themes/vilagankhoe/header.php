@@ -39,10 +39,14 @@
 
 						</div>
 						<div class="two-thirds column" id="search-nav">
-							<form id="search" class="column offset-by-four">
-								<input type="text" name="s" value="" placeholder="Nhập từ khóa" />
+							<form id="search" class="column offset-by-four" action="<?= get_permalink(82)?>">
+								<input type="hidden" name="cx" value="partner-pub-008542593403486818317:fokhjyjrd0s" /> 
+								<input type="hidden" name="cof" value="FORID:10" /> 
+								<input type="hidden" name="ie" value="ISO-8859-1" /> 
+								<input type="text" name="q" value="" placeholder="Nhập từ khóa" />
 								<input type="submit" name="submit" value=""/>
-							</form>						
+							</form>
+							<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=vi"></script>
 							<nav >
 								<?php
 								wp_nav_menu(
