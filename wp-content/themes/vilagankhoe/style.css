@@ -768,6 +768,7 @@ PAGE: cam on BV
     padding: 5px;
 	line-height: 1.4;
 	width: 65%;
+	margin: auto;
 }
 #camon-bv .bv-nhietdoi a,
 #camon-bv .bv-choray a,
