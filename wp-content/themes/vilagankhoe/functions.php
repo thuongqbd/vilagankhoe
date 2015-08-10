@@ -96,3 +96,8 @@ function huong_ung_function(){
 	
 	echo $concurred_count;die;
 }
+add_filter('widget_text', 'php_set_base_url', 99);
+add_filter('the_content', 'php_set_base_url', 99);
+function php_set_base_url($text) {
+	return str_ireplace('http://localhost/vilagankhoe/', WP_HOME . '/', $text);
+}

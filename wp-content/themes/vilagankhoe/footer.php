@@ -10,8 +10,8 @@
  */
 ?>
 
-	</div><!-- .site-content -->
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	</div><!-- #main -->
+		<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container" id="gioithieu">
 			<div class="row">	
 				<?php if (is_front_page() || is_home()) : ?>
@@ -41,7 +41,7 @@
 			<!--<div class="row copyright"></div>-->
 		</div>
 	</footer>
-</div><!-- .site -->
+</div><!-- #page -->
 
 <?php wp_footer(); ?>
 

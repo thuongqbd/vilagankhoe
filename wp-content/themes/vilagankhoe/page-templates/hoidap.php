@@ -19,25 +19,24 @@ global $post;
 //        array(  )
 //    );
 //wp_enqueue_script( 'scrollbar', get_stylesheet_directory_uri().'/libs/jquery.scrollbar/jquery.scrollbar.min.js',array('jquery'));
-get_header(); ?>
+get_header();
+?>
 
-<div id="main-content" class="main-content">
+<div id="main-content" class="main-content container">
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content container" role="main">
-			<div id="hoidap" class="row">
-				<div class="scrollbar-inner">
+		<div id="hoidap" class="row">
+			<div class="scrollbar-inner">
 				<?php
 				// Start the Loop.
-				while ( have_posts() ) : the_post();
+				while (have_posts()) : the_post();
 					the_content();
 				endwhile;
 				?>
-				</div>
 			</div>
-		</div><!-- #content -->
+		</div>
 	</div><!-- #primary -->
 </div><!-- #main-content -->
-<script type="text/javascript">	
+<script type="text/javascript">
 //	$ = jQuery;
 //	$(function(){
 //		$('.qafp-faq').each(function(){

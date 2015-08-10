@@ -16,8 +16,8 @@
 get_header();
 ?>
 
-<div class="main-content">
-	<div class="container">
+<div id="main-content" class="main-content container">
+	<div id="primary" class="content-area ">	
 		<?php if (is_page('cam-on')): ?>
 			<?php
 			// Start the Loop.
@@ -70,7 +70,7 @@ get_header();
 				// Start the Loop.
 				while (have_posts()) : the_post();
 					?>
-					<h1><?php the_title(); ?></h1>
+				<h1><?php the_excerpt(); ?></h1>
 					<div class="row ds-ns responsive">
 						<?php
 						$listGalery = getGaleryFromPost($post);

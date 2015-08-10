@@ -35,9 +35,9 @@ body{
 	height: 768px;
 	overflow: hidden;
 }
-#content{
+/*#content{
 	min-height: 414px;
-}
+}*/
 .left{
 	float: left !important;	
 }
@@ -48,9 +48,12 @@ img{
 	max-width: 100%;
 	height: auto;
 }
+.entry-title {
+    font-size: 3rem;
+}
 .entry-content{
 	overflow: auto;
-    height: 500px;
+    height: 285px;
     font-size: 15px;
     font-weight: normal;
 }
@@ -96,11 +99,22 @@ select option{
 #ewd-feup-register-form-div .error{
 	position: absolute;
 }
+#main{
+	height: 410px;
+	overflow: hidden;
+}
+body.home #main{
+	height: 333px;
+}
 /*=======================================================
 PAGE section:  Header
 =======================================================*/
 header{
 	margin-bottom: 10px;
+	height: 145px;
+}
+body.home header{
+	height: 180px;
 }
 header .top{
 	height: 100px;	
@@ -192,6 +206,10 @@ PAGE section:  footer
 =======================================================*/
 footer{
 	margin-top: 10px;
+	height: 195px;
+}
+body.home footer{
+	height: 230px;
 }
 footer #gioithieu h4 {
 	font-family: Myriad Pro, sans-serif;
@@ -351,7 +369,7 @@ PAGE: hoi dap
 	font-size: 15px;
     line-height: 2;
 	margin: 0 12px;
-	height: 500px;
+	height: 405px;
 	overflow: auto;
 }
 #hoidap .item .hoi{
@@ -393,12 +411,14 @@ PAGE: hoi dap
 PAGE: tintuc
 =======================================================*/
 .tintuc-list, .paging{
-	clear: both;
-    height: auto;
+    clear: both;
+    padding-bottom: 10px;
+    margin: 40px 0;
     overflow: hidden;
+	height: 325px;
 }
 .tintuc-list .item{
-	margin-bottom: 44px;
+	margin-bottom: 20px;
 }
 .tintuc-list .item:nth-child(3n+1){
 	margin-left: 0;
@@ -431,17 +451,18 @@ PAGE: tintuc
 	text-align: center;
 }
 #paging li{
-	font-family: Myriad Hebrew, Tahoma, sans-serif;
-	font-size: 13px;	
+	font-family: Myriad Hebrew, Tahoma, sans-serif;	
 	display: inline-block;
 	width: 100px;
 	text-align: center;
 }
 #paging a{
+	font-size: 15px;	
 	color: #b0afb0;
 	text-decoration: none;
 }
 #paging span{
+	font-size: 15px;	
 	color: #646565;
 }
 .post-title, .post-excerpt, .post-content{
@@ -458,18 +479,18 @@ PAGE: tintuc
     margin: 10px;
 }
 #tintuc-khac{
-	margin-top: 20px;
+	/*margin-top: 20px;*/
 }
 #tintuc-khac h4{
 	margin: 0;
 }
 #tintuc-khac p{
-	margin: 0;
-	margin-left: 15px;
+	margin: 0;	
 }
 #tintuc-khac p a{
 	text-decoration: none;
-	color: #655E5E;
+    color: #000;
+    font-size: 14px
 }
 #tintuc-khac p a:hover{
 	text-decoration: underline;
@@ -513,7 +534,8 @@ PAGE: timhieubenh
 	height: 414px;	
 }
 #timhieubenh{	
-	overflow: hidden;
+	overflow: hidden;	
+    padding-bottom: 10px;
 }
 #timhieubenh div{	
 	overflow: auto;
@@ -530,8 +552,8 @@ PAGE: dang ky test
     background-image: url(images/bg-dktest.png);
     width: 889px;
     height: 350px;
-    margin: 0 auto;
-    box-sizing: border-box;
+    margin: 30px auto;
+    box-sizing: border-box;	
 }
 .lagan-form form input,
 .lagan-form form select{
@@ -713,13 +735,16 @@ PAGE: dat cau hoi
 /*=======================================================
 PAGE: cam on BV & NS
 =======================================================*/
+#camon-bv-ns{
+	margin: 50px auto;
+}
 #camon-bv-ns h1{
 	font-family: Myriad Pro, Tahoma, sans-serif;
 	font-size: 41.4px;
 	color: #c82890;
 	text-align: center;
 	text-transform: uppercase;
-	margin: 0 80px 90px 80px;
+	margin: 10px 80px 10px 80px;
 
 }
 #camon-bv-ns .camon-benh-vien,
@@ -802,8 +827,9 @@ PAGE: cam on Nghe si
 	background-size: 100% 50%;
 }
 #camon-ns img{	
-	margin-bottom: 30px;
+    margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 47%;
 }
 

@@ -39,7 +39,7 @@
 
 						</div>
 						<div class="two-thirds column" id="search-nav">
-							<form id="search" class="column offset-by-four" action="<?= get_permalink(82)?>">
+							<form id="search" class="column offset-by-four" action="<?= get_permalink(82) ?>">
 								<input type="hidden" name="cx" value="partner-pub-008542593403486818317:fokhjyjrd0s" /> 
 								<input type="hidden" name="cof" value="FORID:10" /> 
 								<input type="hidden" name="ie" value="ISO-8859-1" /> 
@@ -68,4 +68,4 @@
 					</div>
 				</div>
 			</header>
-			<div id="content" class="site-content">
+			<div id="main" class="site-main">
