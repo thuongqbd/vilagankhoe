@@ -21,9 +21,9 @@
 				
 				<div class="routine">
 					<div class="line"></div>
-					<a href="<?= get_permalink(68)?>"><img class="haytamsoat" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/img-haytoansoat.png" alt=""/></a>
-					<a href="<?= get_permalink(7)?>"><img class="haychuatri" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/img-haychuatri.png" alt=""/></a>
-					<a href="<?= get_permalink(73)?>"><img class="cunghanhdong" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/img-cunghanhdong.png" alt=""/></a>
+					<a class="haychuatri" href="<?= get_permalink(68)?>" title="Hãy chữa trị vì lá gan khỏe"><span class="hidden-text">Hãy chữa trị vì lá gan khỏe </span></a>
+					<a class="haytamsoat" href="<?= get_permalink(7)?>" title="Hãy tầm soát vì lá gan khỏe"><span class="hidden-text">Hãy tầm soát vì lá gan khỏe </span></a>
+					<a class="cunghanhdong" href="<?= get_permalink(73)?>" title="Cùng hành động vì lá gan khỏe"><span class="hidden-text">Cùng hành động vì lá gan khỏe </span></a>
 				</div>
 			</div>
 			<div class="row " >

@@ -62,6 +62,9 @@ select option{
 	font-size: 13px;
 	font-family: Myriad Pro, Tahoma, sans-serif;
 }
+.hidden-text{
+	font-size: 0;
+}
 ::-webkit-input-placeholder {
 	color: #dcdcd7;  
 	font-size: 13px;
@@ -113,7 +116,7 @@ body.home #main{
 /*=======================================================
 PAGE section:  Header
 =======================================================*/
-body > header{
+header{
     margin-top: 5px;
     height: 180px;
     margin-bottom: 5px;
@@ -200,6 +203,7 @@ header form#search input[type="submit"] {
 	color: #ed1b57;
 	line-height: 2;	
 	margin: 0;
+	padding-left: 12px;
 }
 
 /*=======================================================
@@ -243,21 +247,35 @@ footer #gioithieu .routine .line{
 	width: 100%;
 	z-index: 1;
 }
-footer #gioithieu .routine img{
+footer #gioithieu .routine a{
 	z-index: 2;	
 	position: absolute;
     top: 0;
-}
-footer #gioithieu .routine img.haytamsoat{
-	left: 356px;	
-}
-footer #gioithieu .routine img.haychuatri{
-	left: 110px;
 	display: block;
-    background-color: #fff;
+	width: 111px;
+	height: 111px;
 }
-footer #gioithieu .routine img.cunghanhdong{	
+footer #gioithieu .routine a.haychuatri{
+	width: 110px;
+	left: 110px;	    
+	background: url(images/img-haychuatri.png) no-repeat #fff center center;
+}
+footer #gioithieu .routine a.haychuatri:hover{	
+	background: url(images/img-haychuatri-hover.png) no-repeat #fff center center;
+}
+footer #gioithieu .routine a.haytamsoat{
+	left: 356px;	
+	background: url(images/img-haytamsoat.png) no-repeat #fff center center;
+}
+footer #gioithieu .routine a.haytamsoat:hover{	
+	background: url(images/img-haytamsoat-hover.png) no-repeat #fff center center;
+}
+footer #gioithieu .routine a.cunghanhdong{	
 	right: 148px;
+	background: url(images/img-cunghanhdong.png) no-repeat transparent center center;
+}
+footer #gioithieu .routine a.cunghanhdong:hover{		
+	background: url(images/img-cunghanhdong-hover.png) no-repeat transparent center center;
 }
 footer .dvtctc{
 	width: 480px;
@@ -284,8 +302,9 @@ footer .copyright{
 PAGE: trang chu
 =======================================================*/
 #huongung #video-lagan{
-	width: 545px;
-	margin-right: 21px;
+	width: 547px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 #huongung #toihuongung{
 	width: 321px;
@@ -339,7 +358,7 @@ PAGE: trang chu
     margin: 0 auto;
 }
 #huongung .next{
-	width: 73px;
+	width: 37px;
     background-image: url(images/icon-next.png);
     background-position: 50% 44%;
     height: 301px;
@@ -549,6 +568,7 @@ PAGE: timhieubenh
 	border-bottom: 1px dashed #000;
 	padding-bottom: 5px;
 	margin-bottom: 5px;
+	margin-left: 12px;
 }
 #timhieubenh .one-third p a{
 	font-size: 14px;
@@ -855,9 +875,9 @@ PAGE: cam on Nghe si
     line-height: 1.7;
 }
 #camon-ns img{	
-    margin-bottom: 30px;
+	margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 47%;
+    max-width: 44%;
 }
 
