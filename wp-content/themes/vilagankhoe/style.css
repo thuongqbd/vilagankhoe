@@ -35,9 +35,9 @@ body{
 	height: 768px;
 	overflow: hidden;
 }
-/*#content{
-	min-height: 414px;
-}*/
+a{
+	text-decoration: none;
+}
 .left{
 	float: left !important;	
 }
@@ -93,40 +93,43 @@ select option{
 .ui-draggable .ui-dialog-titlebar{
 	display: none;
 }
-/*.ui-widget-overlay{
-	background: #dedddc;
-}*/
+.ui-widget-overlay {
+    opacity: 0.5;
+    filter: Alpha(Opacity=30);
+    /* support: IE8; */
+    background-color: #fff;
+}
 #ewd-feup-register-form-div .error{
 	position: absolute;
 }
 #main{
-	height: 410px;
+	height: 373px;
 	overflow: hidden;
+	/*background-color: yellow;*/
 }
 body.home #main{
-	height: 333px;
+	height: 327px;
 }
 /*=======================================================
 PAGE section:  Header
 =======================================================*/
-header{
-	margin-bottom: 10px;
-	height: 145px;
+body > header{
+    margin-top: 5px;
+    height: 180px;
+    margin-bottom: 5px;
+    overflow: hidden;
+	/*background-color: pink;*/
 }
-body.home header{
-	height: 180px;
-}
+
 header .top{
 	height: 100px;	
+	overflow: hidden;
 }
-header #logo{
-	position: relative;    
+header #logo h1{
+	margin: 0;
 }
-header #logo img{
-	position: absolute;
-    left: -45px;
-    top: 0;
-    max-width: 71%;
+header #logo img{	
+	height: 100px;
 }
 header #search-nav{
 	padding-top: 20px;
@@ -144,25 +147,25 @@ header nav #menu{
 }
 header nav #menu li{
 	float: left;
-    margin-left: 63px;
+    margin-left: 38px;
     height: 30px;
 	margin-bottom: 0;
 }
 header nav #menu li:first-child{
 	margin-left: 52px;	
 }
-header nav #menu li a{
-	text-decoration: none;
+header nav #menu li a{	
     font-size: 15px;
-    color: #9dc1e6;    
-    padding: 0 11px;
+    color: #3538A2;    
+    padding: 0 20px;
     display: block;
     height: 25px;
     line-height: 25px;
     margin: 2px 0;    
 }
+header nav #menu li:hover a,
 header nav #menu li.current-menu-item a{
-	background-color: #fde6eb;
+	background-color: #F389B8;
     border-radius: 15px;
 }
 header form#search{
@@ -191,31 +194,38 @@ header form#search input[type="submit"] {
 	left: 0px;
 }
 #tamsoat{
-	font-family: Myriad Pro;
+	/*font-family: Myriad Pro;*/
+	font-family: Times New Roman, Tahoma, sans-serif;
 	font-size: 39.5px;
 	color: #ed1b57;
 	line-height: 2;	
 	margin: 0;
 }
-h2#tamsoat{
-	font-size: 30px;
-	line-height: 1.5;
-}
+
 /*=======================================================
 PAGE section:  footer
 =======================================================*/
 footer{
-	margin-top: 10px;
-	height: 195px;
+	margin-top: 5px;
+    height: 195px;
+    margin-bottom: 5px;
+    overflow: hidden;
+	/*background-color: violet;*/
 }
 body.home footer{
-	height: 230px;
+	height: 241px;
 }
 footer #gioithieu h4 {
-	font-family: Myriad Pro, sans-serif;
-	font-size: 22px;
-	color: #78acd4;
+	font-family: Myriad Pro, sans-serif;	
 	margin-bottom: 10px;
+}
+footer #gioithieu h4 a{
+	font-size: 22px;
+	color: #343795;
+	
+}
+footer #gioithieu h4 a:hover{
+	text-decoration: underline;
 }
 footer #gioithieu .routine{
 	height: 111px;
@@ -258,7 +268,7 @@ footer .dvtctc{
 }
 footer .dvtctc *{
 	float: left;
-	color: #c376b1;
+	color: #C72A91;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -320,7 +330,7 @@ PAGE: trang chu
 }
 #huongung #sohuongung span{
 	display: block;
-    background-color: #C376B1;
+    background-color: #C72A91;
     width: 180px;
     color: #fff;
     font-size: 17px;
@@ -344,17 +354,20 @@ PAGE: trang chu
 	text-align: center;
 }
 #camon-fb h1{	
-	font-size: 36px;
+	/*font-size: 36px;*/
+	font-size: 25px;
 	color: #9cc0e6;
 	text-transform: uppercase;
 	margin-top: 20px;
 }
 #camon-fb p{
 	color: #f6bdd6;
-	font-size: 28px;
+	/*font-size: 28px;*/
+	font-size: 20px;
+	
 }
 #camon-fb p a{
-	text-decoration: none;
+	
 }
 #camon-fb p .btn-share img{	
 	float: right;
@@ -410,26 +423,22 @@ PAGE: hoi dap
 /*=======================================================
 PAGE: tintuc
 =======================================================*/
-.tintuc-list, .paging{
-    clear: both;
-    padding-bottom: 10px;
-    margin: 40px 0;
-    overflow: hidden;
-	height: 325px;
-}
-.tintuc-list .item{
-	margin-bottom: 20px;
+.tintuc-list, #paging{
+    clear: both;    
+    overflow: hidden;	
 }
 .tintuc-list .item:nth-child(3n+1){
 	margin-left: 0;
 }
 .tintuc-list .item a{
-	position: relative;
+    position: relative;
     display: block;
-    width: 294px;
-    height: 196px;
-	overflow: hidden;
+	width: 100%;
+    height: 159px;
+    overflow: hidden;
+    padding-top: 10px;
 }
+
 .tintuc-list .item a img{
 	max-width: 100%;
 	height: auto;
@@ -447,21 +456,32 @@ PAGE: tintuc
     height: 56px;
     box-sizing: border-box;
 }
+.tintuc-list .item a:hover span{
+	color: #C82990;
+}
+.tintuc-list .item a:hover img{
+	opacity: 0.7;
+}
+.wp-paginate{
+	margin: 0;
+}
 #paging{
 	text-align: center;
 }
 #paging li{
-	font-family: Myriad Hebrew, Tahoma, sans-serif;	
-	display: inline-block;
-	width: 100px;
-	text-align: center;
+    font-family: Myriad Hebrew, Tahoma, sans-serif;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    padding: 5px 10px;
 }
-#paging a{
+#paging li a{
 	font-size: 15px;	
 	color: #b0afb0;
-	text-decoration: none;
+	
 }
-#paging span{
+#paging li a:hover,
+#paging li span{
 	font-size: 15px;	
 	color: #646565;
 }
@@ -479,20 +499,28 @@ PAGE: tintuc
     margin: 10px;
 }
 #tintuc-khac{
-	/*margin-top: 20px;*/
+	color: #fff;
 }
-#tintuc-khac h4{
+#tintuc-khac h4,
+#tintuc-khac ul{
 	margin: 0;
+	
 }
-#tintuc-khac p{
-	margin: 0;	
+#tintuc-khac ul{
+	margin-left: 20px;
+	color: #3235A1
 }
-#tintuc-khac p a{
-	text-decoration: none;
-    color: #000;
+#tintuc-khac ul li{
+	list-style-type: disc;    
+    margin-left: 0;    
+    line-height: 14px;	
+	color: #fff;
+}
+#tintuc-khac ul li a{	
+    color: #fff;
     font-size: 14px
 }
-#tintuc-khac p a:hover{
+#tintuc-khac ul li a:hover{
 	text-decoration: underline;
 }
 #widget-area h4{
@@ -508,7 +536,7 @@ PAGE: tintuc
 #widget-area a{
 	color: rgba(0, 0, 0, 0.57);
 	/*color: #303393;*/
-	text-decoration: none;		
+			
 	font-size: 13px;
 }
 #widget-area a:hover{
@@ -526,12 +554,12 @@ PAGE: timhieubenh
 	font-size: 14px;
 	font-family: Myriad Pro, Tahoma, sans-serif;
 	color: #000;
-	text-decoration: none;
+	
 	text-transform: uppercase;
 }
 #timhieubenh,
 #timhieubenh div{
-	height: 414px;	
+	height: 373px;
 }
 #timhieubenh{	
 	overflow: hidden;	
@@ -552,7 +580,7 @@ PAGE: dang ky test
     background-image: url(images/bg-dktest.png);
     width: 889px;
     height: 350px;
-    margin: 30px auto;
+    margin: 0 auto;
     box-sizing: border-box;	
 }
 .lagan-form form input,
@@ -714,7 +742,7 @@ PAGE: dat cau hoi
     display: block;
     background-size: 100% 100%;
     text-align: center;
-    text-decoration: none;
+    
 	border:none;	
     color: #1b1b1b;
     font-size: 13px;
@@ -736,15 +764,15 @@ PAGE: dat cau hoi
 PAGE: cam on BV & NS
 =======================================================*/
 #camon-bv-ns{
-	margin: 50px auto;
+	
 }
 #camon-bv-ns h1{
 	font-family: Myriad Pro, Tahoma, sans-serif;
 	font-size: 41.4px;
-	color: #c82890;
+	color: rgb(54, 54, 56);
 	text-align: center;
 	text-transform: uppercase;
-	margin: 10px 80px 10px 80px;
+	margin: 10px 80px 20px 80px;
 
 }
 #camon-bv-ns .camon-benh-vien,
@@ -765,7 +793,7 @@ PAGE: cam on BV & NS
     font-size: 20px;
     color: #fff;    
     text-transform: uppercase;
-	text-decoration: none;
+	
 }
 /*=======================================================
 PAGE: cam on BV
@@ -773,12 +801,11 @@ PAGE: cam on BV
 #camon-bv h1,
 #camon-ns h1{
 	font-family: Myriad Pro, Tahoma, sans-serif;
-	font-size: 30px;
-	font-weight: bold;
-	color: #c82890;
-	text-transform: uppercase;
-	text-align: center;
-	margin-bottom: 26px;
+    font-size: 30px;
+    color: rgb(54, 54, 56);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 26px;
 }
 #camon-bv img,
 #camon-bv a{
@@ -786,8 +813,8 @@ PAGE: cam on BV
 	margin: 0 auto;
 }
 #camon-bv img{
-	max-height: 128px;
-	margin-bottom: 30px;
+	max-height: 100px;
+    margin-bottom: 6px;
 }
 #camon-bv span,
 #camon-ns span{
@@ -795,18 +822,17 @@ PAGE: cam on BV
     background-repeat: no-repeat;
     background-size: 100% 100%;
     font-family: Myriad Pro, Tahoma, sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     color: #f066a6;
     text-align: center;
     display: block;
-    text-decoration: none;
     text-transform: uppercase;
-    height: 56px;
+    height: 28px;
     font-weight: bold;
     padding: 5px;
-	line-height: 1.4;
-	width: 65%;
-	margin: auto;
+    line-height: 2;
+    width: 65%;
+    margin: 0 auto;
 }
 #camon-bv .bv-nhietdoi a,
 #camon-bv .bv-choray a,
@@ -817,7 +843,7 @@ PAGE: cam on BV
 	width: 50%;
 }
 #camon-bv .logo-bv{
-	margin-bottom: 60px;
+	margin-bottom: 10px;
 }
 /*=======================================================
 PAGE: cam on Nghe si
@@ -825,6 +851,8 @@ PAGE: cam on Nghe si
 #camon-ns span{
 	line-height: 1.3;
 	background-size: 100% 50%;
+	height: 56px;
+    line-height: 1.7;
 }
 #camon-ns img{	
     margin-bottom: 30px;

@@ -13,8 +13,8 @@ jQuery(document).ready(function () {
 	if ($("#camon-fb").length && $('#huongung').length) {
 		var dialog = $("#camon-fb").dialog({
 			autoOpen: false,
-			height: 400,
-			width: 960,
+			height: 250,
+			width: 600,
 			modal: true
 		});
 		jQuery('#btn-toihuongung').click(function () {

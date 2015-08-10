@@ -15,7 +15,7 @@
 		<div class="container" id="gioithieu">
 			<div class="row">	
 				<?php if (is_front_page() || is_home()) : ?>
-					<h4>Giới thiệu chương trình “ Đồng hành cùng bệnh nhân viêm gan ”</h4>								
+					<h4><a href="http://vilagankhoe.vn/2015/08/10/phat-dong-chuong-trinh-cung-hanh-dong-vi-benh-nhan-viem-gan-huong-ung-ngay-phong-chong-viem-gan-the-gioi-2015.html">Giới thiệu chương trình “ Đồng hành cùng bệnh nhân viêm gan ”</a></h4>								
 				<?php endif;
 				?>
 				

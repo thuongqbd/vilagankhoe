@@ -26,17 +26,13 @@
 			<header id="masthead" class="site-header" role="banner">
 				<div class="container">
 					<div class="row top">
-						<div class="one-third column " id="logo">
-							<div class="site-branding">
-								<?php if (is_front_page() || is_home()) : ?>
-									<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo.png" alt=""/></a></h1>
-								<?php else : ?>
-									<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo.png" alt=""/></a></p>
-								<?php endif;
-								?>
-
-							</div><!-- .site-branding -->
-
+						<div class="one-third column " id="logo">							
+							<?php if (is_front_page() || is_home()) : ?>
+								<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo.png" alt=""/></a></h1>
+							<?php else : ?>
+								<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo.png" alt=""/></a></p>
+							<?php endif;
+							?>
 						</div>
 						<div class="two-thirds column" id="search-nav">
 							<form id="search" class="column offset-by-four" action="<?= get_permalink(82) ?>">
@@ -57,14 +53,8 @@
 							</nav>
 						</div>
 					</div>
-					<div class="row slogan">
-						<?php if (is_front_page() || is_home()) : ?>
-							<h1 id="tamsoat">TẦM SOÁT & HÀNH ĐỘNG NGAY</h1>
-						<?php else : ?>
-							<h2 id="tamsoat">TẦM SOÁT & HÀNH ĐỘNG NGAY</h2>
-						<?php endif;
-						?>
-
+					<div class="row slogan tag-line">						
+						<h2 id="tamsoat" class="site-description"><?php bloginfo( 'description' ); ?></h2>
 					</div>
 				</div>
 			</header>
