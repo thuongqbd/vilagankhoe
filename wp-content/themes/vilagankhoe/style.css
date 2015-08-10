@@ -709,8 +709,8 @@ PAGE: cam on BV & NS
 	margin: 0 80px 90px 80px;
 
 }
-#camon-bv-ns .camon-bv,
-#camon-bv-ns .camon-ns{
+#camon-bv-ns .camon-benh-vien,
+#camon-bv-ns .camon-nghe-si{
 	background-image: url(images/bg-camon-bv.png);
     background-repeat: no-repeat;    
     height: 206px;
@@ -718,11 +718,11 @@ PAGE: cam on BV & NS
     background-size: 100% 100%;
 	text-align: center;
 }
-#camon-bv-ns .camon-ns{
+#camon-bv-ns .camon-nghe-si{
 	background-image: url(images/bg-camon-ns.png);
 }
-#camon-bv-ns .camon-bv a,
-#camon-bv-ns .camon-ns a{	
+#camon-bv-ns .camon-benh-vien a,
+#camon-bv-ns .camon-nghe-si a{	
     font-family: Myriad Pro, Tahoma, sans-serif;
     font-size: 20px;
     color: #fff;    

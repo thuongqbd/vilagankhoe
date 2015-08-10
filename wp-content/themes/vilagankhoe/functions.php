@@ -36,7 +36,10 @@ function register_my_menu() {
   register_nav_menu('header-menu',__( 'Header Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
-
+function my_custom_init() {
+	add_post_type_support( 'page', 'excerpt' );
+}
+add_action('init', 'my_custom_init');
 function getGaleryFromPost($post, $groupGallery = null) {
     $content = get_the_content($post->ID); 
     $pattern = get_shortcode_regex();
