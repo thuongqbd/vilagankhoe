@@ -20,33 +20,38 @@ get_header();
 	<div id="primary" class="content-area">		
 		<div id="datcauhoi" class="row lagan-form">									
 			<div class="row">
-				<div class="five columns" id="logo-slogan">							
-					<img src="<?= get_stylesheet_directory_uri() ?>/images/logo-dktest.png" alt=""/>
-					<p>Nếu bạn nằm trong nhóm có nguy cơ 
-						bị lây nhiễm bệnh cao, hãy đăng ký
-						tham gia tầm soát bệnh hoàn toàn miễn phí 
-						tại bệnh viện gần nhất nơi bạn sống cùng 
-						chúng tôi ngay hôm nay
-					</p>
-				</div>
-				<div class="seven columns" >								
+				<?php
+				// Start the Loop.
+				while (have_posts()) : the_post();
+					?>				
+					<div class="five columns" id="logo-slogan">							
+						<?php
+						$logo = get_field('logo');
+						if ($logo) {
+							echo wp_get_attachment_image($logo, 'full');
+						} else {
+							?>
+							<img src="<?= get_stylesheet_directory_uri() ?>/images/logo-dktest.png" alt=""/>
+							<?php
+						}
+						?>
+						<div><?php the_field('form_description') ?></div>
+					</div>
+					<div class="seven columns" >								
+						<?php the_content(); ?>
+					</div>
 					<?php
-					// Start the Loop.
-					while (have_posts()) : the_post();
-						the_content();
-					endwhile;
-					?>
-				</div>
-				<div id="camon-dch" class="camon" style="display:none;">
-					<h1>Cảm ơn bạn đã gửi câu hỏi!</h1>
-					<p>Chúng tôi sẽ gửi tư vấn vào hộp thư điện tử của bạn và công bố trên website của chương trình. Vui lòng kiểm tra hộp thư điện thường xuyên.
+				endwhile;
+				?>
+			</div>
+			<div id="camon-dch" class="camon" style="display:none;">
+				<h1><?php the_field('tk_title')?></h1>
+				<p><?php the_field('tk_content')?></p>
+				<p class="form-button">
+					<a href="<?php echo get_permalink(get_page_by_path('hoi-dap')->ID) ?>">XEM NHỮNG THẮC MẮC KHÁC</a>
+					<button class="btn-close">Đóng</button></p>
+			</div>
 
-					</p>
-					<p class="form-button">
-						<a href="<?php echo get_permalink(get_page_by_path('hoi-dap')->ID) ?>">XEM NHỮNG THẮC MẮC KHÁC</a>
-						<button class="btn-close">Đóng</button></p>
-				</div>
-			</div>										
 		</div>
 
 	</div><!-- #primary -->
