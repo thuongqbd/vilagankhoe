@@ -551,8 +551,8 @@ function qafphome_shortcode( $atts ) {
 					';
 				}
 				
-				if ( $hr === true ) $qafp_shortcode_output .= '<hr' . $hrmargin . ' />
-				';
+//				if ( $hr === true ) $qafp_shortcode_output .= '<hr' . $hrmargin . ' />
+//				';
 
 				$qafp_shortcode_output .= '</div><div class="line"></div><!-- .qafp-faq-answer --></div><!-- .qafp-faq -->
 				'; // .qafp-faq-answer .qafp-faq

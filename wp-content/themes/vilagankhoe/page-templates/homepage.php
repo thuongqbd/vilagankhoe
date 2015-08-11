@@ -14,6 +14,8 @@
  * @since Twenty Fifteen 1.0
  */
 get_header();
+wp_enqueue_script( 'counterup', get_stylesheet_directory_uri().'/js/jquery.counterup.min.js',array('jquery'),false,true);
+wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri().'/js/waypoints.min.js',array('jquery'),false,true);
 ?>
 
 <div id="main-content" class="main-content">
@@ -32,7 +34,7 @@ get_header();
 					<button value="" id="btn-toihuongung">Tôi hưởng ứng</button>
 				</div>
 				<div id="sohuongung">
-					<strong id="concurred_count" class="number"><?= number_format_i18n(get_post_meta(get_option('page_on_front'), 'concurred_count', true), 0); ?></strong>
+					<strong id="concurred_count" class="number .integers"><?= number_format_i18n(get_post_meta(get_option('page_on_front'), 'concurred_count', true), 0); ?></strong>
 					<span>người đã hưởng ứng</span>
 				</div>
 				<div id="camon-fb" class="camon " style="display:none;">
