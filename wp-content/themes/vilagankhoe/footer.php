@@ -30,11 +30,15 @@
 				<div class="  dvtctc">
 					<div class="left">
 						<span>Đơn vị tổ chức: </span>
-						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-dvtochuc.png" alt=""/>
+						<a href="http://hoitruyennhiem.vn/" target="_blank">
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-dvtochuc.png" alt=""/>
+						</a>
 					</div>
 					<div class="left">
 						<span>Nhà tài trợ: </span>
+						<a href="http://www.roche.com/" target="_blank">
 						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-dvtaitro.png" alt=""/>
+						</a>
 					</div>
 				</div>
 			</div>

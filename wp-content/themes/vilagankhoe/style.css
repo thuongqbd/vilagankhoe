@@ -155,7 +155,7 @@ header nav #menu li a{
     padding: 0 20px;
     display: block;
     height: 25px;
-    line-height: 30px;
+    line-height: 27px;
     margin: 2px 0;    
 }
 header nav #menu li:hover a,
@@ -250,17 +250,17 @@ footer #gioithieu .routine a{
 footer #gioithieu .routine a.haytamsoat {
 	width: 110px;
 	left: 110px;	    
-	background: url(images/img-haychuatri.png) no-repeat #fff center center;
+	background: url(images/img-haytamsoat.png) no-repeat #fff center center;
 }
-footer #gioithieu .routine a.haytamsoat :hover{	
-	background: url(images/img-haychuatri-hover.png) no-repeat #fff center center;
+footer #gioithieu .routine a.haytamsoat:hover{	
+	background: url(images/img-haytamsoat-hover.png) no-repeat #fff center center;
 }
 footer #gioithieu .routine a.haychuatri{
 	left: 356px;	
-	background: url(images/img-haytamsoat.png) no-repeat #fff center center;
+	background: url(images/img-haychuatri.png) no-repeat #fff center center;
 }
 footer #gioithieu .routine a.haychuatri:hover{	
-	background: url(images/img-haytamsoat-hover.png) no-repeat #fff center center;
+	background: url(images/img-haychuatri-hover.png) no-repeat #fff center center;
 }
 footer #gioithieu .routine a.cunghanhdong{	
 	right: 148px;
@@ -515,19 +515,21 @@ article header{
 	margin: 0;
 }
 article .entry-title {
-    font-size: 3rem;
+    font-size: 2rem;
+	margin-left: 12px;
 }
 article .entry-content{
 	overflow: auto;
-    height: 316px;
+    height: 279px;
     font-size: 15px;
     font-weight: normal;
     overflow-x: hidden;
 }
 
 article img{	
-    display: block;
-    margin: 10px;
+	display: block;
+    margin: 10px auto;
+    max-width: 300px;
 }
 #tintuc-khac{
 	color: #fff;
@@ -535,10 +537,8 @@ article img{
 #tintuc-khac h4,
 #tintuc-khac ul{
 	margin: 0;
-
 }
-#tintuc-khac ul{
-	margin-left: 20px;
+#tintuc-khac ul{	
 	color: #3235A1
 }
 #tintuc-khac ul li{
