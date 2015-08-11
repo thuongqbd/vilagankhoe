@@ -863,20 +863,20 @@ PAGE: cam on BV
 }
 #camon-bv span,
 #camon-ns span{
-	background-image: url(images/bg-ten-bv.png);
+	/*background-image: url(images/bg-ten-bv.png);*/
     background-repeat: no-repeat;
     background-size: 100% 100%;
     font-family: Myriad Pro, Tahoma, sans-serif;
     font-size: 18px;
-    color: #f066a6;
+    color: #46ADE2;
     text-align: center;
     display: block;
     text-transform: uppercase;
     height: 28px;
     font-weight: bold;
-    padding: 5px;
+    padding: 5px 0;
     line-height: 2;
-    width: 65%;
+    /*width: 65%;*/
     margin: 0 auto;
 }
 #camon-bv .bv-nhietdoi a,

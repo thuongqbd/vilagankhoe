@@ -21,8 +21,8 @@
 				
 				<div class="routine">
 					<div class="line"></div>
-					<a class="haytamsoat" href="<?= get_permalink(7)?>" title="Hãy tầm soát vì lá gan khỏe"><span class="hidden-text">Hãy tầm soát vì lá gan khỏe </span></a>
-					<a class="haychuatri" href="<?= get_permalink(68)?>" title="Hãy chữa trị vì lá gan khỏe"><span class="hidden-text">Hãy chữa trị vì lá gan khỏe </span></a>					
+					<a class="haytamsoat" href="<?= get_permalink(68)?>" title="Hãy tầm soát vì lá gan khỏe"><span class="hidden-text">Hãy tầm soát vì lá gan khỏe </span></a>
+					<a class="haychuatri" href="<?= get_permalink(7)?>" title="Hãy chữa trị vì lá gan khỏe"><span class="hidden-text">Hãy chữa trị vì lá gan khỏe </span></a>					
 					<a class="cunghanhdong" href="<?= get_permalink(73)?>" title="Cùng hành động vì lá gan khỏe"><span class="hidden-text">Cùng hành động vì lá gan khỏe </span></a>
 				</div>
 			</div>
