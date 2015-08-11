@@ -48,15 +48,7 @@ img{
 	max-width: 100%;
 	height: auto;
 }
-.entry-title {
-    font-size: 3rem;
-}
-.entry-content{
-	overflow: auto;
-    height: 285px;
-    font-size: 15px;
-    font-weight: normal;
-}
+
 select option{
     color: #dcdcd7;  
 	font-size: 13px;
@@ -100,7 +92,7 @@ select option{
     opacity: 0.5;
     filter: Alpha(Opacity=30);
     /* support: IE8; */
-    background-color: #fff;
+    background: #fff;
 }
 #ewd-feup-register-form-div .error{
 	position: absolute;
@@ -163,7 +155,7 @@ header nav #menu li a{
     padding: 0 20px;
     display: block;
     height: 25px;
-    line-height: 25px;
+    line-height: 30px;
     margin: 2px 0;    
 }
 header nav #menu li:hover a,
@@ -226,7 +218,7 @@ footer #gioithieu h4 {
 footer #gioithieu h4 a{
 	font-size: 22px;
 	color: #343795;
-	
+
 }
 footer #gioithieu h4 a:hover{
 	text-decoration: underline;
@@ -255,19 +247,19 @@ footer #gioithieu .routine a{
 	width: 111px;
 	height: 111px;
 }
-footer #gioithieu .routine a.haychuatri{
+footer #gioithieu .routine a.haytamsoat {
 	width: 110px;
 	left: 110px;	    
 	background: url(images/img-haychuatri.png) no-repeat #fff center center;
 }
-footer #gioithieu .routine a.haychuatri:hover{	
+footer #gioithieu .routine a.haytamsoat :hover{	
 	background: url(images/img-haychuatri-hover.png) no-repeat #fff center center;
 }
-footer #gioithieu .routine a.haytamsoat{
+footer #gioithieu .routine a.haychuatri{
 	left: 356px;	
 	background: url(images/img-haytamsoat.png) no-repeat #fff center center;
 }
-footer #gioithieu .routine a.haytamsoat:hover{	
+footer #gioithieu .routine a.haychuatri:hover{	
 	background: url(images/img-haytamsoat-hover.png) no-repeat #fff center center;
 }
 footer #gioithieu .routine a.cunghanhdong{	
@@ -320,14 +312,22 @@ PAGE: trang chu
     padding-top: 4px; 
 }
 #huongung #btn-toihuongung{
-	background-image: url(images/btn-toihuongung.png);
-    background-repeat: no-repeat;
+	font-size: 32px;
+    font-family: Myriad Pro, Tahoma, sans-serif;
+    color: #d571ad;    
+	font-weight: bold;
+	background: url(images/btn-toihuongung.png) no-repeat transparent;    
     width: 286px;
-    height: 97px;
-    background-color: transparent;
+    height: 97px;    
+	line-height: 114px;
     padding: 0;
+	margin: 0;
     border: none;
-    border-radius: 18px;
+    border-radius: 18px;        
+}
+#huongung #btn-toihuongung:hover{
+	color: #C72A91;
+	background-image: url(images/btn-toihuongung-hover.png);
 }
 #huongung #sohuongung{
     background-repeat: no-repeat;
@@ -383,10 +383,10 @@ PAGE: trang chu
 	color: #f6bdd6;
 	/*font-size: 28px;*/
 	font-size: 20px;
-	
+
 }
 #camon-fb p a{
-	
+
 }
 #camon-fb p .btn-share img{	
 	float: right;
@@ -497,23 +497,35 @@ PAGE: tintuc
 #paging li a{
 	font-size: 15px;	
 	color: #b0afb0;
-	
+
 }
 #paging li a:hover,
 #paging li span{
 	font-size: 15px;	
 	color: #646565;
 }
-.post-title, .post-excerpt, .post-content{
+article{
 	font-family: Minion Pro, Tahoma, sans-serif;
     font-size: 19px;
     color: #000000;
+	height: 370px;
 }
-.post-excerpt, .post-content{
-	font-size: 13px;
+article header{
+	height: auto;
+	margin: 0;
 }
-.post-content img{
-	max-width: 100%;
+article .entry-title {
+    font-size: 3rem;
+}
+article .entry-content{
+	overflow: auto;
+    height: 316px;
+    font-size: 15px;
+    font-weight: normal;
+    overflow-x: hidden;
+}
+
+article img{	
     display: block;
     margin: 10px;
 }
@@ -523,7 +535,7 @@ PAGE: tintuc
 #tintuc-khac h4,
 #tintuc-khac ul{
 	margin: 0;
-	
+
 }
 #tintuc-khac ul{
 	margin-left: 20px;
@@ -555,7 +567,7 @@ PAGE: tintuc
 #widget-area a{
 	color: rgba(0, 0, 0, 0.57);
 	/*color: #303393;*/
-			
+
 	font-size: 13px;
 }
 #widget-area a:hover{
@@ -574,7 +586,7 @@ PAGE: timhieubenh
 	font-size: 14px;
 	font-family: Myriad Pro, Tahoma, sans-serif;
 	color: #000;
-	
+
 	text-transform: uppercase;
 }
 #timhieubenh,
@@ -762,7 +774,7 @@ PAGE: dat cau hoi
     display: block;
     background-size: 100% 100%;
     text-align: center;
-    
+
 	border:none;	
     color: #1b1b1b;
     font-size: 13px;
@@ -784,7 +796,7 @@ PAGE: dat cau hoi
 PAGE: cam on BV & NS
 =======================================================*/
 #camon-bv-ns{
-	
+
 }
 #camon-bv-ns h1{
 	font-family: Myriad Pro, Tahoma, sans-serif;
@@ -813,7 +825,7 @@ PAGE: cam on BV & NS
     font-size: 20px;
     color: #fff;    
     text-transform: uppercase;
-	
+
 }
 /*=======================================================
 PAGE: cam on BV
