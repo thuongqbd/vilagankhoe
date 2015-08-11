@@ -25,7 +25,7 @@ global $post;
 
 					<div class="entry-content">
 						<?php
-						the_post_thumbnail();
+//						the_post_thumbnail();
 						?>
 						<?php the_content(); ?>
 					</div><!-- .entry-content -->
