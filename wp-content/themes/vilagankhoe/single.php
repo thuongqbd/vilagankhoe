@@ -11,65 +11,45 @@ global $post;
 ?>
 
 <div id="primary" class="content-area container">	
+	<div class="row">
+		<div class="column two-thirds">
+			<?php
+			// Start the loop.
+			while (have_posts()) : the_post();
+				get_template_part('content', get_post_format());
 
-	<?php
-	// Start the loop.
-	while (have_posts()) : the_post();
-		?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<header class="entry-header">
-				<?php
-				the_title('<h1 class="entry-title">', '</h1>');
-				?>
-			</header><!-- .entry-header -->
-			<div class="row">				
-				<div class="entry-content column two-thirds">
+			// End the loop.
+			endwhile;
+			?>
+
+		</div>
+		<div class="column one-third">
+			<div id="tintuc-khac">
+				<h4>Tin tức khác</h4>
+				<ul>
 					<?php
-					// Post thumbnail.
-					the_post_thumbnail();
-					?>
+					$args = array(
+						'posts_per_page' => 10,
+						'exclude' => $post->ID,
+						'category_name' => 'tin-tuc'
+					);
+
+					$myposts = get_posts($args);
+					foreach ($myposts as $post) : setup_postdata($post);
+						?>
+						<li>
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+						</li>
 					<?php
-					/* translators: %s: Name of current post */
-					the_content();
+					endforeach;
+					wp_reset_postdata();
 					?>
-				</div><!-- .entry-content -->
-				<div class="column one-third">
-					<div id="tintuc-khac">
-						<h4>Tin tức khác</h4>
-						<ul>
-							<?php
-							$args = array(
-								'posts_per_page' => 5,
-								'exclude' => get_the_ID(),
-								'category_name' => 'tin-tuc'
-							);
 
-							$myposts = get_posts($args);
-							foreach ($myposts as $post) : setup_postdata($post);
-								?>
-								<li>
-									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-								</li>
-								<?php
-							endforeach;
-							wp_reset_postdata();
-							?>
+				</ul>
+			</div>
+		</div>
 
-						</ul>
-					</div>
-				</div>
-			</div><!-- .row -->
-			<footer class="entry-footer">
-				<?php // twentyfifteen_entry_meta();  ?>
-				<?php edit_post_link(__('Edit', 'twentyfifteen'), '<span class="edit-link">', '</span>'); ?>
-			</footer><!-- .entry-footer -->
-		</article><!-- #post-## -->
-		<?php
-// End the loop.
-	endwhile;
-	?>
-
-
+	</div><!-- .site-main -->
 </div><!-- .content-area -->
 
 <?php get_footer(); ?>
