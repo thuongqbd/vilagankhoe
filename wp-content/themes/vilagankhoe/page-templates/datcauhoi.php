@@ -35,7 +35,7 @@ get_header();
 							<?php
 						}
 						?>
-						<div><?php the_field('form_description') ?></div>
+						<div class="form_description"><?php the_field('form_description') ?></div>
 					</div>
 					<div class="seven columns" >								
 						<?php the_content(); ?>

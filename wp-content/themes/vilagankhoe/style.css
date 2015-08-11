@@ -636,13 +636,15 @@ PAGE: dang ky test
 	display: block;
 	margin: 0 auto;
 }
-.lagan-form #logo-slogan p{
+.lagan-form #logo-slogan p,
+.lagan-form #logo-slogan .form_description{
 	font-family: Myriad Pro, Tahoma, sans-serif;
 	font-size: 13px;
 	color: #d9d4ea;	
 	width: 100%;
 	text-align: center;
 	margin: 0;
+	text-transform:	uppercase;
 }
 
 .lagan-form form p:first-child{
@@ -691,9 +693,11 @@ PAGE: dang ky test
 	position: relative;
 }
 #dangky-test img.tip{
-	position: absolute;
+    position: absolute;
     left: 0;
     bottom: -30px;
+    width: 517px;
+    height: auto;
 }
 #camon-dk,
 #camon-dch{
@@ -771,7 +775,7 @@ PAGE: dat cau hoi
 #datcauhoi form .ap-form-error-message {
     display: inline-block;
 }
-#datcauhoi.lagan-form #logo-slogan p{
+#datcauhoi.lagan-form #logo-slogan .form_description{
 	font-size: 16px;
 }
 #camon-dch p.form-button{

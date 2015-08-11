@@ -14,6 +14,9 @@
  * @since Twenty Fifteen 1.0
  */
 get_header();
+wp_enqueue_style( 'lightbox-style', get_stylesheet_directory_uri().'/libs/lightbox/css/lightbox.css',array());
+wp_enqueue_script( 'lightbox-js', get_stylesheet_directory_uri().'/libs/lightbox//js/lightbox.min.js',array('jquery'),false,true);
+
 ?>
 
 <div id="main-content" class="main-content container">
@@ -26,6 +29,7 @@ get_header();
 				?>
 				<div class="row">
 					<div class="five columns" id="logo-slogan">
+						
 						<?php
 						$logo = get_field('logo');
 						if ($logo) {
@@ -36,25 +40,29 @@ get_header();
 							<?php
 						}
 						?>
-						
+						<div class="form_description"><?php the_field('form_description') ?></div>
 					</div>
 					<div class="seven columns" id="form-dkt">
 						<?php
 						the_content();
 						?>
 					</div>
-
+					<div class="form_img">
+						
 					<?php
 					$form_img = get_field('form_img');
 					if ($form_img) {
+						$src = wp_get_attachment_image_src($form_img, 'full');
+						echo '<a href="'.$src[0].'" data-lightbox="image-1" >';
 						echo wp_get_attachment_image($form_img, 'full', false, array('class'=>'tip'));
+						echo '</a>';
 					} else {
 						?>
 						<img src="<?= get_stylesheet_directory_uri() ?>/images/img-dk-test.png" alt="" class="tip"/>
 						<?php
 					}
 					?>
-					<?php the_post_thumbnail($size = 'post-thumbnail', $attr = array('class' => 'tip')); ?>
+					</div>
 					<div id="camon-dk" class="camon" style="display:none;">
 						<h1><?php the_field('tk_title'); ?></h1>
 						<p><?php the_field('tk_content'); ?>

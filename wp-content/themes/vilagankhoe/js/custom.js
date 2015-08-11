@@ -49,6 +49,18 @@ jQuery(document).ready(function () {
 		$('.btn-close').click(function () {
 			dialog2.dialog("close");
 		});
+		var dialog2 = $("#camon-dk").dialog({
+			autoOpen: false,
+			width: 316,
+			height: 290,
+			modal: true
+		});
+
+		if ($("#ewd-feup-register-form-div").find(".success").length) {
+			dialog2.dialog("open");
+		}
+		;
+		
 	}
 	if ($("#datcauhoi").length && $("#camon-dch").length) {
 		var dialog3 = $("#camon-dch").dialog({
