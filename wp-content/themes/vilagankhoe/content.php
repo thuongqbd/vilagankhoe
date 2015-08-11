@@ -11,10 +11,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-		// Post thumbnail.
-//		twentyfifteen_post_thumbnail();
-	?>
+	
 
 	<header class="entry-header">
 		<?php
@@ -27,6 +24,10 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php
+		// Post thumbnail.
+		the_post_thumbnail();
+	?>
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
