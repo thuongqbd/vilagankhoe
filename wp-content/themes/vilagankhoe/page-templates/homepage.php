@@ -29,7 +29,7 @@ get_header();
 			</div>
 			<div id="toihuongung" class="left">
 				<div class="top">
-					<button value="" id="btn-toihuongung"></button>
+					<button value="" id="btn-toihuongung">Tôi hưởng ứng</button>
 				</div>
 				<div id="sohuongung">
 					<strong id="concurred_count" class="number"><?= number_format_i18n(get_post_meta(get_option('page_on_front'), 'concurred_count', true), 0); ?></strong>
