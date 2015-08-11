@@ -84,8 +84,10 @@ get_header();
 									?>
 									<div class="">	
 										<div>
+											<a href="<?= get_post_meta( $id, '_gallery_link_url', true );?>" title="<?php echo $post_obj->post_title; ?>">
 											<img src="<?php echo $img_src; ?>" alt="<?php echo $post_obj->post_title; ?>"/>
 											<span><?php echo $post_obj->post_title; ?></span>
+											</a>
 										</div>
 
 									</div>												
