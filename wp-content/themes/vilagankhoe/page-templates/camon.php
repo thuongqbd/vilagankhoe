@@ -45,6 +45,18 @@ get_header();
 				<?php
 			endwhile;
 			?>
+		<?php elseif (is_page('cam-on/benh-vien')): ?>
+			<?php
+			// Start the Loop.
+			while (have_posts()) : the_post();
+				?>
+				<div id="camon-bv" class="camon row">
+					<h1> <?php the_excerpt(); ?></h1>
+					<?php the_content(); ?>
+				</div>
+				<?php
+			endwhile;
+			?>
 		<?php else: ?>
 		<?php
 			// Start the Loop.
