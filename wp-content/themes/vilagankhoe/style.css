@@ -632,6 +632,14 @@ PAGE: dang ky test
 	margin-bottom: 0;
 	border-radius: 15px;
 }
+.lagan-form form select{
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	background: url("images/br_down.png") no-repeat right center;
+	background-position: 97% 8px;
+	background-color: #fff;
+}
 .lagan-form #logo-slogan img{
 	display: block;
 	margin: 0 auto;
@@ -693,11 +701,11 @@ PAGE: dang ky test
 	position: relative;
 }
 #dangky-test img.tip{
-    position: absolute;
+	position: absolute;
     left: 0;
-    bottom: -30px;
-    width: 517px;
-    height: auto;
+    bottom: -35px;
+    width: 590px;
+    max-height: 100px;
 }
 #camon-dk,
 #camon-dch{
@@ -764,7 +772,12 @@ PAGE: dat cau hoi
     padding-bottom: 10px;
 	margin-bottom: 0;
 }
-#datcauhoi form .ap-form-field-wrapper.first{
+/*#datcauhoi form .ap-form-field-wrapper.first{
+	margin-top: 43px;
+	display: inline-block;
+}*/
+#datcauhoi form .ap-form-field-wrapper:first-child, #datcauhoi form div.ap-form-field-wrapper:nth-child(2) {
+    display: inline-block;
 	margin-top: 43px;
 }
 #datcauhoi form input[type='text'], #datcauhoi form input[type='email']{
@@ -773,7 +786,8 @@ PAGE: dat cau hoi
     /*display: block;*/
 }
 #datcauhoi form .ap-form-error-message {
-    display: inline-block;
+    /*display: inline-block;*/
+	margin-left: 27px;
 }
 #datcauhoi.lagan-form #logo-slogan .form_description{
 	font-size: 16px;
