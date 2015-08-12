@@ -8,6 +8,7 @@
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */
+global $post;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
@@ -22,7 +23,7 @@
 	</head>
 
 	<body <?php body_class(); ?>>		
-		<div id="page" class="hfeed site">
+		<div id="page" class="hfeed site <?= ( basename(get_permalink($post->ID)) );?>">
 			<header id="masthead" class="site-header" role="banner">
 				<div class="container">
 					<div class="row top">

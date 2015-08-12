@@ -50,7 +50,7 @@ img{
 }
 
 select option{
-    color: #dcdcd7;  
+    color: #333;  
 	font-size: 13px;
 	font-family: Myriad Pro, Tahoma, sans-serif;
 }
@@ -923,9 +923,53 @@ PAGE: cam on Nghe si
     color: #C72A91 !important;
 }
 #camon-ns img{	
-	margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
-    max-height: 300px;
+	width: 100%;
+    height: 100%;
+}
+#camon-ns .gallery .gallery-item{
+	float: left;
+    margin-top: 10px;
+    text-align: center;
+    width: 20%;
+	position: relative;
+    overflow: hidden;
+}
+#camon-ns .gallery .gallery-item .gallery-icon {
+    height: 200px;
+}
+#camon-ns .gallery .gallery-item .gallery-icon a {
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+#camon-ns .gallery .gallery-item  .gallery-caption {
+	font-size: 18px;
+    color: #C72A91;
+    font-family: Myriad Pro, Tahoma, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.6);
+    padding: 8px 0px 7px 3px;
+    width: 90%;
+    margin-left: 10px;
+	position: absolute;
+	webkit-transition: margin-top 0.35s ease;
+    -moz-transition: margin-top 0.35s ease;
+    -o-transition: margin-top 0.35s ease;
+    -ms-transition: margin-top 0.35s ease;
+    transition: margin-top 0.35s ease;
+}
+#camon-ns .gallery .gallery-item:hover  .gallery-caption {
+    margin-top: -35px;
+}
+#page.nghe-si{
+	height: auto;
+	
+}
+#page.nghe-si #main{
+	height: auto;
+	margin-bottom: 50px;
 }
 
