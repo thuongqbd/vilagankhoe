@@ -28,13 +28,13 @@
 			</div>
 			<div class="row " >
 				<div class="  dvtctc">
-					<div class="left">
+					<div class="one-half column">
 						<span>Đơn vị tổ chức: </span>
 						<a href="http://hoitruyennhiem.vn/" target="_blank">
 							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-dvtochuc.png" alt=""/>
 						</a>
 					</div>
-					<div class="right">
+					<div class="one-half column">
 						<span>Nhà tài trợ: </span>
 						<a href="http://www.roche.com/" target="_blank">
 						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-dvtaitro.png" alt=""/>
