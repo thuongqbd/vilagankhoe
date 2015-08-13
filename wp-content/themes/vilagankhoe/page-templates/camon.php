@@ -68,9 +68,9 @@ get_header();
 				<h1> <?php the_excerpt(); ?></h1>
 				<div class="camon-ns-gallery row">
 					<?php the_content(); ?>
-					<div>
+					<div class="show-huongung">
 						<button value="" id="btn-toihuongung">Tôi hưởng ứng</button>
-						<span>Đã có <strong id="concurred_count" class="number .integers">5,035</strong> người hưởng ứng chương trình</span>
+						<p>Đã có <strong id="concurred_count" class="number .integers">5,035</strong> người hưởng ứng chương trình</p>
 					</div>
 				</div>
 				<div id="camon-fb" class="camon " style="display:none;">

@@ -23,7 +23,7 @@ and open the template in the editor.
 
 
 /* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 /*
 Note: The best way to structure the use of media queries is to create the queries
 near the relevant code. For example, if you wanted to change the styles for buttons
@@ -197,13 +197,14 @@ there.
 		left: 0px;
 	}
 	#tamsoat{
-		/*font-family: Myriad Pro;*/
-		font-family: Times New Roman, Tahoma, sans-serif;
+		font-family: Myriad Pro;
+		/*font-family: Times New Roman, Tahoma, sans-serif;*/
 		font-size: 27px;
-		color: #ed1b57;
+		color: #2E3192;
 		line-height: 2;	
 		margin: 0;	
 		text-align: center;
+		font-weight: bold;
 	}
 
 	/*=======================================================
@@ -237,7 +238,7 @@ there.
 		box-sizing: border-box;	
 		width: auto;
 		margin-top: 0;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		position: relative;
 	}
 	footer #gioithieu .line{
@@ -302,9 +303,14 @@ there.
 	footer .dvtctc .one-half *{
 		float: left;
 	}
-	footer .dvtctc img{
+	footer .dvtctc .left img{
 		max-width: 45px;
-	}	
+		margin-top: 7px;
+	}
+	footer .dvtctc .right img{
+		max-width: 54px;
+		margin-top: 9px;
+	}
 	footer .dvtctc .one-half:first-child img{
 		/*max-width: 33px;*/
 		padding: 3px 0;
@@ -351,7 +357,7 @@ there.
 	#huongung #btn-toihuongung{
 		font-size: 32px;
 		font-family: Myriad Pro, Tahoma, sans-serif;
-		color: #d571ad;
+		color: #C72A91;
 		font-weight: bold;
 		background: url(images/btn-toihuongung.png) no-repeat transparent;
 		width: 100%;
@@ -362,11 +368,13 @@ there.
 		border: none;
 		border-radius: 18px;
 		display: block;
-		background-size: 100% 100%;       
+		background-size: 100% 100%;
+		transition: all .2s ease-in-out;		
 	}
 	#huongung #btn-toihuongung:hover{
-		color: #C72A91;
 		background-image: url(images/btn-toihuongung-hover.png);
+		text-shadow: 1px 4px 6px #d571ad;
+		transform: scale(1.03);
 	}
 	#huongung #sohuongung{
 		background-repeat: no-repeat;
@@ -390,7 +398,7 @@ there.
 		display: block;
 		background-color: #fff;
 		width: 180px;
-		color: #C72A91;
+		color: #B3D5EE;
 		font-size: 17px;
 		text-align: center;
 		line-height: 2.4;
@@ -643,7 +651,7 @@ there.
 	PAGE: dang ky test
 	=======================================================*/
 	.lagan-form{
-		background-color: #756db2;
+		/*background-color: #756db2;*/
 		padding: 0 10px;
 		/*		
 				background-image: url(images/bg-dktest.png);
@@ -660,6 +668,9 @@ there.
 		margin-bottom: 0;
 		border-radius: 15px;
 	}
+	.lagan-form .feup-pure-control-group.right.first input {
+		margin-left: 18px !important;
+	}
 	.lagan-form form select{
 		-webkit-appearance: none;
 		-moz-appearance: none;
@@ -673,7 +684,7 @@ there.
 		margin: 0 auto;
 	}
 	.lagan-form div .form_img{
-		display: none;
+		/*display: none;*/
 	}
 	.lagan-form #logo-slogan .form_img{
 		display: block;
@@ -688,7 +699,7 @@ there.
 		color: #d9d4ea;	
 		width: 100%;
 		text-align: center;
-		margin: 5px 0;
+		margin: -5px 0;
 		text-transform:	uppercase;
 	}
 
@@ -810,6 +821,7 @@ there.
 		padding-top: 10px;
 		padding-bottom: 10px;
 		margin-bottom: 0;
+		margin-top: 25px;
 	}
 	/*#datcauhoi form .ap-form-field-wrapper.first{
 		margin-top: 43px;
@@ -969,9 +981,13 @@ there.
 		margin-left: auto;
 		margin-right: auto;
 		max-height: 300px;
+		border: none !important;
 	}
-
-
+	#camon-ns .show-huongung p{
+		display: inline-block;
+		font-size: 18px;
+		color: #46ADE2;
+	}
 /* Larger than mobile */
 @media (min-width: 400px) {
 	/*=======================================================
@@ -1138,9 +1154,9 @@ there.
 	}
 	#tamsoat{
 		/*font-family: Myriad Pro;*/
-		font-family: Times New Roman, Tahoma, sans-serif;
+		/*font-family: Times New Roman, Tahoma, sans-serif;*/
 		/*font-size: 32px;*/
-		color: #ed1b57;
+		/*color: #ed1b57;*/
 		line-height: 2;	
 		margin: 0;	
 		text-align: center;
@@ -1178,7 +1194,7 @@ there.
 		box-sizing: border-box;	
 		width: auto;
 		margin-top: 0;
-		margin-bottom: 20px;
+		/*margin-bottom: 20px;*/
 		position: relative;
 	}
 	footer #gioithieu .routine .one-third{
@@ -1287,7 +1303,7 @@ there.
 	#huongung #btn-toihuongung{
 		font-size: 32px;
 		font-family: Myriad Pro, Tahoma, sans-serif;
-		color: #d571ad;
+		/*color: #C72A91;*/
 		font-weight: bold;
 		background: url(images/btn-toihuongung.png) no-repeat transparent;
 		width: 286px;
@@ -1297,11 +1313,10 @@ there.
 		margin: 0 auto;
 		border: none;
 		border-radius: 18px;
-		display: block;       
+		display: block;		
 	}
-	#huongung #btn-toihuongung:hover{
-		color: #C72A91;
-		background-image: url(images/btn-toihuongung-hover.png);
+	#huongung #btn-toihuongung:hover{		
+		background-image: url(images/btn-toihuongung-hover.png);		
 	}
 	#huongung #sohuongung{
 		background-repeat: no-repeat;
@@ -1578,7 +1593,7 @@ there.
 	PAGE: dang ky test
 	=======================================================*/
 	.lagan-form{
-		background-color: #756db2;
+		/*background-color: #756db2;*/
 		padding: 0 10px;
 		/*		
 				background-image: url(images/bg-dktest.png);
@@ -1608,7 +1623,7 @@ there.
 		margin: 0 auto;
 	}
 	.lagan-form div .form_img{
-		display: none;
+		/*display: none;*/
 	}
 	.lagan-form #logo-slogan .form_img{
 		display: block;
@@ -1623,7 +1638,7 @@ there.
 		color: #d9d4ea;	
 		width: 100%;
 		text-align: center;
-		margin: 5px 0;
+		margin: -5px 0;
 		text-transform:	uppercase;
 	}
 
@@ -1854,7 +1869,7 @@ there.
 		margin: 0 auto;
 	}
 	#camon-bv img{
-		max-height: 100px;
+		max-height: 170px;
 		margin-bottom: 6px;
 	}
 	#camon-bv span,
@@ -2084,9 +2099,9 @@ header form#search input[type="submit"] {
 }
 #tamsoat{
 	/*font-family: Myriad Pro;*/
-	font-family: Times New Roman, Tahoma, sans-serif;
+	/*font-family: Times New Roman, Tahoma, sans-serif;*/
 	font-size: 39.5px;
-	color: #ed1b57;
+	/*color: #ed1b57;*/
 	line-height: 2;	
 	margin: 0;
 	padding-left: 12px;
@@ -2126,7 +2141,7 @@ footer #gioithieu .routine{
     margin-right: 30px;
     width: auto;
 		margin-top: 0;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
     position: relative;
 }
 footer #gioithieu .routine .line{
@@ -2142,7 +2157,7 @@ footer #gioithieu .routine a{
     top: 0;
 	display: block;
 	width: 111px;
-	height: 111px;
+	height: 122px;
 	transition: all .2s ease-in-out;
 }
 footer #gioithieu .routine a:hover{
@@ -2222,7 +2237,7 @@ PAGE: trang chu
 #huongung #btn-toihuongung{
 	font-size: 32px;
     font-family: Myriad Pro, Tahoma, sans-serif;
-    color: #d571ad;    
+    /*color: #d571ad;*/    
 	font-weight: bold;
 	background: url(images/btn-toihuongung.png) no-repeat transparent;    
     width: 286px;
@@ -2233,10 +2248,10 @@ PAGE: trang chu
     border: none;
     border-radius: 18px;        
 }
-#huongung #btn-toihuongung:hover{
+/*#huongung #btn-toihuongung:hover{
 	color: #C72A91;
 	background-image: url(images/btn-toihuongung-hover.png);
-}
+}*/
 #huongung #sohuongung{
     background-repeat: no-repeat;
     width: 270px;
@@ -2550,7 +2565,7 @@ PAGE: dang ky test
 	color: #d9d4ea;	
 	width: 100%;
 	text-align: center;
-	margin: 0;
+	margin: -5px 0;
 	text-transform:	uppercase;
 }
 
@@ -2858,6 +2873,7 @@ PAGE: cam on BV
 #camon-ns button:hover{
 	color: #C72A91;
     background-image: url(images/btn-toihuongung-small-hover.png);
+	text-shadow: 1px 4px 6px #d571ad;
 }
 /*=======================================================
 PAGE: cam on Nghe si
@@ -2889,7 +2905,7 @@ PAGE: cam on Nghe si
     width: 18.1%;
     overflow: hidden;
     position: relative;
-    height: 255px;
+    height: 248px;
     margin-bottom: 10px;
     margin: 7px 9px;
 }
