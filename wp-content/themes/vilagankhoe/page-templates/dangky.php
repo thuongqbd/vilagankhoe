@@ -41,6 +41,22 @@ wp_enqueue_script( 'lightbox-js', get_stylesheet_directory_uri().'/libs/lightbox
 						}
 						?>
 						<div class="form_description"><?php the_field('form_description') ?></div>
+						<div class="form_img">
+						
+						<?php
+						$form_img = get_field('form_img');
+						if ($form_img) {
+							$src = wp_get_attachment_image_src($form_img, 'full');
+							echo '<a href="'.$src[0].'" data-lightbox="image-1" >';
+							echo wp_get_attachment_image($form_img, 'full', false, array('class'=>'tip'));
+							echo '</a>';
+						} else {
+							?>
+							<img src="<?= get_stylesheet_directory_uri() ?>/images/img-dk-test.png" alt="" class="tip"/>
+							<?php
+						}
+						?>
+						</div>
 					</div>
 					<div class="seven columns" id="form-dkt">
 						<?php

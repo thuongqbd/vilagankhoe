@@ -62,7 +62,7 @@ wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri().'/js/waypoints.mi
 
 				</div>
 			</div>
-			<div class="next right"></div>
+			<!--<div class="next right"></div>-->
 		</div>
 	</div><!-- #primary -->
 </div><!-- #main-content -->
