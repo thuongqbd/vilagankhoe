@@ -991,7 +991,7 @@ function gallery_shortcode( $attr ) {
 		'itemtag'    => $html5 ? 'figure'     : 'dl',
 		'icontag'    => $html5 ? 'div'        : 'dt',
 		'captiontag' => $html5 ? 'figcaption' : 'dd',
-		'columns'    => 3,
+		'columns'    => 0,
 		'size'       => 'thumbnail',
 		'include'    => '',
 		'exclude'    => '',

@@ -736,7 +736,7 @@ function wp_print_media_templates() {
 			<span><?php _e('Columns'); ?></span>
 			<select class="columns" name="columns"
 				data-setting="columns">
-				<?php for ( $i = 1; $i <= 9; $i++ ) : ?>
+				<?php for ( $i = 0; $i <= 9; $i++ ) : ?>
 					<option value="<?php echo esc_attr( $i ); ?>" <#
 						if ( <?php echo $i ?> == wp.media.galleryDefaults.columns ) { #>selected="selected"<# }
 					#>>

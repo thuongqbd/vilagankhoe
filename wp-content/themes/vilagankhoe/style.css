@@ -885,6 +885,7 @@ PAGE: cam on BV
     bottom: 0;
     margin: auto;
 	border: none !important;
+	width: 95%;
 }
 #camon-bv .gallery{
 	margin: auto;
@@ -931,6 +932,7 @@ PAGE: cam on BV
     margin: auto;
     display: none;
     padding-top: 50%;
+	width: 95%;
 }
 #camon-bv .gallery .gallery-item:hover  .gallery-caption {
     display: block;
@@ -966,9 +968,9 @@ PAGE: cam on BV
 PAGE: cam on Nghe si
 =======================================================*/
 #camon-ns .camon-ns-gallery {
-    border: 2px solid #8C8787;
+    /*border: 2px solid #8C8787;*/
     padding: 10px 0px;
-    background-color: #fff;
+    /*background-color: #fff;*/
 }
 #camon-ns img{	
     max-width: 100%;
@@ -1023,7 +1025,7 @@ PAGE: cam on Nghe si
 }
 #camon-ns .gallery .gallery-item:hover  .gallery-caption {
     display: block;
-	border: 2px solid #8C8787;
+	/*border: 2px solid #8C8787;*/
 }
 #page.nghe-si{
 	height: auto;	
