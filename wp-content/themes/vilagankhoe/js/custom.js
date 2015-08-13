@@ -10,7 +10,7 @@ jQuery(document).ready(function () {
 			jQuery(this).val(1);
 		}
 	});
-	if ($("#camon-fb").length && $('#huongung').length) {
+	if ($("#camon-fb").length) {
 		var dialog = $("#camon-fb").dialog({
 			autoOpen: false,
 			height: 250,

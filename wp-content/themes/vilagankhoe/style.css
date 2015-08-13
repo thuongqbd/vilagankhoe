@@ -230,7 +230,7 @@ footer #gioithieu .routine{
     margin-left: 30px;
     margin-right: 30px;
     width: auto;
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 20px;
     position: relative;
 }
@@ -248,6 +248,10 @@ footer #gioithieu .routine a{
 	display: block;
 	width: 111px;
 	height: 111px;
+	transition: all .2s ease-in-out;
+}
+footer #gioithieu .routine a:hover{
+	transform: scale(1.1);
 }
 footer #gioithieu .routine a.haytamsoat {
 	width: 110px;
@@ -871,64 +875,24 @@ PAGE: cam on BV
     text-align: center;
     margin-bottom: 26px;
 }
-#camon-bv img,
-#camon-bv a{
-	display: block;
-	margin: 0 auto;
-}
-#camon-bv img{
-	max-height: 100px;
-    margin-bottom: 6px;
-}
-#camon-bv span,
-#camon-ns span{
-	/*background-image: url(images/bg-ten-bv.png);*/
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    font-family: Myriad Pro, Tahoma, sans-serif;
-    font-size: 18px;
-    color: #46ADE2;
-    text-align: center;
-    display: block;
-    text-transform: uppercase;
-    height: 28px;
-    font-weight: bold;
-    padding: 5px 0;
-    line-height: 2;
-    /*width: 65%;*/
-    margin: 0 auto;
-}
-#camon-bv .bv-nhietdoi a,
-#camon-bv .bv-choray a,
-#camon-bv .bv-tudu a{
-	width: 187px;
-}
-#camon-bv .bv-yduochn a{
-	width: 50%;
-}
-#camon-bv .logo-bv{
-	margin-bottom: 10px;
-}
-/*=======================================================
-PAGE: cam on Nghe si
-=======================================================*/
-#camon-ns span{
-	line-height: 1.3;
-    background-size: 100% 50%;
-    height: 56px;
-    position: relative;
-    bottom: 65px;
-    left: 0;
+#camon-bv img{	
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
     right: 0;
-    color: #C72A91 !important;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+	border: none !important;
 }
-#camon-ns img{	
-    margin-left: auto;
-    margin-right: auto;
-	width: 100%;
-    height: 100%;
+#camon-bv .gallery{
+	margin: auto;
+    display: block;
+    overflow: hidden;
+    padding-bottom: 50px;
 }
-#camon-ns .gallery .gallery-item{
+#camon-bv .gallery .gallery-item{
 	float: left;
     margin-top: 10px;
     text-align: center;
@@ -936,13 +900,110 @@ PAGE: cam on Nghe si
 	position: relative;
     overflow: hidden;
 }
+#camon-bv .gallery .gallery-item .gallery-icon {
+	height: 200px;
+    overflow: hidden;
+    margin: auto;
+    width: 90%;
+}
+#camon-bv .gallery .gallery-item .gallery-icon a {
+    display: block;
+    height: 100%;
+	position: relative;
+}
+#camon-bv .gallery .gallery-item  .gallery-caption {
+	font-size: 18px;
+    color: #3538A2;
+    font-family: Myriad Pro, Tahoma, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.6);
+    position: absolute;
+    webkit-transition: margin-top 0.35s ease;
+    -moz-transition: margin-top 0.35s ease;
+    -o-transition: margin-top 0.35s ease;
+    -ms-transition: margin-top 0.35s ease;
+    transition: margin-top 0.35s ease;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: none;
+    padding-top: 50%;
+}
+#camon-bv .gallery .gallery-item:hover  .gallery-caption {
+    display: block;
+	border: 2px solid #8C8787;
+}
+#page.nghe-si{
+	height: auto;	
+}
+#page.nghe-si #main{
+	height: auto;
+	margin-bottom: 50px;
+}
+#camon-ns button{
+	font-size: 15px;
+    font-family: Myriad Pro, Tahoma, sans-serif;
+    color: #d571ad;
+    font-weight: bold;
+    background: url(images/btn-toihuongung-small.png) no-repeat transparent;
+    width: 140px;
+    height: 37px;
+    line-height: 44px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-size: 100%;
+    margin-left: 10px;
+}
+#camon-ns button:hover{
+	color: #C72A91;
+    background-image: url(images/btn-toihuongung-small-hover.png);
+}
+/*=======================================================
+PAGE: cam on Nghe si
+=======================================================*/
+#camon-ns .camon-ns-gallery {
+    border: 2px solid #8C8787;
+    padding: 10px 0px;
+    background-color: #fff;
+}
+#camon-ns img{	
+    max-width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute
+}
+#camon-ns .gallery{
+	margin: auto;
+    display: block;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+#camon-ns .gallery .gallery-item{
+	float: left;
+    text-align: center;
+    width: 18.1%;
+    overflow: hidden;
+    position: relative;
+    height: 255px;
+    margin-bottom: 10px;
+    margin: 7px 9px;
+}
 #camon-ns .gallery .gallery-item .gallery-icon {
-    height: 200px;
+	height: 100%;
+    max-width: 100%;
 }
 #camon-ns .gallery .gallery-item .gallery-icon a {
-    display: block;
-    width: 90%;
-    margin: auto;
+	display: block;
+    height: 100%;
+    position: relative;
 }
 #camon-ns .gallery .gallery-item  .gallery-caption {
 	font-size: 18px;
@@ -951,25 +1012,42 @@ PAGE: cam on Nghe si
     font-weight: bold;
     text-transform: uppercase;
     background: rgba(255,255,255,0.6);
-    padding: 8px 0px 7px 3px;
-    width: 90%;
-    margin-left: 10px;
-	position: absolute;
-	webkit-transition: margin-top 0.35s ease;
-    -moz-transition: margin-top 0.35s ease;
-    -o-transition: margin-top 0.35s ease;
-    -ms-transition: margin-top 0.35s ease;
-    transition: margin-top 0.35s ease;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: none;
+    padding-top: 55%;
 }
 #camon-ns .gallery .gallery-item:hover  .gallery-caption {
-    margin-top: -35px;
+    display: block;
+	border: 2px solid #8C8787;
 }
 #page.nghe-si{
-	height: auto;
-	
+	height: auto;	
 }
 #page.nghe-si #main{
 	height: auto;
 	margin-bottom: 50px;
 }
-
+#camon-ns button{
+	font-size: 15px;
+    font-family: Myriad Pro, Tahoma, sans-serif;
+    color: #d571ad;
+    font-weight: bold;
+    background: url(images/btn-toihuongung-small.png) no-repeat transparent;
+    width: 140px;
+    height: 37px;
+    line-height: 44px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-size: 100%;
+    margin-left: 10px;
+}
+#camon-ns button:hover{
+	color: #C72A91;
+    background-image: url(images/btn-toihuongung-small-hover.png);
+}

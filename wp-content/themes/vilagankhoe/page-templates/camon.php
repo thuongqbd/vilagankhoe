@@ -59,16 +59,49 @@ get_header();
 			?>
 		<?php else: ?>
 		<?php
+			wp_enqueue_script( 'counterup', get_stylesheet_directory_uri().'/js/jquery.counterup.min.js',array('jquery'),false,true);
+			wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri().'/js/waypoints.min.js',array('jquery'),false,true);
 			// Start the Loop.
 			while (have_posts()) : the_post();
 				?>
 			<div id="camon-ns" class="camon row">				
 				<h1> <?php the_excerpt(); ?></h1>
-				<?php the_content(); ?>
+				<div class="camon-ns-gallery row">
+					<?php the_content(); ?>
+					<div>
+						<button value="" id="btn-toihuongung">Tôi hưởng ứng</button>
+						<span>Đã có <strong id="concurred_count" class="number .integers">5,035</strong> người hưởng ứng chương trình</span>
+					</div>
+				</div>
+				<div id="camon-fb" class="camon " style="display:none;">
+					<div class="container">
+
+						<h1>  Cảm ơn bạn đã HƯỞNG ỨNG chương trình<br>
+							cùng hành động vì bệnh nhân viêm gan!</h1>
+						<p>
+							Hãy chia sẻ để chương trình lan tỏa và ý nghĩa hơn
+						</p>
+						<div class="row">
+							<div class="one-half column">
+								<a href="javascript:fbshareCurrentPage()" class="btn-share ">
+									<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/btn-share.png" alt=""/>
+								</a>
+							</div>
+							<div class="one-half column">
+								<a href="#" class="btn-dont-share btn-close" >
+									<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/btn-dont-share.png" alt=""/>
+								</a>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
 			</div>
 		<?php
 			endwhile;
 			?>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
 		<?php endif; ?>
 
 	</div><!-- #primary -->
