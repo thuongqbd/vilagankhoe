@@ -2090,6 +2090,7 @@ header form#search input[type="submit"] {
 	line-height: 2;	
 	margin: 0;
 	padding-left: 12px;
+		text-align: left;
 }
 
 /*=======================================================
