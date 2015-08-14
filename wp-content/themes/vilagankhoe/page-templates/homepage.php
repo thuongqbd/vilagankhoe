@@ -21,7 +21,7 @@ wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri().'/js/waypoints.mi
 <div id="main-content" class="main-content">
 	<div id="primary" class="content-area container">		
 		<div id="huongung" class="row">
-			<div id="video-lagan" class="left">
+			<div id="video-lagan" class="left two-thirds column">
 				<?php
 				// Start the Loop.
 				while (have_posts()) : the_post();
@@ -29,7 +29,7 @@ wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri().'/js/waypoints.mi
 				endwhile;
 				?>
 			</div>
-			<div id="toihuongung" class="left">
+			<div id="toihuongung" class="left one-third column">
 				<div class="top">
 					<button value="" id="btn-toihuongung">Tôi hưởng ứng</button>
 				</div>

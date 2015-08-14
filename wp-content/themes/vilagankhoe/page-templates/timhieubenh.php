@@ -13,6 +13,9 @@
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */
+wp_enqueue_style( 'lightbox-style', get_stylesheet_directory_uri().'/libs/lightbox/css/lightbox.css',array());
+wp_enqueue_script( 'lightbox-js', get_stylesheet_directory_uri().'/libs/lightbox//js/lightbox.min.js',array('jquery'),false,true);
+
 global $post;
 get_header();
 ?>
@@ -33,11 +36,16 @@ get_header();
 								$img = wp_get_attachment_image_src($id, 'full');
 								$img_src = $img[0];
 								?>
-								<p>
+								<p class="forpc">
 									<a href="javascrip:void(0)" data-src="<?php echo $img_src; ?>">
 										<?php echo $post_obj->post_title; ?>
 									</a>
-								</p>				
+								</p>
+								<p class="forsp">
+									<a href="<?php echo $img_src; ?>" data-lightbox="image-1">
+										<?php echo $post_obj->post_title; ?>
+									</a>
+								</p>
 								<?php
 							}
 						}

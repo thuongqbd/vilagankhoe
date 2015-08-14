@@ -41,13 +41,13 @@ wp_enqueue_script( 'lightbox-js', get_stylesheet_directory_uri().'/libs/lightbox
 						}
 						?>
 						<div class="form_description"><?php the_field('form_description') ?></div>
-						<div class="form_img">
+						<div class="form_img forsp">
 						
 						<?php
 						$form_img = get_field('form_img');
 						if ($form_img) {
 							$src = wp_get_attachment_image_src($form_img, 'full');
-							echo '<a href="'.$src[0].'" data-lightbox="image-1" >';
+							echo '<a href="'.$src[0].'" data-lightbox="image-forsp" >';
 							echo wp_get_attachment_image($form_img, 'full', false, array('class'=>'tip'));
 							echo '</a>';
 						} else {
@@ -63,7 +63,7 @@ wp_enqueue_script( 'lightbox-js', get_stylesheet_directory_uri().'/libs/lightbox
 						the_content();
 						?>
 					</div>
-					<div class="form_img">
+					<div class="form_img forpc">
 						
 					<?php
 					$form_img = get_field('form_img');
