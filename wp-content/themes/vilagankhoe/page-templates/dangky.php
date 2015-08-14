@@ -28,8 +28,7 @@ wp_enqueue_script( 'lightbox-js', get_stylesheet_directory_uri().'/libs/lightbox
 			while (have_posts()) : the_post();
 				?>
 				<div class="row">
-					<div class="five columns" id="logo-slogan">
-						
+					<div class="five columns" id="logo-slogan">						
 						<?php
 						$logo = get_field('logo');
 						if ($logo) {
