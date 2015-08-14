@@ -207,14 +207,13 @@ there.
 		left: 0px;
 	}
 	#tamsoat{
-		font-family: Myriad Pro;
-		/*font-family: Times New Roman, Tahoma, sans-serif;*/
-		font-size: 39.5px;
-		/*color: #ed1b57;*/
+		font-size: 27px;
+		color: #2E3192;
 		line-height: 2;	
 		margin: 0;
 		padding-left: 12px;
 		text-align: left;
+		font-weight: bold;
 	}
 
 	/*=======================================================
@@ -267,7 +266,7 @@ there.
 		display: block;
 		margin: 0 auto;
 	}
-	
+
 	footer #gioithieu .routine a:hover{
 		transform: scale(1.1);
 	}
@@ -319,13 +318,13 @@ there.
 	PAGE: trang chu
 	=======================================================*/
 	#huongung #video-lagan{
-/*		width: 547px;
-		margin-right: 20px;
-		margin-left: 20px;*/
+		/*		width: 547px;
+				margin-right: 20px;
+				margin-left: 20px;*/
 	}
 	#huongung #toihuongung{
-/*		width: 321px;
-		height: auto;*/
+		/*		width: 321px;
+				height: auto;*/
 	}
 	#huongung #toihuongung .top{
 		padding-bottom: 25px;
@@ -338,7 +337,7 @@ there.
 	}
 	#huongung #btn-toihuongung{
 		font-size: 32px;
-		
+
 		/*color: #d571ad;*/    
 		font-weight: bold;
 		background: url(images/btn-toihuongung.png) no-repeat transparent;    
@@ -423,6 +422,7 @@ there.
 	#camon-fb p .btn-dont-share img{	
 		float: left;
 	}
+
 	/*=======================================================
 	PAGE: hoi dap
 	=======================================================*/
@@ -493,7 +493,7 @@ there.
 	}
 	.tintuc-list .item a span{
 		color: #fff;
-		font-family: Myriad Hebrew;
+		font-family: Myriad Pro;
 		font-size: 15px;
 		position: absolute;
 		bottom: 0;
@@ -517,7 +517,7 @@ there.
 		text-align: center;
 	}
 	#paging li{
-		font-family: Myriad Hebrew;
+		font-family: Myriad Pro;
 		display: inline-block;
 		text-align: center;
 		margin: 0;
@@ -534,7 +534,6 @@ there.
 		color: #646565;
 	}
 	article{
-		font-family: Minion Pro;
 		font-size: 19px;
 		color: #000000;
 		height: 370px;
@@ -553,8 +552,6 @@ there.
 		font-size: 15px;
 		font-weight: normal;
 		overflow-x: hidden;
-		padding-left: 12px;
-		box-sizing: border-box;
 	}
 
 	article img{	
@@ -615,7 +612,7 @@ there.
 	}
 	#timhieubenh .one-third p a{
 		font-size: 14px;
-		
+
 		color: #000;
 
 		text-transform: uppercase;
@@ -668,7 +665,7 @@ there.
 	}
 	.lagan-form #logo-slogan p,
 	.lagan-form #logo-slogan .form_description{
-		
+
 		font-size: 13px;
 		color: #d9d4ea;	
 		width: 100%;
@@ -802,6 +799,7 @@ there.
 		display: inline-block;
 		margin-top: 43px;
 	}
+
 	#datcauhoi form input[type='text'], #datcauhoi form input[type='email']{
 		margin-bottom: 5px;
 		margin-left: 27px;
@@ -815,7 +813,7 @@ there.
 		font-size: 16px;
 	}
 	#camon-dch p.form-button{
-		margin-top: 5px;
+		margin-top: 60px;
 	}
 	#camon-dch a{
 		background-image: url(images/bg-ten-bv.png);
@@ -826,11 +824,13 @@ there.
 		display: block;
 		background-size: 100% 100%;
 		text-align: center;
-		border: none;
+
+		border:none;	
 		color: #1b1b1b;
-		font-size: 11px;
+		font-size: 13px;
 		line-height: 25px;
-		float: left;
+		float: left;	
+
 	}
 	#camon-dch button{
 		float: right;	
@@ -841,7 +841,6 @@ there.
 		width: 79px;
 		height: 25px;
 		font-weight: normal;
-		background-size: 100% 100%;
 	}
 	/*=======================================================
 	PAGE: cam on BV & NS
@@ -850,7 +849,7 @@ there.
 
 	}
 	#camon-bv-ns h1{
-		
+
 		font-size: 41.4px;
 		color: #2E3192;
 		text-align: center;
@@ -872,7 +871,7 @@ there.
 	}
 	#camon-bv-ns .camon-benh-vien a,
 	#camon-bv-ns .camon-nghe-si a{	
-		
+
 		font-size: 20px;
 		color: #fff;
 		text-transform: uppercase;
@@ -884,7 +883,7 @@ there.
 	=======================================================*/
 	#camon-bv h1,
 	#camon-ns h1{
-		
+
 		font-size: 30px;
 		color: #2E3192;
 		text-transform: uppercase;
@@ -931,7 +930,7 @@ there.
 	#camon-bv .gallery .gallery-item  .gallery-caption {
 		font-size: 18px;
 		color: #3538A2;
-		
+
 		font-weight: bold;
 		text-transform: uppercase;
 		background: rgba(255,255,255,0.6);
@@ -963,7 +962,7 @@ there.
 	}
 	#camon-ns button{
 		font-size: 15px;
-		
+
 		color: #d571ad;
 		font-weight: bold;
 		background: url(images/btn-toihuongung-small.png) no-repeat transparent;
@@ -1027,7 +1026,7 @@ there.
 	#camon-ns .gallery .gallery-item  .gallery-caption {
 		font-size: 18px;
 		color: #C72A91;
-		
+
 		font-weight: bold;
 		text-transform: uppercase;
 		background: rgba(255,255,255,0.6);
@@ -1035,7 +1034,7 @@ there.
 		top: 0;
 		bottom: 0;
 		right: 0;
-		left: 0;
+		left: 0;	    
 		margin: auto;
 		display: none;
 		padding-top: 55%;
@@ -1045,7 +1044,7 @@ there.
 		/*border: 2px solid #8C8787;*/
 	}
 	#page.nghe-si{
-		height: auto;	
+		height: auto;
 	}
 	#page.nghe-si #main{
 		height: auto;
@@ -1053,7 +1052,7 @@ there.
 	}
 	#camon-ns button{
 		font-size: 15px;
-		
+
 		color: #d571ad;
 		font-weight: bold;
 		background: url(images/btn-toihuongung-small.png) no-repeat transparent;
