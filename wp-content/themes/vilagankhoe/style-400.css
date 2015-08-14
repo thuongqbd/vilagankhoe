@@ -1,17 +1,31 @@
 
 @media (max-width: 399px) {
+	/*=======================================================
+	COMMON
+	=======================================================*/
+	/*=======================================================
+	Page 
+	=======================================================*/
 	body{
 		background: none;
 	}
 	.container{
 		width: 100%;
+		min-width: 320px;
 	}
-
+	#page{
+		height: auto;
+	}
+	/*=======================================================
+	PAGE section:  Header
+	=======================================================*/
 	header{
 		height: auto;
+		overflow: visible;
 	}
 	header .top {
 		height: auto;
+		overflow: visible;
 	}
 	header #logo h1, header #logo p{
 		text-align: center;
@@ -23,9 +37,78 @@
 		padding-top: 0;
 		position: relative;
 		height: 45px;
+		z-index: 1;
 	}
 	header form#search {		
 		top: -48px;
+		z-index: 99999;
+	}
+	/*=======================================================
+	PAGE section:  footer
+	=======================================================*/
+	footer,
+	body.home footer {
+		height: auto;
+		margin-top: 20px;
+		position: static;
+	}
+	footer #gioithieu h4{
+		text-align: center;
+	}
+	footer #gioithieu h4 a{
+		font-size: 20px;
+	}
+	footer #gioithieu .row{
+		height: auto;
+	}
+	footer #gioithieu .line{
+		display: none;
+	}
+	footer #gioithieu .routine{
+		position: static;
+	}
+	footer #gioithieu .routine .one-third{
+		width: 33%;
+		padding: 0 0.3%;
+	}
+	footer #gioithieu .routine .one-third img{
+		max-width: 100%;
+	}
+	footer #gioithieu .routine a{
+		width: 90px;
+		height: 90px;
+	}
+	footer .dvtctc {
+		margin: 0 auto;
+		height: 27px;
+		line-height: 1;
+	}
+	
+	footer .dvtctc .row .one-half{
+		width: 50%;
+		padding: 0 1px;
+		box-sizing: border-box;
+	}
+	footer .dvtctc .row .one-half:first-child img {
+		max-width: 30px;
+		position: relative;
+		top: -10px;
+	}
+	footer .dvtctc .one-half:nth-child(2) img {
+		position: relative;
+		top: -5px;
+	}
+	footer .dvtctc .row .one-half span{
+		font-size: 11px;
+	}
+	/*=======================================================
+	PAGE: trang chu
+	=======================================================*/
+	#huongung #video-lagan p{
+		margin: 0;
+	}
+	#huongung #toihuongung .top {    
+		border-bottom-color: #C72A91;
 	}
 	#tamsoat {
 		font-size: 27px;
@@ -39,6 +122,26 @@
 	#huongung .next{
 		display: none;
 	}
+	#main,
+	body.home #main{
+		height: auto;
+		overflow: visible;
+	}
+	#huongung{
+		background: none;
+		padding-right: 0;
+	}
+	#huongung #sohuongung strong {    
+		color: #C72A91;
+	}
+	#huongung #sohuongung span{
+		background: #fff;
+		color: #C72A91;
+	}
+	/*=======================================================
+	PAGE: tim hieu benh
+	=======================================================*/
+	
 }
 /* Larger than mobile */
 @media (min-width: 400px) {	
