@@ -393,7 +393,7 @@ there.
 		display: block;
 		background-color: #fff;
 		width: 180px;
-		color: #B3D5EE;
+		color: #46ADE2;
 		font-size: 17px;
 		text-align: center;
 		line-height: 2.4;
@@ -489,7 +489,7 @@ there.
 				display: block;
 				background-color: #fff;
 				width: 180px;
-				color: #C72A91;
+				color: #46ADE2;
 				font-size: 17px;
 				text-align: center;
 				line-height: 2.4;
@@ -1045,7 +1045,7 @@ there.
 	#camon-bv-ns h1{
 		font-family: Myriad Pro, Tahoma, sans-serif;
 		font-size: 19px;
-		color: rgb(54, 54, 56);
+		color: #2E3192;
 		text-align: center;
 		text-transform: uppercase;
 		margin: 0;
@@ -1083,7 +1083,7 @@ there.
 	#camon-ns h1{
 		font-family: Myriad Pro, Tahoma, sans-serif;
 		font-size: 30px;
-		color: rgb(54, 54, 56);
+		color: #2E3192;
 		text-transform: uppercase;
 		text-align: center;
 		margin-bottom: 26px;
@@ -1453,7 +1453,7 @@ there.
 		display: block;
 		background-color: #fff;
 		width: 180px;
-		color: #C72A91;
+		color: #46ADE2;
 		font-size: 17px;
 		text-align: center;
 		line-height: 2.4;
@@ -1550,7 +1550,7 @@ there.
 				display: block;
 				background-color: #fff;
 				width: 180px;
-				color: #C72A91;
+				color: #46ADE2;
 				font-size: 17px;
 				text-align: center;
 				line-height: 2.4;
@@ -2102,7 +2102,7 @@ there.
 	#camon-bv-ns h1{
 		
 		font-size: 19px;
-		color: rgb(54, 54, 56);
+		color: #2E3192;
 		text-align: center;
 		text-transform: uppercase;
 		margin: 0;
@@ -2140,7 +2140,7 @@ there.
 	#camon-ns h1{
 		
 		font-size: 30px;
-		color: rgb(54, 54, 56);
+		color: #2E3192;
 		text-transform: uppercase;
 		text-align: center;
 		margin-bottom: 26px;
@@ -2505,7 +2505,7 @@ PAGE: trang chu
 	display: block;
 	background-color: #C72A91;
 	width: 180px;
-	color: #fff;
+	color: #46ADE2;
 	font-size: 17px;
 	text-align: center;
 	line-height: 1;
@@ -2977,7 +2977,7 @@ PAGE: cam on BV & NS
 #camon-bv-ns h1{
 	
 	font-size: 41.4px;
-	color: rgb(54, 54, 56);
+	color: #2E3192;
 	text-align: center;
 	text-transform: uppercase;
 	margin: 10px 80px 20px 80px;
@@ -3011,7 +3011,7 @@ PAGE: cam on BV
 #camon-ns h1{
 	
 	font-size: 30px;
-	color: rgb(54, 54, 56);
+	color: #2E3192;
 	text-transform: uppercase;
 	text-align: center;
 	margin-bottom: 26px;
