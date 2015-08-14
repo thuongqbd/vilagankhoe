@@ -137,8 +137,10 @@ there.
 		height: 100px;	
 		overflow: hidden;
 	}
-	header #logo h1{
+	header #logo h1,
+	header #logo p{
 		margin: 0;
+		text-align: right;
 	}
 	header #logo img{	
 		height: 100px;
@@ -207,11 +209,10 @@ there.
 		left: 0px;
 	}
 	#tamsoat{
-		font-size: 27px;
+		font-size: 39.5px;
 		color: #2E3192;
 		line-height: 2;	
-		margin: 0;
-		padding-left: 12px;
+		margin: 0;		
 		text-align: left;
 		font-weight: bold;
 	}
@@ -317,15 +318,12 @@ there.
 	/*=======================================================
 	PAGE: trang chu
 	=======================================================*/
-	#huongung #video-lagan{
-		/*		width: 547px;
-				margin-right: 20px;
-				margin-left: 20px;*/
-	}
-	#huongung #toihuongung{
-		/*		width: 321px;
-				height: auto;*/
-	}
+	#huongung{
+		padding-right: 100px;
+		background-image: url(images/icon-next.png);
+		background-position: right 35%;
+		background-repeat: no-repeat;
+	}	
 	#huongung #toihuongung .top{
 		padding-bottom: 25px;
 		margin-bottom: 25px;
@@ -336,31 +334,33 @@ there.
 		padding-top: 4px; 
 	}
 	#huongung #btn-toihuongung{
-		font-size: 32px;
-
-		/*color: #d571ad;*/    
+		font-size: 30px;		
+		color: #C72A91;
 		font-weight: bold;
-		background: url(images/btn-toihuongung.png) no-repeat transparent;    
-		width: 286px;
-		height: 97px;    
+		background: url(images/btn-toihuongung.png) no-repeat transparent;
+		width: 100%;
+		height: 97px;
 		line-height: 114px;
 		padding: 0;
-		margin: 0;
+		margin: 0 auto;
 		border: none;
-		border-radius: 18px;        
+		border-radius: 18px;
+		display: block;
+		background-size: 100% 100%;
+		transition: all .2s ease-in-out;		
 	}
-	/*#huongung #btn-toihuongung:hover{
-		color: #C72A91;
+	#huongung #btn-toihuongung:hover{
 		background-image: url(images/btn-toihuongung-hover.png);
-	}*/
+		text-shadow: 1px 4px 6px #d571ad;
+		transform: scale(1.03);
+	}
 	#huongung #sohuongung{
 		background-repeat: no-repeat;
-		width: 270px;
+		width: 100%;
 		height: 95px;
 		display: block;
 		border: 3px solid #9EC0E5;
-		border-radius: 27px;
-		/*margin-left: 25px;*/
+		border-radius: 27px;		
 	}
 	#huongung #sohuongung strong{
 		font-family: Myriad Pro;
@@ -381,13 +381,7 @@ there.
 		line-height: 1;
 		margin: 0 auto;
 	}
-	#huongung .next{
-		width: 37px;
-		background-image: url(images/icon-next.png);
-		background-position: 50% 44%;
-		height: 301px;
-		background-repeat: no-repeat;
-	}
+	
 	#camon-fb{		
 		background-color: #fff;
 		padding: 6px;
@@ -549,9 +543,10 @@ there.
 	article .entry-content{
 		overflow: auto;
 		height: 329px;
-		font-size: 15px;
+		font-size: 11px;
 		font-weight: normal;
 		overflow-x: hidden;
+		background-color: #fff;
 	}
 
 	article img{	
@@ -610,12 +605,13 @@ there.
 		margin-bottom: 5px;
 		margin-left: 12px;
 	}
+	#timhieubenh .one-third p.forsp{
+		display: none;
+	}
 	#timhieubenh .one-third p a{
 		font-size: 14px;
-
 		color: #000;
-
-		text-transform: uppercase;
+		/*text-transform: uppercase;*/
 	}
 	#timhieubenh,
 	#timhieubenh div{
