@@ -1145,6 +1145,7 @@ there.
 		margin-right: auto;
 		max-height: 300px;
 		border: none !important;
+<<<<<<< HEAD
 	}
 	#camon-ns .show-huongung p{
 		display: inline-block;
@@ -1152,6 +1153,14 @@ there.
 		color: #46ADE2;
 	}
 <<<<<<< HEAD
+=======
+	}
+	#camon-ns .show-huongung p{
+		display: inline-block;
+		font-size: 18px;
+		color: #46ADE2;
+	}
+>>>>>>> origin/master
 /* Larger than mobile */
 @media (min-width: 400px) {
 =======
@@ -1254,9 +1263,12 @@ there.
 		/*font-family: Times New Roman, Tahoma, sans-serif;*/
 		/*font-size: 32px;*/
 		/*color: #ed1b57;*/
+<<<<<<< HEAD
 =======
 		color: #ed1b57;
 >>>>>>> Duyen fix style responsive
+=======
+>>>>>>> origin/master
 		line-height: 2;	
 		margin: 0;	
 		text-align: center;
@@ -2294,10 +2306,13 @@ header form#search input[type="submit"] {
 <<<<<<< HEAD
 	/*font-family: Myriad Pro;*/
 	/*font-family: Times New Roman, Tahoma, sans-serif;*/
+<<<<<<< HEAD
 =======
 	
 	
 >>>>>>> Duyen fix style responsive
+=======
+>>>>>>> origin/master
 	font-size: 39.5px;
 	/*color: #ed1b57;*/
 	line-height: 2;	
@@ -2447,10 +2462,13 @@ PAGE: trang chu
 <<<<<<< HEAD
     font-family: Myriad Pro, Tahoma, sans-serif;
     /*color: #d571ad;*/    
+<<<<<<< HEAD
 =======
 	
 	color: #d571ad;    
 >>>>>>> Duyen fix style responsive
+=======
+>>>>>>> origin/master
 	font-weight: bold;
 	background: url(images/btn-toihuongung.png) no-repeat transparent;    
 	width: 286px;
@@ -3088,9 +3106,12 @@ PAGE: cam on BV
 <<<<<<< HEAD
     background-image: url(images/btn-toihuongung-small-hover.png);
 	text-shadow: 1px 4px 6px #d571ad;
+<<<<<<< HEAD
 =======
 	background-image: url(images/btn-toihuongung-small-hover.png);
 >>>>>>> Duyen fix style responsive
+=======
+>>>>>>> origin/master
 }
 /*=======================================================
 PAGE: cam on Nghe si
