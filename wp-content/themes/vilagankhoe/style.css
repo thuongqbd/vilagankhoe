@@ -273,28 +273,30 @@ there.
 		transition: all .2s ease-in-out;
 		display: block;
 		margin: 0 auto;
+		background-size: 90% !important;
 	}
 
 	footer #gioithieu .routine a:hover{
 		transform: scale(1.1);
+		background-size: 90% !important;
 	}
 	footer #gioithieu .routine a.haytamsoat {
-		background: url(images/img-haytamsoat.png) no-repeat transparent center center;
+		background: url(images/cuc1-bt.png) no-repeat transparent center center;		
 	}
 	footer #gioithieu .routine a.haytamsoat:hover{	
-		background: url(images/img-haytamsoat-hover.png) no-repeat transparent center center;
+		background: url(images/cuc1-hieuung.png) no-repeat transparent center center;
 	}
 	footer #gioithieu .routine a.haychuatri{
-		background: url(images/img-haychuatri.png) no-repeat transparent center center;
+		background: url(images/cuc2-bt.png) no-repeat transparent center center;
 	}
 	footer #gioithieu .routine a.haychuatri:hover{	
-		background: url(images/img-haychuatri-hover.png) no-repeat transparent center center;
+		background: url(images/cuc2-hieuung.png) no-repeat transparent center center;
 	}
 	footer #gioithieu .routine a.cunghanhdong{			
-		background: url(images/img-cunghanhdong.png) no-repeat transparent center center;
+		background: url(images/cuc3-bt.png) no-repeat transparent center center;
 	}
 	footer #gioithieu .routine a.cunghanhdong:hover{		
-		background: url(images/img-cunghanhdong-hover.png) no-repeat transparent center center;
+		background: url(images/cuc3-hieuung.png) no-repeat transparent center center;
 	}
 	footer .dvtctc{		
 		margin: 0 auto;
