@@ -185,7 +185,8 @@ there.
 		margin: 2px 0;    
 	}
 	header nav #menu li:hover a,
-	header nav #menu li.current-menu-item a{
+	header nav #menu li.current-menu-item a,
+	header nav #menu li.current-post-ancestor a{
 		background-color: #F389B8;
 		border-radius: 15px;
 	}
@@ -353,7 +354,8 @@ there.
 		border-radius: 18px;
 		display: block;
 		background-size: 100% 100%;
-		transition: all .2s ease-in-out;		
+		transition: all .2s ease-in-out;
+		max-width: 286px;
 	}
 	#huongung #btn-toihuongung:hover{
 		background-image: url(images/btn-toihuongung-hover.png);
@@ -366,7 +368,10 @@ there.
 		height: auto;
 		display: block;
 		border: 3px solid #9EC0E5;
-		border-radius: 27px;		
+		border-radius: 27px;	
+		max-width: 286px;
+		display: block;
+		margin: 0 auto;
 	}
 	#huongung #sohuongung strong{
 		font-family: Myriad Pro;
@@ -875,7 +880,7 @@ there.
 	}
 	#camon-bv-ns .camon-benh-vien a,
 	#camon-bv-ns .camon-nghe-si a{	
-
+		height: 206px;
 		font-size: 20px;
 		color: #fff;
 		text-transform: uppercase;

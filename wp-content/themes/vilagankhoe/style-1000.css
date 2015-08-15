@@ -1,8 +1,70 @@
+@media (max-width: 959px){
+	.container{
+		max-width: 768px;
+	}
+	#page,
+	header, header .top,
+	#timhieubenh, #timhieubenh div,
+	body.home #main, #main,
+	article, article .entry-content,
+	#hoidap{
+		height: auto;
+	}
+	header nav #menu {   
+		width: 100%;    
+		background-size: 100% 100%;
+	}
+	header nav #menu li {		
+		margin-left: 10px;		
+	}
+	header nav #menu li:first-child {
+		margin-left: 5px;
+	}
+	#huongung {
+		padding-right: 0;
+		background: none;
+	}
+	#huongung #btn-toihuongung {
+		font-size: 26px;
+	}
+	article .entry-title{
+		margin-left: 0;
+	}
+	#dangky-test{
+		background: #756db2;
+		height: auto;
+		width: 100%;
+	}
+	#dangky-test .five,#dangky-test .seven{
+		width: 100%;
+		margin-left: 0;
+	}
+	#dangky-test .forsp{
+		display: block;
+	}
+	#dangky-test .forpc{
+		display: none;
+	}
+	.lagan-form #logo-slogan p, 
+	.lagan-form #logo-slogan .form_description{
+		margin: 0;
+	}
+	#dangky-test img.tip {
+		position: static;
+	}
+	#dangky-test .feup-pure-control-group {		
+		width: 50%;
+	}
+	#dangky-test form input:first-child {
+		margin-left: 0;
+		width: 95%;
+	}
+}
+
+
 /* Larger than desktop */
 @media (min-width: 1000px) {
-	.container{
-		width: 960px;
-	}
+
 }
 
 /* Larger than Desktop HD */

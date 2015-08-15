@@ -1,5 +1,5 @@
 
-@media (max-width: 399px) {
+@media (max-width: 480px) {
 	/*=======================================================
 	COMMON
 	=======================================================*/
@@ -62,7 +62,7 @@
 		text-align: center;
 	}
 	footer #gioithieu h4 a{
-		font-size: 20px;
+		font-size: 18px;
 	}
 	footer #gioithieu .row{
 		height: auto;
@@ -92,7 +92,7 @@
 	
 	footer .dvtctc .row .one-half{
 		width: 50%;
-		padding: 0 1px;
+		padding: 0 1%;
 		box-sizing: border-box;
 	}
 	footer .dvtctc .row .one-half img{
@@ -208,6 +208,11 @@
 		width: 100%;
 		margin-top: 0;
 	}
+	#dangky-test .line.clearfix {
+		border: none;
+		display: block;
+		height: 20px;
+	}
 	#ewd-feup-register-form-div .error {
 		position: static;
 		background-color: pink;
@@ -227,6 +232,45 @@
 	#datcauhoi form input[type='email']{
 		/*margin-left: 0;*/
 	}
+	#datcauhoi .ap-post-submission-message{
+		background-color: pink;
+		padding: 5px;
+		margin: 5px 0;
+	}
+	#camon-bv-ns h1{
+		font-size: 19px;
+		margin: 0;
+	}
+	#camon-bv h1, 
+	#camon-ns h1 {
+		font-size: 21px;	
+	}
+	#camon-bv .gallery .gallery-item,
+	#camon-bv .gallery .gallery-item .gallery-icon{
+		width: 100%;
+		height: auto;
+	}
+	#camon-bv img{
+		width: auto;
+		position: static;
+		max-width: 200px;
+	}
+	#camon-ns .gallery .gallery-item{
+		height: auto;
+	}
+	#camon-ns img{
+		position: static;
+	}
+	#camon-ns .gallery{
+		padding-bottom: 10px;
+	}
+	#camon-ns p{
+		margin: 0;
+	}
+	#gallery-4 img{
+		border: none !important;
+	}
+	
 }
 /* Larger than mobile */
 @media (min-width: 400px) {	
