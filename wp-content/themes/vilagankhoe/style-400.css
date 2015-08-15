@@ -153,10 +153,11 @@
 	=======================================================*/
 	#timhieubenh .one-third p.forpc,
 	#timhieubenh #show{
-		display: none;
+		display: none;		
 	}
 	#timhieubenh .one-third p.forsp{
 		display: block;
+		margin-left: 0;
 	}
 	/*=======================================================
 	PAGE: tin tuc
