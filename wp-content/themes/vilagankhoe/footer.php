@@ -38,7 +38,7 @@
 				</div>
 				<div class="one-half column">
 					<div>
-						<span>Nhà tài trợ: </span>
+						<span>Đơn vị tài trợ: </span>
 						<a href="http://www.roche.com/" target="_blank">
 							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo-dvtaitro.png" alt=""/>
 						</a>

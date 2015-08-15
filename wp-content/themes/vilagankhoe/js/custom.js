@@ -85,7 +85,24 @@ jQuery(document).ready(function () {
 			time: 500 // the speed time in ms
 		});
 	}
-
+	jQuery('.gallery-caption').hover(function(event){
+		jQuery(this).addClass('hover');
+	},function(event){
+		jQuery(this).removeClass('hover');
+	});
+	jQuery('.gallery-caption').click(function(event){
+		event.preventDefault();
+		if(jQuery(this).hasClass('hover')){
+			var item = jQuery(this).closest('.gallery-item');
+			if(item.length){
+				var link = item.find('a');
+				if(link.length)
+					window.location.href = link.attr('href');
+			}
+		}else{
+			jQuery(this).addClass('hover');
+		}
+	});
 });
 function fbshareCurrentPage()
 {

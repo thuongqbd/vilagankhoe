@@ -274,7 +274,9 @@
 	#gallery-4 img{
 		border: none !important;
 	}
-	
+	#camon-bv .gallery .gallery-item .gallery-caption {
+		padding-top: 20% !important;
+	}
 }
 /* Larger than mobile */
 @media (min-width: 400px) {	
