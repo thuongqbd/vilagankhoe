@@ -55,9 +55,39 @@
 	#dangky-test .feup-pure-control-group {		
 		width: 50%;
 	}
-	#dangky-test form input:first-child {
+	#dangky-test form input:first-child,
+	.lagan-form form select{
 		margin-left: 0;
 		width: 95%;
+	}
+	#dangky-test form input[type="button"], 
+	#dangky-test form input[type="submit"] {		
+		float: none;
+		margin-top: 30px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#datcauhoi{
+		width: 100%;
+	}
+	#datcauhoi.lagan-form form input{
+		width: auto;
+	}
+	#datcauhoi.lagan-form form input[type='submit']{
+		width: 194px;
+	}
+	#camon-bv-ns h1 {
+		font-size: 39px;
+	}
+	#camon-bv h1, #camon-ns h1{
+		font-size: 29px;
+	}
+	#camon-ns .gallery .gallery-item {		
+		width: 20%;
+		padding: 7px 9px;
+		box-sizing: border-box;
+		margin: 0;
 	}
 }
 
