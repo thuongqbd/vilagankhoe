@@ -114,6 +114,12 @@ there.
 	.container {
 		width: 960px;
 	}
+	.forsp{
+		display: none;
+	}
+	.forpc{
+		display: block;
+	}
 	#main{
 		height: 373px;
 		overflow: hidden;
@@ -570,7 +576,7 @@ there.
 		list-style-type: disc;    
 		margin-left: 0;    
 		line-height: 14px;	
-		color: #fff;
+		/*color: #fff;*/
 	}
 	#tintuc-khac ul li a{	
 		color: #fff;

@@ -42,7 +42,7 @@ get_header();
 									</a>
 								</p>
 								<p class="forsp">
-
+									<a href="<?php echo $img_src; ?>" data-lightbox="image-1">
 									<?php echo $post_obj->post_title; ?>
 									</a>
 								</p>

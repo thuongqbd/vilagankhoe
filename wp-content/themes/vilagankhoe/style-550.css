@@ -1,6 +1,4 @@
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
-	footer .dvtctc .one-half {		
-		width: 48%;		
-	}
+	
 }

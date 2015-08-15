@@ -16,6 +16,12 @@
 	#page{
 		height: auto;
 	}
+	.forpc{
+		display: none;
+	}
+	.forsp{
+		display: block;
+	}
 	/*=======================================================
 	PAGE section:  Header
 	=======================================================*/
@@ -89,6 +95,9 @@
 		padding: 0 1px;
 		box-sizing: border-box;
 	}
+	footer .dvtctc .row .one-half img{
+		margin-left: 5px;
+	}
 	footer .dvtctc .row .one-half:first-child img {
 		max-width: 30px;
 		position: relative;
@@ -97,6 +106,7 @@
 	footer .dvtctc .one-half:nth-child(2) img {
 		position: relative;
 		top: -5px;
+		padding: 0;
 	}
 	footer .dvtctc .row .one-half span{
 		font-size: 11px;
@@ -141,7 +151,82 @@
 	/*=======================================================
 	PAGE: tim hieu benh
 	=======================================================*/
+	#timhieubenh .one-third p.forpc,
+	#timhieubenh #show{
+		display: none;
+	}
+	#timhieubenh .one-third p.forsp{
+		display: block;
+	}
+	/*=======================================================
+	PAGE: tin tuc
+	=======================================================*/
+	article .entry-title {		
+		margin: 0;
+	}
+	article,
+	article .entry-content{
+		height: auto;
+	}
+	#tintuc-khac {
+		color: #000;
+	}
+	#tintuc-khac ul li a {
+		color: #000;
+		font-size: 14px;
+	}
+	/*=======================================================
+	PAGE: hoidap
+	=======================================================*/
+	#hoidap{
+		height: auto;
+	}
+	#hoidap .item .line {		
+		margin-left: 0;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+	}
+	.lagan-form{
+		background: #756db2;
+		width: auto;
+		height: auto;
+	}
+	#dangky-test img.tip {
+		position: static;
+		width: 100%;
+		height: auto;
+		margin: 10px 0;
+	}
+	#dangky-test img.tip{
+		position: static;
+		width: 100%;
+	}
 	
+	#dangky-test .feup-pure-control-group,
+	#dangky-test .feup-pure-control-group.first,
+	#dangky-test.lagan-form form input, #dangky-test.lagan-form form select{
+		width: 100%;
+		margin-top: 0;
+	}
+	#ewd-feup-register-form-div .error {
+		position: static;
+		background-color: pink;
+		margin: 10px 0;
+		padding: 5px;
+	}
+	#datcauhoi form .ap-form-field-wrapper:first-child, 
+	#datcauhoi form div.ap-form-field-wrapper:nth-child(2) {		
+		margin-top: 0;
+		width: 100%;
+	}
+	#datcauhoi .seven{
+		margin-top: 10px;		
+	}
+	
+	#datcauhoi form input[type='text'], 
+	#datcauhoi form input[type='email']{
+		/*margin-left: 0;*/
+	}
 }
 /* Larger than mobile */
 @media (min-width: 400px) {	
