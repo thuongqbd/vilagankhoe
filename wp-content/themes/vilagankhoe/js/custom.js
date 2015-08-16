@@ -24,7 +24,8 @@ jQuery(document).ready(function () {
 			};
 			dialog.dialog("open");
 			jQuery.post(MyAjax.ajaxurl, data, function (response) {
-				jQuery('#concurred_count').text(numeral(response).format('0,0'));
+				updateCounter(response);
+				//jQuery('#concurred_count').text(numeral(response).format('0,0'));
 			});
 		});
 //		$("#btn-toihuongung").button().on("click", function() {
@@ -81,9 +82,21 @@ jQuery(document).ready(function () {
 	}
 	if (jQuery("#concurred_count").length){
 		jQuery('#concurred_count').counterUp({
-			delay: 5, // the delay time in ms
-			time: 500 // the speed time in ms
-		});
+				delay: 5, // the delay time in ms
+				time: 500 // the speed time in ms
+			});
+		setTimeout(function(){ updateCounter(parseInt(jQuery('#concurred_count').text()),true);}, 1000);
+		
+		/*
+		if(jQuery('#concurred_count').text() == '0'){
+			jQuery('#concurred_count').text('0000');
+		}else{
+			jQuery('#concurred_count').counterUp({
+				delay: 5, // the delay time in ms
+				time: 500 // the speed time in ms
+			});
+		}
+		*/
 	}
 	jQuery('.gallery-caption').hover(function(event){
 		jQuery(this).addClass('hover');
@@ -114,6 +127,26 @@ function fbshareCurrentPage()
 	window.open("https://www.facebook.com/sharer/sharer.php?u=" + escape(href) + "&t=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
 	$("#camon-fb").dialog('close');
 	return false;
+}
+
+function updateCounter(concurred_count,first) {
+    //var concurred_count = parseInt(jQuery('#concurred_count').text()),
+    var    filler = '';
+    if (concurred_count > 0 && concurred_count < 1000) {
+        if (concurred_count < 10) {
+            filler = '000';
+		} else if (concurred_count < 100 && concurred_count >= 10) {
+            filler = '00';
+        } else if (concurred_count < 1000 && concurred_count >= 100) {
+            filler = '0';
+        }
+        jQuery("#concurred_count").text(filler + concurred_count);
+    } else if (concurred_count >= 1000){
+		jQuery("#concurred_count").text(numeral(concurred_count).format('0,0'));
+		
+	}else{
+        jQuery("#concurred_count").text('0000');
+    }
 }
 
 
