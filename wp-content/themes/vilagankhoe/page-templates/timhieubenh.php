@@ -37,7 +37,7 @@ get_header();
 								$img_src = $img[0];
 								?>
 								<p class="forpc">
-									<a href="javascrip:void(0)" data-src="<?php echo $img_src; ?>">
+									<a href="#" data-src="<?php echo $img_src; ?>">
 										<?php echo $post_obj->post_title; ?>
 									</a>
 								</p>

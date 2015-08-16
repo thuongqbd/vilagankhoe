@@ -40,10 +40,9 @@ wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri().'/js/waypoints.mi
 				<div id="camon-fb" class="camon " style="display:none;">
 					<div class="container">
 
-						<h1>  Cảm ơn bạn đã HƯỞNG ỨNG chương trình<br>
-							cùng hành động vì bệnh nhân viêm gan!</h1>
+						<h1>  <?php the_field('tk_title');?></h1>
 						<p>
-							Hãy chia sẻ để chương trình lan tỏa và ý nghĩa hơn
+							 <?php the_field('tk_content');?>
 						</p>
 						<div class="row">
 							<div class="one-half column">

@@ -1,6 +1,18 @@
+@media (max-width: 1024px){
+	body{	
+		background-image: url(images/background-1024.png);
+		
+	}
+	header #logo h1, header #logo p {
+		margin: 0;
+		text-align: right;
+	}
+}
 @media (max-width: 959px){
 	.container{
 		max-width: 768px;
+		padding: 0 12px;
+		box-sizing: border-box;
 	}
 	#page,
 	header, header .top,
@@ -10,22 +22,32 @@
 	#hoidap{
 		height: auto;
 	}
+	header{
+		margin-top: 40px;
+	}
 	header nav #menu {   
 		width: 100%;    
 		background-size: 100% 100%;
 	}
 	header nav #menu li {		
-		margin-left: 10px;		
+		margin-left: 5px;		
 	}
 	header nav #menu li:first-child {
 		margin-left: 5px;
 	}
+	header nav #menu li a{
+		padding: 0 10px;
+	}
+	
 	#huongung {
 		padding-right: 0;
 		background: none;
 	}
 	#huongung #btn-toihuongung {
-		font-size: 26px;
+		font-size: 20px;
+	}
+	#huongung #sohuongung strong {    
+		font-size: 50px;
 	}
 	article .entry-title{
 		margin-left: 0;
@@ -90,7 +112,11 @@
 		margin: 0;
 	}
 }
-
+@media (max-width: 768px){
+	body{	
+		background-image: url(images/background-768.png);
+	}
+}
 
 /* Larger than desktop */
 @media (min-width: 1000px) {

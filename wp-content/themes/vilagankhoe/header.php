@@ -27,7 +27,7 @@ global $post;
 			<header id="masthead" class="site-header" role="banner">
 				<div class="container">
 					<div class="row top">
-						<div class="one-third column " id="logo">							
+						<div class="five columns " id="logo">							
 							<?php if (is_front_page() || is_home()) : ?>
 								<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo.png" alt=""/></a></h1>
 							<?php else : ?>
@@ -35,7 +35,7 @@ global $post;
 							<?php endif;
 							?>
 						</div>
-						<div class="two-thirds column" id="search-nav">
+						<div class="seven columns" id="search-nav">
 							<form id="search" class="column offset-by-four" action="<?= get_permalink(82) ?>">
 								<input type="hidden" name="cx" value="partner-pub-008542593403486818317:fokhjyjrd0s" /> 
 								<input type="hidden" name="cof" value="FORID:10" /> 
