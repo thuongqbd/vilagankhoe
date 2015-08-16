@@ -18,73 +18,71 @@ wp_enqueue_script('lightbox-js', get_stylesheet_directory_uri() . '/libs/lightbo
 
 global $post;
 get_header();
+if ($post->post_parent === 0) {
+	$parent = $post->ID;
+	$pages = get_children(
+			array(
+				'post_parent' => $parent,
+				'post_type' => 'page',
+				'order' => 'ASC',
+				'orderby' => 'menu_order'));
+	$arr = $pages;
+	$current = reset($arr);
+	wp_redirect(get_permalink($current->ID));
+	$current = null;
+} else {
+	$parent = $post->post_parent;
+	$current = $post;
+}
 ?>
+
 
 <div id="main-content" class="main-content container">
 	<div id="primary" class="content-area">
-
-		<?php while (have_posts()) : the_post(); ?>
-			<div id="timhieubenh">
-				<div class="one-third column">
-					<?php
-					$listGalery = getGaleryFromPost($post);
-					if ($listGalery) {
-						foreach ($listGalery as $galery) {
-							$galery = $galery['ids'];
-							foreach ($galery as $id) {
-								$post_obj = get_post($id);
-								$img = wp_get_attachment_image_src($id, 'full');
-								$img_src = $img[0];
-								?>
-								<p class="forpc">
-									<a href="#" data-src="<?php echo $img_src; ?>">
-										<?php echo $post_obj->post_title; ?>
-									</a>
-								</p>
-								<p class="forsp">
-									<a href="<?php echo $img_src; ?>" data-lightbox="image-1">
-									<?php echo $post_obj->post_title; ?>
-									</a>
-								</p>
-								<?php
-							}
-						}
-					}
+		<div id="timhieubenh">
+			<div class="two-thirds column" id="show">				
+				<?php
+				while(have_posts()): the_post();
+				the_content();
+				endwhile;
+				?>							
+			</div>
+			<div class="one-third column">
+				<?php
+				wp_reset_query();
+				wp_reset_postdata();	
+				$pages = get_children(
+				array(
+					'post_parent' => $parent,
+					'post_type' => 'page',
+					'order' => 'ASC',
+					'orderby' => 'menu_order'));
+				foreach ($pages as $page) {					
 					?>
-				</div>
-				<div class="two-thirds column" id="show">				
-					<?php
-					if (!empty($galery) && count($galery) != 0) {
-						$attachment_id = $galery[0];
-						$post_obj = get_post($attachment_id);
-						$img = wp_get_attachment_image_src($id, 'full');
-						$img_src = $img[0];
-						?>
-						<a href="<?php echo $img_src; ?>" data-lightbox="image-tailieu">
-							<?php
-							echo wp_get_attachment_image($attachment_id, 'full', $icon = 1, $attr = array(
-								'id' => '1_1_main',
-							));
+					<p class="forpc" data-post_order="<?php echo $page->menu_order; ?>">
+						<a style="<?php echo $current->ID == $page->ID ? 'color:#ed1b57' : '' ?>" href="<?php echo get_the_permalink($page->ID); ?>" title="<?php get_the_title($page->ID); ?>">
+							<?php echo $page->menu_order . '. '.get_the_title($page->ID);
 							?>
 						</a>
-						<?php
-					}
-					?>							
-				</div>
+					</p>						
+					<?php
+				}
+				?>
 			</div>
-		<?php endwhile; ?>		
+			
+		</div>				
 	</div><!-- #primary -->
 </div><!-- #main-content -->
 <script type="text/javascript">
-	$ = jQuery;
-	if ($('#timhieubenh').length) {
-		$('#timhieubenh').find('p a[data-src]').click(function() {
-			$('#timhieubenh').find('p a[data-src]').css('color', '');
-			$(this).css('color', '#ed1b57');
-			var src = $(this).data('src');
-			$('#timhieubenh').find('#show img').attr('src', src);
-		});
-	}
+//	$ = jQuery;
+//	if ($('#timhieubenh').length) {
+//		$('#timhieubenh').find('p a[data-src]').click(function() {
+//			$('#timhieubenh').find('p a[data-src]').css('color', '');
+//			$(this).css('color', '#ed1b57');
+//			var src = $(this).data('src');
+//			$('#timhieubenh').find('#show img').attr('src', src);
+//		});
+//	}
 
 
 </script>

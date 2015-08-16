@@ -187,7 +187,8 @@ there.
 	}
 	header nav #menu li:hover a,
 	header nav #menu li.current-menu-item a,
-	header nav #menu li.current-post-ancestor a{
+	header nav #menu li.current-post-ancestor a,
+	header nav #menu li.current-page-ancestor a{
 		background-color: #F389B8;
 		border-radius: 15px;
 	}
@@ -637,6 +638,7 @@ there.
 	#timhieubenh,
 	#timhieubenh div{
 		height: 373px;
+		background: #fff;
 	}
 	#timhieubenh{	
 		overflow: hidden;	
@@ -644,6 +646,27 @@ there.
 	}
 	#timhieubenh div{	
 		overflow: auto;
+	}
+	#timhieubenh .two-thirds{
+		padding: 10px 5px;
+		font-size: 11px;
+	}
+	#timhieubenh .two-thirds p{
+		margin: 0;
+	}
+	#timhieubenh ul{
+		margin: 5px 10px;
+	}
+	#timhieubenh ul li{
+		list-style: circle;		
+	}
+	#timhieubenh .one-third{
+		margin-left: 0%;
+		float: left;
+	}
+	#timhieubenh .two-thirds{
+		margin-left: 0;
+		float: right;
 	}
 	/*=======================================================
 	PAGE: dang ky test
