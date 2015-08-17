@@ -1,5 +1,185 @@
 
 /* Larger than tablet */
 @media (min-width: 750px) {
+	body{
+		background-image: url(images/background.png);	
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	.container{
+		max-width: 768px;	
+		/*padding: 0 20px;*/
+	}
+	#page,
+	header, header .top,
+	#timhieubenh, #timhieubenh div,
+	body.home #main, #main,
+	article, article .entry-content,
+	#hoidap{
+		height: auto;
+	}
+	header{
+		margin-top: 40px;
+	}
+	header #search-nav {
+		position: static;
+		height: auto;
+		height: 127px;
+		padding-top: 62px;
+		box-sizing: border-box;
+	}
+	header form#search {
+		width: 210px;
+		top: -43px;
+	}
 	
+	header nav #menu {   
+		width: 100%;    
+		background-size: 100% 100%;
+	}
+	header nav #menu li {		
+		margin: 0 2px;		
+	}	
+	header nav #menu li a{
+		padding: 0 8px;
+		font-size: 12px;
+	}
+	footer #gioithieu h4{
+		text-align: left;
+	}
+	#huongung {
+		padding-right: 15px;
+		background-position: 100% 50%;
+	}
+	#huongung #btn-toihuongung {
+		font-size: 27px;
+		color: #C72A91;
+		font-weight: bold;
+		background: url(images/btn-toihuongung.png) no-repeat transparent;
+		width: 100%;
+		height: 97px;
+		line-height: 112px;
+		padding: 0;
+		margin: 0 auto;
+		border: none;
+		border-radius: 18px;
+		display: block;
+		background-size: 100% 100%;
+		transition: all .2s ease-in-out;
+		max-width: 286px;
+	}
+	#huongung #btn-toihuongung {
+		font-size: 18px;
+	}
+	#huongung #toihuongung .top {
+		border-bottom-color: #fff;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+	}
+	#huongung #sohuongung{
+		height: auto;
+	}
+	#huongung #sohuongung strong {    
+		font-size: 50px;
+		color: #fff;
+		line-height: 1;
+		height: auto;
+	}
+	#huongung #sohuongung span {
+		background: #C72A91;
+		color: #fff;
+		font-size: 13px;
+	}
+	
+	article .entry-title{
+		margin-left: 0;
+	}
+	#dangky-test{
+		background: #756db2;
+		height: auto;
+		width: 100%;
+	}
+	#dangky-test .five,#dangky-test .seven{
+		width: 100%;
+		margin-left: 0;
+	}
+	#dangky-test .forsp{
+		display: block;
+	}
+	#dangky-test .forpc{
+		display: none;
+	}
+	.lagan-form #logo-slogan p, 
+	.lagan-form #logo-slogan .form_description{
+		margin: 0;
+	}
+	#dangky-test img.tip {
+		position: static;
+	}
+	#dangky-test .feup-pure-control-group {		
+		width: 50%;
+	}
+	#dangky-test form input:first-child,
+	.lagan-form form select{
+		margin-left: 0;
+		width: 95%;
+	}
+	#dangky-test form input[type="button"], 
+	#dangky-test form input[type="submit"] {		
+		float: none;
+		margin-top: 30px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#datcauhoi{
+		width: 100%;
+	}
+	#datcauhoi.lagan-form form input{
+		width: auto;
+	}
+	#datcauhoi.lagan-form form input[type='submit']{
+		width: 194px;
+	}
+	#camon-bv-ns h1 {
+		font-size: 33px;
+	}
+	#camon-bv h1, #camon-ns h1{
+		font-size: 29px;
+	}
+	#camon-ns .gallery .gallery-item {		
+		width: 25%;
+		padding: 7px 9px;
+		box-sizing: border-box;
+		margin: 0;
+		height: 220px;
+	}
+	#camon-bv-ns .camon-benh-vien, #camon-bv-ns .camon-nghe-si{
+		height: 114px;
+	}
+	#camon-bv-ns .camon-benh-vien a, #camon-bv-ns .camon-nghe-si a {		
+		height: 114px;
+		padding: 49px 5px;		
+	}
+	#camon-bv img{
+		max-width: 100%;
+	}
+	.tintuc-list .item {
+		margin-bottom: 20px;
+		height: 152px;
+	}
+	.tintuc-list .item a img {
+		width: 100%;
+		height: 152px;
+	}
+	article .entry-content{
+		background-color: #fff;
+	}
+	/*#datcauhoi form .ap-form-field-wrapper:first-child, #datcauhoi form div.ap-form-field-wrapper:nth-child(2){
+		width: 50%;
+	}*/
+	footer #gioithieu h4 a {
+		font-size: 18px;
+		font-weight: bold;
+	}
 }

@@ -1,17 +1,344 @@
 
-@media (max-width: 480px) {
+@media (max-width: 399px) {
 	/*=======================================================
 	COMMON
 	=======================================================*/
 	/*=======================================================
 	Page 
-	=======================================================*/
-	body{
-		background: none;
-	}
+	=======================================================*/	
 	.container{
+		/*width: 100%;*/
+		/*max-width: 320px;*/
+	}
+	#page{
+		height: auto;
+	}
+	.forpc{
+		display: none;
+	}
+	.forsp{
+		display: block;
+	}
+	/*=======================================================
+	PAGE section:  Header
+	=======================================================*/
+	header{
+		height: auto;
+		overflow: visible;
+	}
+	header .top {
+		height: auto;
+		overflow: visible;
+	}
+	header #logo h1, header #logo p{
+		text-align: center;
+	}
+	header #logo img{
+		height: auto;
+	}
+	header #search-nav {
+		padding-top: 0;
+		position: relative;
+		height: 45px;
+		z-index: 1;
+	}
+	header form#search {		
+		top: -48px;
+		z-index: 99999;
+	}
+	#tamsoat {
+		font-size: 24px;
+	}
+	/*=======================================================
+	PAGE section:  footer
+	=======================================================*/
+	footer,
+	body.home footer {
+		height: auto;
+		margin-top: 20px;
+		position: static;
+	}
+	footer #gioithieu h4{
+		text-align: center;
+	}
+	footer #gioithieu h4 a{
+		font-size: 18px;
+	}
+	footer #gioithieu .row{
+		height: auto;
+	}
+	footer #gioithieu .line{
+		display: none;
+	}
+	footer #gioithieu .routine{
+		position: static;
+	}
+	footer #gioithieu .routine .one-third{
+		width: 33%;
+		padding: 0 0.3%;
+	}
+	footer #gioithieu .routine .one-third img{
+		max-width: 100%;
+	}
+	footer #gioithieu .routine a{
+		width: 90px;
+		height: 90px;
+	}
+	footer .dvtctc {
+		margin: 0 auto;
+		height: 27px;
+		line-height: 1;
+	}
+
+	footer .dvtctc .row .one-half{
+		width: 50%;
+		padding: 0 1%;
+		box-sizing: border-box;
+	}
+	footer .dvtctc .row .one-half img{
+		margin-left: 5px;
+	}
+	footer .dvtctc .row .one-half:first-child img {
+		max-width: 30px;
+		position: relative;
+		top: -10px;
+	}
+	footer .dvtctc .one-half:nth-child(2) img {
+		position: relative;
+		top: -5px;
+		padding: 0;
+	}
+	footer .dvtctc .row .one-half span{
+		font-size: 11px;
+	}
+	/*=======================================================
+	PAGE: trang chu
+	=======================================================*/
+	#huongung #video-lagan p{
+		margin: 0;
+	}
+	#huongung #toihuongung .top {    
+		border-bottom-color: #C72A91;
+	}
+
+
+	.dvtctc .one-half img{
+		max-width: 47px; 
+	}
+	.dvtctc .one-half:first-child img{
+		max-width:30px;
+	}
+	#huongung .next{
+		display: none;
+	}
+	#main,
+	body.home #main{
+		height: auto;
+		overflow: visible;
+	}
+	#huongung{
+		background: none;
+		padding-right: 0;
+	}
+	#huongung #sohuongung strong {    
+		color: #C72A91;
+	}
+	#huongung #sohuongung span{
+		background: #fff;
+		color: #C72A91;
+	}
+	/*=======================================================
+	PAGE: tim hieu benh
+	=======================================================*/
+	#timhieubenh h1.forsp{
+		font-size: 27px;
+	}
+	#timhieubenh .one-third{
+		margin-left: 0%;
+		float: left;
+		border-top: 1px solid red;
+		padding-top: 20px;
+	}
+	#timhieubenh .two-thirds{
+		padding: 10px 5px;
+		font-size: 11px;
+		margin-left: 0;
+		float: right;
+	}
+
+
+	/*=======================================================
+	PAGE: tin tuc
+	=======================================================*/
+	article .entry-title {		
+		margin: 0;
+		margin-bottom: 20px;
+	}
+	article,
+	article .entry-content{
+		height: auto;
+	}
+	#tintuc-khac {
+		color: #000;
+	}
+	#tintuc-khac ul li{
+		color: #000;
+	}
+	#tintuc-khac ul li a {
+		color: #000;
+		font-size: 14px;
+	}
+	/*=======================================================
+	PAGE: hoidap
+	=======================================================*/
+
+	#hoidap{
+		height: auto;
+	}
+	#hoidap .item .line {		
+		margin-left: 0;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+	}
+	.lagan-form{
+		background: #756db2;
+		width: auto;
+		height: auto;
+	}
+	#dangky-test img.tip {
+		position: static;
 		width: 100%;
-		min-width: 320px;
+		height: auto;
+		margin: 10px 0;
+	}
+	#dangky-test img.tip{
+		position: static;
+		width: 100%;
+	}
+
+	#dangky-test .feup-pure-control-group,
+	#dangky-test .feup-pure-control-group.first,
+	#dangky-test.lagan-form form input, #dangky-test.lagan-form form select{
+		width: 100%;
+		margin-top: 0;
+	}
+	#dangky-test .line.clearfix {
+		border: none;
+		display: block;
+		height: 20px;
+		width: 100%;
+	}
+	#dangky-test form input[type="button"], #dangky-test form input[type="submit"]{
+		background-position: center;
+	}
+	#ewd-feup-register-form-div .error {
+		position: static;
+		background-color: pink;
+		margin: 10px 0;
+		padding: 5px;
+	}
+	#datcauhoi form .ap-form-field-wrapper:first-child, 
+	#datcauhoi form div.ap-form-field-wrapper:nth-child(2) {		
+		margin-top: 0;
+		width: 100%;
+	}
+	#datcauhoi .seven{
+		margin-top: 10px;		
+	}
+
+	#datcauhoi form input[type='text'], 
+	#datcauhoi form input[type='email']{
+		/*margin-left: 0;*/
+	}
+	#datcauhoi .ap-post-submission-message{
+		background-color: pink;
+		padding: 5px;
+		margin: 5px 0;
+	}
+	#camon-bv-ns h1{
+		font-size: 16px;
+		margin: 20px 0;
+		font-weight: bold;
+	}
+	
+	#camon-bv h1, 
+	#camon-ns h1 {
+		font-size: 21px;	
+	}
+	#camon-bv .gallery .gallery-item,
+	#camon-bv .gallery .gallery-item .gallery-icon{
+		width: 100%;
+		height: auto;
+	}
+	#camon-bv img{
+		width: auto;
+		position: static;
+		max-width: 200px;
+	}
+	#camon-ns .gallery .gallery-item{
+		height: auto;
+		width: 50%;
+		padding: 5px;
+		box-sizing: border-box;
+		margin: 0;
+		height: 211px;
+	}
+	#camon-ns img{
+		position: static;
+	}
+	#camon-ns .gallery{
+		padding-bottom: 10px;
+	}
+	#camon-ns p{
+		margin: 0;
+	}
+	#gallery-4 img{
+		border: none !important;
+	}
+	#camon-bv .gallery .gallery-item .gallery-caption {
+		padding-top: 20% !important;
+	}
+	.tintuc-list .item{		
+		margin-bottom: 20px;		
+	}
+	.tintuc-list .item a {
+		height: auto;
+		display: block;		
+	}
+	.tintuc-list .item a span{
+		bottom: 6px;
+	}
+
+	.tintuc-list .item a img {
+		width: 100%;
+		height: auto;		
+	}
+	#camon-bv-ns .camon-benh-vien, #camon-bv-ns .camon-nghe-si {
+		height: 115px;
+		margin-bottom: 20px;
+	}
+	#camon-bv-ns .camon-benh-vien a, #camon-bv-ns .camon-nghe-si a {
+		font-size: 15px;
+		line-height: 2;
+		padding: 30px 5px;
+		height: 144px;		
+	}
+	#camon-bv-ns .camon-benh-vien a{
+		padding: 45px 5px;
+	}
+}
+/* Larger than mobile */
+@media (min-width: 400px) {	
+	/*=======================================================
+	COMMON
+	=======================================================*/
+	/*=======================================================
+	Page 
+	=======================================================*/	
+	.container{
+		/*width: 100%;*/
+		/*min-width: 360px;*/
+		max-width: 480px;
 	}
 	#page{
 		height: auto;
@@ -67,9 +394,9 @@
 	footer #gioithieu .row{
 		height: auto;
 	}
-	footer #gioithieu .line{
-		display: none;
-	}
+	/*	footer #gioithieu .line{
+			display: none;
+		}*/
 	footer #gioithieu .routine{
 		position: static;
 	}
@@ -89,7 +416,7 @@
 		height: 27px;
 		line-height: 1;
 	}
-	
+
 	footer .dvtctc .row .one-half{
 		width: 50%;
 		padding: 0 1%;
@@ -114,8 +441,15 @@
 	/*=======================================================
 	PAGE: trang chu
 	=======================================================*/
+
 	#huongung #video-lagan p{
 		margin: 0;
+	}
+	#huongung #btn-toihuongung {
+		font-size: 27px;        
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
 	}
 	#huongung #toihuongung .top {    
 		border-bottom-color: #C72A91;
@@ -151,22 +485,42 @@
 	/*=======================================================
 	PAGE: tim hieu benh
 	=======================================================*/
-	#timhieubenh .one-third p.forpc,
-	#timhieubenh #show{
-		display: none;		
+	#timhieubenh h1.forsp{
+		font-size: 27px;
 	}
-	#timhieubenh .one-third p.forsp{
-		display: block;
+	#timhieubenh .one-third{
+		margin-left: 0%;
+		float: left;
+		border-top: 1px solid red;
+		padding-top: 20px;
+	}
+	#timhieubenh .two-thirds{
+		padding: 10px 5px;
+		font-size: 11px;
 		margin-left: 0;
+		float: right;
 	}
-	#tintuc-khac ul li{
-		color: #000;
-	}
+
+
 	/*=======================================================
 	PAGE: tin tuc
 	=======================================================*/
+	.tintuc-list .item a{
+		height: auto;
+	}
+	.tintuc-list .item a img {
+		width: 100%;
+		height: auto;
+	}
+	.tintuc-list .item a span{
+		bottom:6px;
+	}
+	.tintuc-list .item{
+		margin-bottom: 20px; 
+	}
 	article .entry-title {		
 		margin: 0;
+		margin-bottom: 20px;
 	}
 	article,
 	article .entry-content{
@@ -175,10 +529,14 @@
 	#tintuc-khac {
 		color: #000;
 	}
+	#tintuc-khac ul li{
+		color: #000;
+	}
 	#tintuc-khac ul li a {
 		color: #000;
 		font-size: 14px;
 	}
+
 	/*=======================================================
 	PAGE: hoidap
 	=======================================================*/
@@ -205,17 +563,22 @@
 		position: static;
 		width: 100%;
 	}
-	
+
 	#dangky-test .feup-pure-control-group,
 	#dangky-test .feup-pure-control-group.first,
 	#dangky-test.lagan-form form input, #dangky-test.lagan-form form select{
 		width: 100%;
 		margin-top: 0;
 	}
+	#dangky-test form input[type="button"], 
+	#dangky-test form input[type="submit"]{
+		background-position: center;
+	}
 	#dangky-test .line.clearfix {
 		border: none;
 		display: block;
 		height: 20px;
+		width: 100%;
 	}
 	#ewd-feup-register-form-div .error {
 		position: static;
@@ -231,7 +594,7 @@
 	#datcauhoi .seven{
 		margin-top: 10px;		
 	}
-	
+
 	#datcauhoi form input[type='text'], 
 	#datcauhoi form input[type='email']{
 		/*margin-left: 0;*/
@@ -243,11 +606,11 @@
 	}
 	#camon-bv-ns h1{
 		font-size: 19px;
-		margin: 0;
+		margin: 20px 0;
 	}
 	#camon-bv h1, 
 	#camon-ns h1 {
-		font-size: 21px;	
+		font-size: 20px;	
 	}
 	#camon-bv .gallery .gallery-item,
 	#camon-bv .gallery .gallery-item .gallery-icon{
@@ -261,6 +624,11 @@
 	}
 	#camon-ns .gallery .gallery-item{
 		height: auto;
+		width: 50%;
+		padding: 5px;
+		box-sizing: border-box;
+		margin: 0;
+		max-height: 246px;
 	}
 	#camon-ns img{
 		position: static;
@@ -277,8 +645,16 @@
 	#camon-bv .gallery .gallery-item .gallery-caption {
 		padding-top: 20% !important;
 	}
-}
-/* Larger than mobile */
-@media (min-width: 400px) {	
-
+	#camon-bv-ns .camon-benh-vien, #camon-bv-ns .camon-nghe-si{
+		height: 135px;
+		margin-bottom: 20px;
+	}
+	#camon-bv-ns .camon-benh-vien a, #camon-bv-ns .camon-nghe-si a {		
+		font-size: 20px;
+		line-height: 2;		
+		padding: 50px 0;
+	}
+	#camon-bv-ns .camon-nghe-si a {
+		padding: 35px 0;
+	}
 }

@@ -100,19 +100,17 @@ there.
 	Page 
 	=======================================================*/
 	body{	
-		background-image: url(images/background.png);
-		background-size: 100% 100%;
-		background-repeat: no-repeat;
-		font-family: Myriad Pro;
+		font-family: Arial;
 		font-size: 13px;	
 	}
 	#page{
 		width: 100%;
-		height: 768px;
+		/*height: 768px;*/
 		/*overflow: hidden;*/
 	}
 	.container {
-		width: 960px;
+		/*width: 960px;*/
+		/*background: pink;*/
 	}
 	.forsp{
 		display: none;
@@ -120,19 +118,19 @@ there.
 	.forpc{
 		display: block;
 	}
-	#main{
+/*	#main{
 		height: 373px;
 		overflow: hidden;
-		/*background-color: yellow;*/
+		background-color: yellow;
 	}
 	body.home #main{
 		height: 327px;
-	}
+	}*/
 	/*=======================================================
 	PAGE section:  Header
 	=======================================================*/
 	header{
-		margin-top: 15px;
+		margin-top: 5px;
 		height: 180px;
 		margin-bottom: 5px;
 		overflow: hidden;
@@ -169,7 +167,7 @@ there.
 	}
 	header nav #menu li{
 		float: left;
-		margin-left: 20px;
+		margin: 0 8px;
 		height: 30px;
 		margin-bottom: 0;
 	}
@@ -203,7 +201,7 @@ there.
 		padding-left: 36px;
 		background-color: #fff;
 		border-radius: 20px;
-		width: 210px;
+		width: 100%;
 		height: 33px;
 		color: #333;
 		background-position: 5px 5px;
@@ -249,29 +247,30 @@ there.
 	footer #gioithieu h4 a:hover{
 		text-decoration: underline;
 	}
-	footer #gioithieu .row{
+/*	footer #gioithieu .row{
 		position: relative;
-		height: 122px;
-	}
-	footer #gioithieu .routine{
-		height: 122px;
-		box-sizing: border-box;
-		margin-top: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
-	}
-	footer #gioithieu .line{
+		height: 110px;
+	}*/
+/*	footer #gioithieu .line{
 		border-bottom: 4px dashed #94a9cb;
 		height: 61px;
 		width: 100%;
 		z-index: 1;
+	}*/
+	footer #gioithieu .routine{
+		/*height: 110px;*/
+		box-sizing: border-box;
+		/*margin-top: 0;*/
+		/*position: absolute;*/
+		/*top: 0;*/
+		width: 100%;
 	}
+	
 	footer #gioithieu .routine a{
 		z-index: 2;			
 		display: block;
 		width: 111px;
-		height: 122px;
+		height: 110px;
 		transition: all .2s ease-in-out;
 		display: block;
 		margin: 0 auto;
@@ -308,7 +307,7 @@ there.
 	footer .dvtctc .row .one-half *{
 		float: left;
 		color: #C72A91;
-		font-size: 20px;
+		font-size: 15px;
 		font-weight: bold;
 	}
 	footer .dvtctc .one-half img{
@@ -345,17 +344,17 @@ there.
 		padding-top: 4px; 
 	}
 	#huongung #btn-toihuongung{
-		font-size: 30px;		
+		font-size: 27px;		
 		color: #C72A91;
 		font-weight: bold;
 		background: url(images/btn-toihuongung.png) no-repeat transparent;
 		width: 100%;
 		height: 97px;
-		line-height: 114px;
+		line-height: 112px;
 		padding: 0;
 		margin: 0 auto;
 		border: none;
-		border-radius: 18px;
+		/*border-radius: 18px;*/
 		display: block;
 		background-size: 100% 100%;
 		transition: all .2s ease-in-out;
@@ -379,7 +378,7 @@ there.
 		box-sizing: border-box;
 	}
 	#huongung #sohuongung strong{
-		font-family: Myriad Pro;
+		
 		font-size: 75px;
 		color: #ffffff;
 		display: block;
@@ -408,6 +407,7 @@ there.
 		text-align: center;
 		width: 600px;
 		height: 250px;
+		font-weight: bold;
 	}
 	#camon-fb .container{
 		width: auto;
@@ -444,8 +444,9 @@ there.
 	#hoidap{
 		font-size: 15px;
 		line-height: 2;		
-		height: 405px;
+		/*height: 405px;*/
 		overflow: auto;
+		background: #fff;
 	}
 	#hoidap .item .hoi{
 		background-color: #f9cde0;
@@ -474,6 +475,7 @@ there.
 		text-align: justify;
 
 	}
+	
 	#hoidap .item .line{
 		border-bottom: 1px dashed #000;
 		margin: 0 5%;
@@ -499,8 +501,7 @@ there.
 		display: block;
 		width: 100%;
 		height: 159px;
-		overflow: hidden;
-		padding-top: 10px;
+		overflow: hidden;		
 	}
 
 	.tintuc-list .item a img{
@@ -509,7 +510,7 @@ there.
 	}
 	.tintuc-list .item a span{
 		color: #fff;
-		font-family: Myriad Pro;
+		
 		font-size: 15px;
 		position: absolute;
 		bottom: 0;
@@ -533,7 +534,7 @@ there.
 		text-align: center;
 	}
 	#paging li{
-		font-family: Myriad Pro;
+		
 		display: inline-block;
 		text-align: center;
 		margin: 0;
@@ -564,7 +565,7 @@ there.
 	}
 	article .entry-content{
 		overflow: auto;
-		height: 329px;
+		/*height: 329px;*/
 		font-size: 11px;
 		font-weight: normal;
 		overflow-x: hidden;
@@ -635,24 +636,33 @@ there.
 		color: #000;
 		/*text-transform: uppercase;*/
 	}
-	#timhieubenh,
+/*	#timhieubenh,
 	#timhieubenh div{
 		height: 373px;
 		background: #fff;
-	}
+	}*/
 	#timhieubenh{	
 		overflow: hidden;	
 		padding-bottom: 10px;
 	}
-	#timhieubenh div{	
+	#timhieubenh div.one-third,
+	#timhieubenh div.two-thirds{	
 		overflow: auto;
+	}
+	#timhieubenh .one-third{
+		margin-left: 0%;
+		float: left;
 	}
 	#timhieubenh .two-thirds{
 		padding: 10px 5px;
-		font-size: 11px;
+		font-size: 14px;
+		margin-left: 0;
+		float: right;
+		
 	}
 	#timhieubenh .two-thirds p{
 		margin: 0;
+		
 	}
 	#timhieubenh ul{
 		margin: 5px 10px;
@@ -660,24 +670,12 @@ there.
 	#timhieubenh ul li{
 		list-style: circle;		
 	}
-	#timhieubenh .one-third{
-		margin-left: 0%;
-		float: left;
-	}
-	#timhieubenh .two-thirds{
-		margin-left: 0;
-		float: right;
-	}
+	
+	
 	/*=======================================================
 	PAGE: dang ky test
 	=======================================================*/
-	body.page-template-dangky #tamsoat,
-	body.page-template-dangky footer .container,
-	body.page-template-datcauhoi #tamsoat,
-	body.page-template-datcauhoi footer .container{
-		width: 889px;
-		margin: 0 auto;
-	}
+	
 	.lagan-form{
 		/*background-color: #756db2;*/
 		padding-left: 16px;
@@ -692,7 +690,7 @@ there.
 	}
 	.lagan-form form input,
 	.lagan-form form select{
-		width: 214px;
+		width: 200px;
 		height: 33px;
 		/*margin-left: 54px;*/
 		margin-bottom: 0;
@@ -789,9 +787,9 @@ there.
 		margin: 0;
 		margin-bottom: 15px;
 	}
-	#camon-dk p,
-	#camon-dch p{
-		font-size: 15px;
+	#camon-dk p
+	{
+		font-size: 16px;
 		margin: 0;
 		color: #dbdada;
 	}
@@ -837,6 +835,9 @@ there.
 		padding-top: 10px;
 		padding-bottom: 10px;
 		margin-bottom: 0;
+	}
+	#camon-dch p{
+		font-size: 15px;
 	}
 	/*#datcauhoi form .ap-form-field-wrapper.first{
 		margin-top: 43px;
@@ -907,11 +908,10 @@ there.
 	#camon-bv-ns .camon-benh-vien,
 	#camon-bv-ns .camon-nghe-si{
 		background-image: url(images/bg-camon-bv.png);
-		background-repeat: no-repeat;    
-		height: 206px;
-		line-height: 206px;
-		background-size: 100% 100%;
-		text-align: center;
+		background-repeat: no-repeat;
+		height: auto;
+		background-size: 100%;
+		text-align: center;		
 	}
 	#camon-bv-ns .camon-nghe-si{
 		background-image: url(images/bg-camon-ns.png);
@@ -924,6 +924,7 @@ there.
 		text-transform: uppercase;
 		line-height: 206px;
 		display: block;
+		box-sizing: border-box;
 	}
 	/*=======================================================
 	PAGE: cam on BV

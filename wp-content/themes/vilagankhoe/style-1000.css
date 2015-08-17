@@ -1,127 +1,132 @@
-@media (max-width: 1024px){
-	body{	
-		background-image: url(images/background-1024.png);
-		
-	}
-	header #logo h1, header #logo p {
-		margin: 0;
-		text-align: right;
-	}
-}
-@media (max-width: 959px){
-	.container{
-		max-width: 768px;
-		padding: 0 12px;
-		box-sizing: border-box;
-	}
-	#page,
-	header, header .top,
-	#timhieubenh, #timhieubenh div,
-	body.home #main, #main,
-	article, article .entry-content,
-	#hoidap{
-		height: auto;
-	}
-	header{
-		margin-top: 40px;
-	}
-	header nav #menu {   
-		width: 100%;    
+/* Larger than desktop */
+@media (min-width: 1000px) {
+	body{
 		background-size: 100% 100%;
 	}
-	header nav #menu li {		
-		margin-left: 5px;		
+	#page{
+		width: 100%;
+		height: 768px;
+		/*overflow: hidden;*/
 	}
-	header nav #menu li:first-child {
-		margin-left: 5px;
+	.container{
+		max-width: 960px;
+		/*max-width: 960px;*/
+		/*min-width: 960px;*/
+	}	
+	#main{
+		height: 373px;
+		overflow: hidden;
+		/*background-color: yellow;*/
 	}
-	header nav #menu li a{
-		padding: 0 10px;
+	body.home #main{
+		height: 327px;
+	}
+	header #logo img{
+		height: 100px;
+	}
+	header nav #menu li a {
+		padding: 0 15px;
+		font-weight: bold;
+	}
+	header nav #menu li {
+		margin: 0 5px;
+	}
+	#tamsoat {
+		font-size: 39.5px;
 	}
 	
 	#huongung {
-		padding-right: 0;
-		background: none;
+		padding-right: 70px;
+		background-image: url(images/icon-next.png);
+		background-position: 100% 41%;
+		background-repeat: no-repeat;
+	}
+	#huongung #sohuongung span{
+		font-size: 17px;
+	}
+	#timhieubenh,
+	#timhieubenh div{
+		height: 373px;
+		background: #fff;
+	}
+	body.page-template-dangky #tamsoat,	
+	body.page-template-datcauhoi #tamsoat{
+		width: 889px;
+		margin: 0 auto;
+	}
+	#camon-bv-ns .camon-benh-vien, #camon-bv-ns .camon-nghe-si {
+		height: 150px;
+	}
+	#camon-bv-ns .camon-benh-vien a, #camon-bv-ns .camon-nghe-si a {
+		height: 150px;
+		padding: 64px 5px;
+		font-size: 17px;
+	}
+	#camon-bv .gallery .gallery-item{
+		width: 20%;
+	}
+	#camon-ns .gallery .gallery-item {
+		width: 20%;
+	}
+	.tintuc-list .item {
+		margin-bottom: 20px;
+		height: 176px;
+		overflow: hidden;
+	}
+	.tintuc-list .item a{
+		height: 176px;
+	}
+	.tintuc-list .item a img {
+		width: 100%;
+		height: 176px;
+	}
+	.tintuc-list .item a span {
+		bottom: 0;
+	}
+	article .entry-content{		
+		height: 329px;
+	}
+	#hoidap{
+		height: 405px;
 	}
 	#huongung #btn-toihuongung {
-		font-size: 20px;
+		font-size: 23px;
+		line-height: 5;
 	}
-	#huongung #sohuongung strong {    
-		font-size: 50px;
+	#tintuc-khac, 
+	#tintuc-khac ul li, 
+	#tintuc-khac ul li a {
+		color: #fff;
 	}
-	article .entry-title{
-		margin-left: 0;
+	footer #gioithieu h4 a {
+		font-size: 19px;		
 	}
-	#dangky-test{
-		background: #756db2;
-		height: auto;
-		width: 100%;
-	}
-	#dangky-test .five,#dangky-test .seven{
-		width: 100%;
-		margin-left: 0;
-	}
-	#dangky-test .forsp{
-		display: block;
-	}
-	#dangky-test .forpc{
-		display: none;
-	}
-	.lagan-form #logo-slogan p, 
-	.lagan-form #logo-slogan .form_description{
-		margin: 0;
-	}
-	#dangky-test img.tip {
-		position: static;
-	}
-	#dangky-test .feup-pure-control-group {		
-		width: 50%;
-	}
-	#dangky-test form input:first-child,
-	.lagan-form form select{
-		margin-left: 0;
-		width: 95%;
-	}
-	#dangky-test form input[type="button"], 
-	#dangky-test form input[type="submit"] {		
-		float: none;
-		margin-top: 30px;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	#datcauhoi{
-		width: 100%;
-	}
-	#datcauhoi.lagan-form form input{
-		width: auto;
-	}
-	#datcauhoi.lagan-form form input[type='submit']{
-		width: 194px;
-	}
-	#camon-bv-ns h1 {
-		font-size: 39px;
-	}
-	#camon-bv h1, #camon-ns h1{
-		font-size: 29px;
-	}
-	#camon-ns .gallery .gallery-item {		
-		width: 20%;
-		padding: 7px 9px;
-		box-sizing: border-box;
-		margin: 0;
-	}
-}
-@media (max-width: 768px){
-	body{	
-		background-image: url(images/background-768.png);
-	}
-}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {
-
 }
 
 /* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+	#huongung {
+		padding-right: 70px;
+		background-image: url(images/icon-next.png);
+		background-position: 100% 35%;
+		background-repeat: no-repeat;
+	}
+	#huongung #sohuongung span {
+		font-size: 20px;
+	}
+	header nav #menu li a{
+		font-size: 14px;
+	}
+	header nav #menu li {
+		margin: 0 10px;
+	}
+	#huongung #btn-toihuongung {
+		font-size: 28px;
+		line-height: 4;
+	}
+	footer #gioithieu h4 a {
+		font-size: 22px;
+	}
+}
+	
+}

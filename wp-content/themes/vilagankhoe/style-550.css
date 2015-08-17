@@ -1,4 +1,103 @@
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
-	
+	.forsp{
+		display: none;
+	}
+	.container{
+		max-width: 480px;
+		/*min-width: 440px;*/
+	}
+	#huongung #btn-toihuongung{
+		font-size: 13px;
+	}
+	header form#search {
+		width: 175px;
+	}
+	header #search-nav {
+		padding-top: 35px;
+	}
+	#huongung #sohuongung{
+		width: 100%;
+		border-radius: 10px;
+	}
+	#huongung #sohuongung strong{
+		font-size: 30px;
+		height: 23px;
+	}
+	#huongung #sohuongung span{
+		font-size: 10px;
+		width: 80%;
+	}
+	footer #gioithieu .row{
+		position: relative;
+		height: 110px;
+	}
+	footer #gioithieu h4 a {
+		font-size: 17px;
+	}
+	footer #gioithieu .line{
+		border-bottom: 4px dashed #94a9cb;
+		height: 45px;
+		width: 100%;
+		z-index: 1;
+	}
+	footer #gioithieu .routine{
+		height: 90px;
+		box-sizing: border-box;
+		margin-top: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	footer #gioithieu .routine .one-third{
+		margin: 0;
+	}
+	footer .dvtctc .row .one-half{
+		margin: 0;
+	}
+	#timhieubenh .one-third{
+		border-top: none;
+	}
+	#logo-slogan .forsp{
+		display: block;
+	}
+	#dangky-test .feup-pure-control-group.first {
+		margin-top: 43px;
+	}
+	#dangky-test .feup-pure-control-group, 
+	#dangky-test .feup-pure-control-group.first{
+		width: 50%;
+	}
+	#dangky-test.lagan-form form input, 
+	#dangky-test.lagan-form form select{
+		width: 95%;
+	}
+	#datcauhoi.lagan-form #logo-slogan .form_description {
+		font-size: 13px;
+	}
+	#camon-bv-ns .camon-benh-vien a, #camon-bv-ns .camon-nghe-si a {
+		font-size: 14px;
+		color: #fff;
+		text-transform: uppercase;
+		line-height: 1.5;
+		padding: 0;
+		height: 62px;
+		padding: 25px 5px;
+		box-sizing: border-box;
+	}
+	#camon-bv .gallery .gallery-item{
+		width: 50%;
+	}
+	.tintuc-list .item {
+		margin-bottom: 20px;
+		height: 165px;
+	}
+	.tintuc-list .item {
+		margin-bottom: 20px;
+		height: 118px;
+	}
+	.tintuc-list .item a img {
+		width: 100%;
+		height: 113px;
+	}
 }
