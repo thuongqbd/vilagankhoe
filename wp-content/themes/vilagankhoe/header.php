@@ -20,6 +20,16 @@ global $post;
 		<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/html5.js"></script>
 		<![endif]-->
 		<?php wp_head(); ?>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-66410707-1', 'auto');
+			ga('send', 'pageview');
+
+		</script>
 	</head>
 
 	<body <?php body_class(); ?>>		
@@ -36,7 +46,7 @@ global $post;
 							?>
 						</div>
 						<div class="seven columns" id="search-nav">
-							<form id="search" class="column offset-by-four" action="<?= get_permalink(82) ?>">
+							<form id="search" class="column offset-by-four" action="<?= get_permalink(89) ?>">
 								<input type="hidden" name="cx" value="partner-pub-008542593403486818317:fokhjyjrd0s" /> 
 								<input type="hidden" name="cof" value="FORID:10" /> 
 								<input type="hidden" name="ie" value="ISO-8859-1" /> 

@@ -70,7 +70,7 @@ get_header();
 					<?php the_content(); ?>
 					<div>
 						<button value="" id="btn-toihuongung">Tôi hưởng ứng</button>
-						<span>Đã có <strong id="concurred_count" class="number .integers">5,035</strong> người hưởng ứng chương trình</span>
+						<span>Đã có <strong id="concurred_count" class="number .integers"><?= number_format_i18n(get_post_meta(get_option('page_on_front'), 'concurred_count', true), 0); ?></strong> người hưởng ứng chương trình</span>
 					</div>
 				</div>
 				<div id="camon-fb" class="camon " style="display:none;">
