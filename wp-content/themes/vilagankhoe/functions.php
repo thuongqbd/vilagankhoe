@@ -110,8 +110,8 @@ add_action( 'wp_ajax_nopriv_upload_avatar', 'upload_avatar_function' ); // need 
 function upload_avatar_function(){
 	check_ajax_referer( 'vilagankhoe', 'security' );
 	$wp_upload_dir = wp_upload_dir();
-	$upload_dir = $wp_upload_dir['basedir']."/avatar/";
-	$upload_url = $wp_upload_dir['baseurl']."/avatar/";
+	$upload_dir = $wp_upload_dir['basedir']."/avatars/";
+	$upload_url = $wp_upload_dir['baseurl']."/avatars/";
 	
 	$imgUrl = $_POST['imgUrl'];
 	// original sizes
@@ -207,7 +207,8 @@ function upload_avatar_function(){
 			'action'=>'download_avatar',
 			'pic_url' => $pic_url
 		);
-		
+		$upload_avatar_page_id = get_option( 'upload_avatar_page_id', 1 );
+		add_post_meta($upload_avatar_page_id, 'avatars', $pic_url);
 		$response = Array(
 				"status" => 'success',
 				"url" => $pic_url,
@@ -249,8 +250,8 @@ add_action( 'wp_ajax_nopriv_download_avatar', 'download_avatar_function' ); // n
 function download_avatar_function(){
 	check_ajax_referer( 'vilagankhoe', 'security' );
 	$wp_upload_dir = wp_upload_dir();
-	$upload_dir = $wp_upload_dir['basedir']."/avatar/";
-	$upload_url = $wp_upload_dir['baseurl']."/avatar/";
+	$upload_dir = $wp_upload_dir['basedir']."/avatars/";
+	$upload_url = $wp_upload_dir['baseurl']."/avatars/";
 	
 	//get filedata
 	$file_url = $_GET['pic_url'];
@@ -312,3 +313,94 @@ function download_avatar_function(){
 	readfile("{$file_url}");
 	exit();
 }
+
+/* ======================= them phan quan ly avatar ===================*/
+function render_meta_box_content() 
+{
+	$upload_avatar_page_id = get_option( 'upload_avatar_page_id', 1 );
+	?>
+	<div class='list-avatar'>
+		<?php
+		if($upload_avatar_page_id){
+			$list_avatars = get_post_meta ( $upload_avatar_page_id, 'avatars');
+			if($list_avatars){
+				wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/libs/slick/slick.css', array());
+				wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/libs/slick/slick-theme.css', array());
+				wp_enqueue_script('slick-js', get_stylesheet_directory_uri() . '/libs/slick/slick.min.js', array('jquery'), false, true);
+				?>
+				<div class="slick-avatar">
+					<?php for ($i = count($list_avatars)-1; $i >= 0; $i--){?>
+					<div class="slick-slide" style="padding: 10px;">
+						<img data-lazy="<?= $list_avatars[$i]?>" width="200">
+					</div>			
+					<?php }?>				
+				</div>
+				<script type="text/javascript">
+					jQuery(document).ready(function(){
+						jQuery('.slick-avatar').slick({
+							lazyLoad: 'ondemand',
+							slidesToShow: 3,
+							responsive: [
+							  {
+								breakpoint: 768,
+								settings: {
+								  arrows: false,
+								  slidesToShow: 3
+								}
+							  },
+							  {
+								breakpoint: 480,
+								settings: {
+								  arrows: false,
+								  slidesToShow: 3
+								}
+							  }
+							]
+						});
+					});
+				</script>
+				<?php
+			}
+		}	
+		?>		  
+	</div>
+	<?php
+
+}
+function myplugin_add_meta_box() {
+	global $post;
+	$upload_avatar_page_id = get_option( 'upload_avatar_page_id', 1 );
+	if($post->ID == $upload_avatar_page_id){
+		add_meta_box( 
+				 'some_meta_box_name'
+				,__( 'Some Meta Box Headline')
+				,'render_meta_box_content'
+				,'page' 
+				,'advanced'
+				,'high'
+			);
+	}
+}
+
+if(is_admin()){
+	add_action( 'add_meta_boxes', 'myplugin_add_meta_box' );
+}
+/* ======================= ==================== ===================*/
+
+/* ======================= them setting avatar page id ===================*/
+$new_general_setting = new new_general_setting();
+
+class new_general_setting {
+    function new_general_setting( ) {
+        add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+    }
+    function register_fields() {
+        register_setting( 'general', 'upload_avatar_page_id');
+        add_settings_field('upload_avatar_page_id_setting-id', '<label for="upload_avatar_page_id">'.__('Upload avatar page ID?').'</label>' , array(&$this, 'fields_html') , 'general' );
+    }
+    function fields_html() {
+        $value = get_option( 'upload_avatar_page_id', '' );
+        echo '<input type="text" id="upload_avatar_page_id" name="upload_avatar_page_id" value="' . $value . '" />';
+    }
+}
+/* ======================= =========================== ===================*/

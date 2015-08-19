@@ -97,6 +97,52 @@ get_header();
 					</div>
 
 				</div>
+				<?php $upload_avatar_page_id = get_option( 'upload_avatar_page_id', 1 );?>
+				<div class='list-avatar'>
+					<?php
+					if($upload_avatar_page_id){
+						$list_avatars = get_post_meta ( $upload_avatar_page_id, 'avatars');
+						if($list_avatars){
+							wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/libs/slick/slick.css', array());
+							wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/libs/slick/slick-theme.css', array());
+							wp_enqueue_script('slick-js', get_stylesheet_directory_uri() . '/libs/slick/slick.min.js', array('jquery'), false, true);
+							?>
+							<div class="slick-avatar">
+								<?php for ($i = count($list_avatars)-1; $i >= 0; $i--){?>
+								<div class="slick-slide" style="padding: 10px;">
+									<img data-lazy="<?= $list_avatars[$i]?>" width="100">
+								</div>			
+								<?php }?>				
+							</div>
+							<script type="text/javascript">
+								jQuery(document).ready(function(){
+									jQuery('.slick-avatar').slick({
+										lazyLoad: 'ondemand',
+										slidesToShow: 3,
+										responsive: [
+										  {
+											breakpoint: 768,
+											settings: {
+											  arrows: false,
+											  slidesToShow: 3
+											}
+										  },
+										  {
+											breakpoint: 480,
+											settings: {
+											  arrows: false,
+											  slidesToShow: 3
+											}
+										  }
+										]
+									});
+								});
+							</script>
+							<?php
+						}
+					}	
+					?>		  
+				</div>
 			</div>
 		<?php
 			endwhile;
