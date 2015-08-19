@@ -408,36 +408,25 @@ there.
 		width: 600px;
 		height: 250px;
 		font-weight: bold;
+	    border: 3px solid #46ADE2;
 	}
-	#camon-fb .container{
-		width: auto;
+	#camon-fb.one-half{
+		float: left;
+		width: 50%;
+		padding: 0 1%;
+		box-sizing: border-box;
 	}
 	#camon-fb h1{			
-		font-size: 22px;
-		color: #9cc0e6;
+		font-size: 20px;
+		color: #C72A91;
 		text-transform: uppercase;
 		margin-top: 20px;
+		font-weight: bold;
 	}
 	#camon-fb p{
-		color: #f6bdd6;
-		/*font-size: 28px;*/
-		font-size: 20px;
-
+		color: #44ADE2;
+		font-size: 19px;
 	}
-	
-	#camon-fb a{
-		width: 193px;
-		height: 67px;
-		display: block;
-	}
-	#camon-fb .btn-share{	
-		float: right;
-	}
-	#camon-fb .btn-dont-share{	
-		width: 192px;
-		float: left;
-	}
-
 	/*=======================================================
 	PAGE: hoi dap
 	=======================================================*/

@@ -147,6 +147,22 @@
 		background: #fff;
 		color: #C72A91;
 	}
+	#camon-fb .one-half{
+	    width: 50%;
+    	padding: 1%;
+	}
+	#camon-fb .one-half a
+	{
+		display: inline-block;
+		margin: 0 auto;
+	    height: 67px
+	}
+	#camon-fb h1 {
+    	font-size: 14px;
+    }
+    #camon-fb p {	 
+	    font-size: 15px;
+	}
 	/*=======================================================
 	PAGE: tim hieu benh
 	=======================================================*/
@@ -446,10 +462,7 @@
 		margin: 0;
 	}
 	#huongung #btn-toihuongung {
-		font-size: 27px;        
-		width: 100%;
-		height: 50px;
-		line-height: 50px;
+		
 	}
 	#huongung #toihuongung .top {    
 		border-bottom-color: #C72A91;
@@ -481,6 +494,27 @@
 	#huongung #sohuongung span{
 		background: #fff;
 		color: #C72A91;
+	}
+	#camon-fb .one-half{
+	    width: 50%;
+	    padding: 1%;
+	    box-sizing: border-box;
+        margin: 0;
+	}
+	#camon-fb .one-half a
+	{
+		display: inline-block;
+    	margin: 0 auto;
+    	height: 47px;
+	}
+	#camon-fb .one-half img{
+		
+	}
+	#camon-fb h1 {
+    	font-size: 14px;
+    }
+    #camon-fb p {	 
+	    font-size: 15px;
 	}
 	/*=======================================================
 	PAGE: tim hieu benh

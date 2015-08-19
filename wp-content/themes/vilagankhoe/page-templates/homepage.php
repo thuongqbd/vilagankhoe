@@ -38,8 +38,7 @@ wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri().'/js/waypoints.mi
 					<span>người đã hưởng ứng</span>
 				</div>
 				<div id="camon-fb" class="camon " style="display:none;">
-					<div class="container">
-
+					
 						<h1>  <?php the_field('tk_title');?></h1>
 						<p>
 							 <?php the_field('tk_content');?>
@@ -57,7 +56,7 @@ wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri().'/js/waypoints.mi
 							</div>
 						</div>
 
-					</div>
+					
 
 				</div>
 			</div>

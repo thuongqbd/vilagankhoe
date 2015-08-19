@@ -8,7 +8,10 @@
 		/*min-width: 440px;*/
 	}
 	#huongung #btn-toihuongung{
-		font-size: 13px;
+	    font-size: 13px;
+	    width: 100%;
+	    height: 50px;
+	    line-height: 58px;
 	}
 	header form#search {
 		width: 175px;
@@ -54,6 +57,17 @@
 	}
 	footer .dvtctc .row .one-half{
 		margin: 0;
+	}
+	#camon-fb h1{			
+		font-size: 20px;
+		color: #C72A91;
+		text-transform: uppercase;
+		margin-top: 20px;
+		font-weight: bold;
+	}
+	#camon-fb p{
+		color: #44ADE2;
+		font-size: 19px;
 	}
 	#timhieubenh .one-third{
 		border-top: none;

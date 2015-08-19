@@ -1,5 +1,10 @@
 $ = jQuery;
+var windowWidth;
 jQuery(document).ready(function () {
+	windowWidth = $(window).width();
+	$(window).resize(function(){
+		windowWidth = $(window).width();			
+	});
 //	if(jQuery('.scrollbar-inner').length)
 //		jQuery('.scrollbar-inner').scrollbar();
 
@@ -11,12 +16,21 @@ jQuery(document).ready(function () {
 		}
 	});
 	if ($("#camon-fb").length) {
-		var dialog = $("#camon-fb").dialog({
-			autoOpen: false,
-			height: 250,
-			width: 600,
-			modal: true
-		});
+		if(windowWidth>=750){
+			var dialog = $("#camon-fb").dialog({
+				resizable: true,
+				autoOpen: false,
+				height: 250,
+				width: 600,
+				modal: true
+			});
+		}else{
+			var dialog = $("#camon-fb").dialog({
+				resizable: true,
+				autoOpen: false,					
+				modal: true
+			});
+		}
 		jQuery('#btn-toihuongung').click(function () {
 			var data = {
 				action: 'huong_ung',
@@ -35,13 +49,15 @@ jQuery(document).ready(function () {
 			dialog.dialog("close");
 		});
 	}
-	if ($("#dangky-test").length && $("#camon-dk").length) {
+	if ($("#dangky-test").length && $("#camon-dk").length) {		
 		var dialog2 = $("#camon-dk").dialog({
+			resizable: true,
 			autoOpen: false,
 			width: 316,
 			height: 290,
 			modal: true
 		});
+		
 
 		if ($("#ewd-feup-register-form-div").find(".success").length) {
 			dialog2.dialog("open");
@@ -65,11 +81,13 @@ jQuery(document).ready(function () {
 	}
 	if ($("#datcauhoi").length && $("#camon-dch").length) {
 		var dialog3 = $("#camon-dch").dialog({
+			resizable: true,
 			autoOpen: false,
 			width: 316,
 			height: 290,
 			modal: true
 		});
+		
 
 		if ($(".ap-post-submission-message").length) {
 			dialog3.dialog("open");

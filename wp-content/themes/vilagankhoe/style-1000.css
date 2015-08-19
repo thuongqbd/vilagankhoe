@@ -24,6 +24,9 @@
 	header #logo img{
 		height: 100px;
 	}
+	#search-nav {
+	    padding-top: 20px;
+	}
 	header nav #menu li a {
 		padding: 0 15px;
 		font-weight: bold;
@@ -101,10 +104,45 @@
 	footer #gioithieu h4 a {
 		font-size: 19px;		
 	}
+	#datcauhoi.lagan-form {		
+		padding-left: 16px;
+		padding-right: 17px;
+		padding-top: 5px;
+		padding-bottom: 15px;
+		background-color: transparent;
+		background-image: url(images/bg-dktest.png);
+		max-width: 889px;
+		height: 350px;
+	}
+	#datcauhoi form .ap-form-field-wrapper:first-child, #datcauhoi form div.ap-form-field-wrapper:nth-child(2) {
+		margin-top: 43px;
+		width: 50%;
+	}
+	
 }
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {
+	header {
+	    margin-top: 25px;
+	}
+	
+	header nav #menu li a{
+		font-size: 14px;
+	}
+	header nav #menu li {
+		margin: 0 10px;
+	}
+	header #search-nav {	   
+	    padding-top: 20px;
+	}
+	footer #gioithieu h4 a {
+		font-size: 22px;
+	}
+	#huongung #btn-toihuongung {
+		font-size: 28px;
+		line-height: 4;
+	}
 	#huongung {
 		padding-right: 70px;
 		background-image: url(images/icon-next.png);
@@ -114,19 +152,7 @@
 	#huongung #sohuongung span {
 		font-size: 20px;
 	}
-	header nav #menu li a{
-		font-size: 14px;
-	}
-	header nav #menu li {
-		margin: 0 10px;
-	}
-	#huongung #btn-toihuongung {
-		font-size: 28px;
-		line-height: 4;
-	}
-	footer #gioithieu h4 a {
-		font-size: 22px;
-	}
+	
 }
 	
 }

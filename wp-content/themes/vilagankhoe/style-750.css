@@ -23,14 +23,14 @@
 	}
 	header #search-nav {
 		position: static;
-		height: auto;
-		height: 127px;
-		padding-top: 62px;
+		height: auto;				
 		box-sizing: border-box;
+	    padding-top: 30px;
 	}
 	header form#search {
-		width: 210px;
-		top: -43px;
+	    width: 210px;
+		bottom: 0;
+   		top: 0;
 	}
 	
 	header nav #menu {   
@@ -41,7 +41,7 @@
 		margin: 0 2px;		
 	}	
 	header nav #menu li a{
-		padding: 0 8px;
+		padding: 0 7px;
 		font-size: 12px;
 	}
 	footer #gioithieu h4{
@@ -108,6 +108,20 @@
 	}
 	#dangky-test .forpc{
 		display: none;
+	}
+	
+	#camon-fb a{
+		width: 193px;
+		height: 67px;
+		display: block;
+	}
+	
+	#camon-fb .btn-dont-share{	
+		width: 192px;
+		float: left;
+	}
+	#camon-fb .btn-share{	
+		float: right;
 	}
 	.lagan-form #logo-slogan p, 
 	.lagan-form #logo-slogan .form_description{
@@ -182,4 +196,5 @@
 		font-size: 18px;
 		font-weight: bold;
 	}
+	
 }

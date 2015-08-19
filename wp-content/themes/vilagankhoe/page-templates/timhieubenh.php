@@ -43,9 +43,14 @@ if ($post->post_parent === 0) {
 			<div class="two-thirds column" id="show">				
 				<?php
 				while(have_posts()): the_post();
+				?>
+				
+				<div>
+				<?php
 				the_content();
 				endwhile;
-				?>							
+				?>	
+				</div>
 			</div>
 			<div class="one-third column">
 				<?php
@@ -59,9 +64,9 @@ if ($post->post_parent === 0) {
 					'orderby' => 'menu_order'));
 				foreach ($pages as $page) {					
 					?>
-					<p class="forpc" data-post_order="<?php echo $page->menu_order; ?>">
+					<p class="" data-post_order="<?php echo $page->menu_order; ?>">
 						<a style="<?php echo $current->ID == $page->ID ? 'color:#ed1b57' : '' ?>" href="<?php echo get_the_permalink($page->ID); ?>" title="<?php get_the_title($page->ID); ?>">
-							<?php echo $page->menu_order . '. '.get_the_title($page->ID);
+							<?php echo get_the_title($page->ID);
 							?>
 						</a>
 					</p>						
