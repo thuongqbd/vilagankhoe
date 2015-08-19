@@ -134,6 +134,50 @@ jQuery(document).ready(function () {
 			jQuery(this).addClass('hover');
 		}
 	});
+	if(jQuery('#avatar').length){
+		var croppicHeaderOptions = {
+				// uploadUrl:'img_save_to_file.php',
+				cropData:{
+					action: 'upload_avatar',
+					security: MyAjax.security
+				},
+				cropUrl:MyAjax.ajaxurl,
+				customUploadButtonId:'cropContainerHeaderButton',
+				modal:false,
+				enableMousescroll:true,
+				processInline:true,
+				outputUrlId:'cropOutput',
+				loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> ',
+				onBeforeImgUpload: function(){ console.log('onBeforeImgUpload') },
+				onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
+				onImgDrag: function(){ console.log('onImgDrag') },
+				onImgZoom: function(){ console.log('onImgZoom') },
+				onBeforeImgCrop: function(){ console.log('onBeforeImgCrop') },
+				onAfterImgCrop:function(){
+					this.cropControlRemoveCroppedImage.replaceWith('<i class="cropControlDownloadCroppedImage"></i>');
+//					jQuery('#cropOutput').val();
+					console.log('onAfterImgCrop',this,jQuery('#cropOutput').val()) ;
+				},
+				onError:function(errormessage){ console.log('onError:'+errormessage) }
+		}	
+		var croppic = new Croppic('croppic', croppicHeaderOptions);
+		
+		jQuery('#croppic').on('click','.cropControlDownloadCroppedImage',function(){
+			var cropOutput = jQuery('#cropOutput').val();
+			if(cropOutput){
+				var data = {
+					action: 'download_avatar',
+					security: MyAjax.security,
+					pic_url:cropOutput
+				};
+				jQuery.get(MyAjax.ajaxurl, data, function (response) {
+
+				});
+			}
+			
+		});
+		
+	}
 });
 function fbshareCurrentPage()
 {

@@ -102,3 +102,213 @@ add_filter('the_content', 'php_set_base_url', 99);
 function php_set_base_url($text) {
 	return str_ireplace('http://localhost/vilagankhoe/', WP_HOME . '/', $text);
 }
+
+// THE AJAX ADD ACTIONS
+add_action( 'wp_ajax_upload_avatar', 'upload_avatar_function' );
+add_action( 'wp_ajax_nopriv_upload_avatar', 'upload_avatar_function' ); // need this to serve non logged in users
+// THE FUNCTION
+function upload_avatar_function(){
+	check_ajax_referer( 'vilagankhoe', 'security' );
+	$wp_upload_dir = wp_upload_dir();
+	$upload_dir = $wp_upload_dir['basedir']."/avatar/";
+	$upload_url = $wp_upload_dir['baseurl']."/avatar/";
+	
+	$imgUrl = $_POST['imgUrl'];
+	// original sizes
+	$imgInitW = $_POST['imgInitW'];
+	$imgInitH = $_POST['imgInitH'];
+	// resized sizes
+	$imgW = $_POST['imgW'];
+	$imgH = $_POST['imgH'];
+	// offsets
+	$imgY1 = $_POST['imgY1'];
+	$imgX1 = $_POST['imgX1'];
+	// crop box
+	$cropW = $_POST['cropW'];
+	$cropH = $_POST['cropH'];
+	// rotation angle
+	$angle = $_POST['rotation'];
+
+	$jpeg_quality = 100;
+
+	$output_filename = "croppedImg_".rand();
+
+	$what = getimagesize($imgUrl);
+
+	switch(strtolower($what['mime']))
+	{
+		case 'image/png':
+			$img_r = imagecreatefrompng($imgUrl);
+			$source_image = imagecreatefrompng($imgUrl);
+			$type = '.png';
+			break;
+		case 'image/jpeg':
+			$img_r = imagecreatefromjpeg($imgUrl);
+			$source_image = imagecreatefromjpeg($imgUrl);
+			error_log("jpg");
+			$type = '.jpeg';
+			break;
+		case 'image/gif':
+			$img_r = imagecreatefromgif($imgUrl);
+			$source_image = imagecreatefromgif($imgUrl);
+			$type = '.gif';
+			break;
+		default: die('image type not supported');
+	}
+
+
+	//Check write Access to Directory
+
+	if(!is_writable(dirname($upload_dir.$output_filename))){
+		$response = Array(
+			"status" => 'error',
+			"message" => 'Can`t write cropped File'
+		);	
+	}else{
+
+		// resize the original image to size of editor
+		$resizedImage = imagecreatetruecolor($imgW, $imgH);
+		imagecopyresampled($resizedImage, $source_image, 0, 0, 0, 0, $imgW, $imgH, $imgInitW, $imgInitH);
+		// rotate the rezized image
+		$rotated_image = imagerotate($resizedImage, -$angle, 0);
+		// find new width & height of rotated image
+		$rotated_width = imagesx($rotated_image);
+		$rotated_height = imagesy($rotated_image);
+		// diff between rotated & original sizes
+		$dx = $rotated_width - $imgW;
+		$dy = $rotated_height - $imgH;
+		// crop rotated image to fit into original rezized rectangle
+		$cropped_rotated_image = imagecreatetruecolor($imgW, $imgH);
+		imagecolortransparent($cropped_rotated_image, imagecolorallocate($cropped_rotated_image, 0, 0, 0));
+		imagecopyresampled($cropped_rotated_image, $rotated_image, 0, 0, $dx / 2, $dy / 2, $imgW, $imgH, $imgW, $imgH);
+		// crop image into selected area
+		$final_image = imagecreatetruecolor($cropW, $cropH);
+		imagecolortransparent($final_image, imagecolorallocate($final_image, 0, 0, 0));
+		imagecopyresampled($final_image, $cropped_rotated_image, 0, 0, $imgX1, $imgY1, $cropW, $cropH, $cropW, $cropH);
+		// finally output png image
+		
+		$final_file = $output_filename.$type;
+	
+//		imagepng($final_image, $upload_dir.$final_file, 0);
+		imagejpeg($final_image,$upload_dir.$final_file, $jpeg_quality);
+		
+		$watermarked_file = "watermark__".rand().$type;
+		
+		
+		 
+		if(watermark_image($upload_dir.$final_file, $upload_dir.$watermarked_file)){
+			$pic_url = $upload_url.$watermarked_file;
+			
+		}else{
+			$pic_url = $upload_url.$final_file;
+		}
+		
+		$params = array(
+			'action'=>'download_avatar',
+			'pic_url' => $pic_url
+		);
+		
+		$response = Array(
+				"status" => 'success',
+				"url" => $pic_url,
+				"download_link" => admin_url('admin-ajax.php').'?'.  http_build_query($params)
+			);
+	}
+	print json_encode($response);
+	die;
+}
+
+function watermark_image($oldimage_name, $new_image_name){
+	$watermark_image = get_stylesheet_directory().'/images/watermark.jpg';
+	if(file_exists($watermark_image)){
+		list($owidth,$oheight) = getimagesize($oldimage_name);
+		$width = 660;
+		$height =598;    
+		$im = imagecreatetruecolor($width, $height);
+		$img_src = imagecreatefromjpeg($oldimage_name);
+		imagecopyresampled($im, $img_src, 0, 0, 0, 0, $width, $height, $owidth, $oheight);
+		$watermark = imagecreatefrompng($watermark_image);
+		list($w_width, $w_height) = getimagesize($watermark_image);        
+		$pos_x = $width - $w_width; 
+		$pos_y = $height - $w_height;
+		imagecopy($im, $watermark, $pos_x, $pos_y, 0, 0, $w_width, $w_height);
+		imagejpeg($im, $new_image_name, 100);
+		imagedestroy($im);
+		unlink($oldimage_name);
+		return true;
+	}else{
+		return false;
+	}
+    
+}
+
+// THE AJAX ADD ACTIONS
+add_action( 'wp_ajax_download_avatar', 'download_avatar_function' );
+add_action( 'wp_ajax_nopriv_download_avatar', 'download_avatar_function' ); // need this to serve non logged in users
+// THE FUNCTION
+function download_avatar_function(){
+	check_ajax_referer( 'vilagankhoe', 'security' );
+	$wp_upload_dir = wp_upload_dir();
+	$upload_dir = $wp_upload_dir['basedir']."/avatar/";
+	$upload_url = $wp_upload_dir['baseurl']."/avatar/";
+	
+	//get filedata
+	$file_url = $_GET['pic_url'];
+	$file_new_name = $_GET['new_name'];
+
+	//clean the fileurl
+	$file_url  = stripslashes(trim($file_url ));
+
+	//get filename
+	$file_name = basename($file_url );
+
+	//get fileextension
+	#$file_extension = pathinfo($file_name, PATHINFO_EXTENSION);
+	$file_extension = pathinfo($file_name);
+
+	//security check
+	$fileName = strtolower($file_url);
+//	var_dump($fileName,$file_url);die;
+	$whitelist = array('png', 'gif', 'tiff', 'jpeg', 'jpg','bmp','svg');
+	if(!in_array(end(explode('.', $fileName)), $whitelist))
+	{
+		exit('Invalid file!');
+	}
+	if(strpos( $file_url , '.php' ) == true)
+	{
+		die("Invalid file!");
+	}
+
+	//check if file exist
+	if(file_exists( $file_url  ) == false){
+		#exit("File Not Found!");
+	}
+
+	//rename                                                              //since 1.4
+	if(isset($file_new_name) and !empty($file_new_name))  {
+		$file_new_name = $file_new_name.".".$file_extension['extension'];
+	} else{
+		$file_new_name = $file_name;
+	}
+
+	//check filetype
+	switch( $file_extension['extension'] ) {
+			case "png": $content_type="image/png"; break;
+			case "gif": $content_type="image/gif"; break;
+			case "tiff": $content_type="image/tiff"; break;
+			case "jpeg":
+			case "jpg": $content_type="image/jpg"; break;
+			default: $content_type="application/force-download";
+	}
+	header("Expires: 0");
+	header("Cache-Control: no-cache, no-store, must-revalidate"); 
+	header('Cache-Control: pre-check=0, post-check=0, max-age=0', false); 
+	header("Pragma: no-cache");	
+	header("Content-type: {$content_type}");
+	header("Content-Disposition:attachment; filename={$file_new_name}");
+	header("Content-Type: application/force-download");
+	#header("Content-Type: application/download");
+	#header( "Content-Length: ". filesize($file_name) );
+	readfile("{$file_url}");
+	exit();
+}
