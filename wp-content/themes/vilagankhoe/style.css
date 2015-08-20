@@ -997,7 +997,7 @@ there.
 		height: auto;
 		margin-bottom: 50px;
 	}
-	#camon-ns button{
+	#camon-ns button#btn-toihuongung{
 		font-size: 15px;
 
 		color: #d571ad;
@@ -1012,7 +1012,7 @@ there.
 		background-size: 100%;
 		margin-left: 10px;
 	}
-	#camon-ns button:hover{
+	#camon-ns button#btn-toihuongung:hover{
 		color: #C72A91;
 		background-image: url(images/btn-toihuongung-small-hover.png);
 		text-shadow: 1px 4px 6px #d571ad;
@@ -1087,7 +1087,7 @@ there.
 		height: auto;
 		margin-bottom: 50px;
 	}
-	#camon-ns button{
+	#camon-ns button#btn-toihuongung{
 		font-size: 15px;
 
 		color: #d571ad;
@@ -1102,8 +1102,21 @@ there.
 		background-size: 100%;
 		margin-left: 10px;
 	}
-	#camon-ns button:hover{
+	#camon-ns button#btn-toihuongung:hover{
 		color: #C72A91;
 		background-image: url(images/btn-toihuongung-small-hover.png);
+	}
+	
+	/*=======================================================
+	PAGE: cam on Nghe si
+	=======================================================*/
+	#page.avatar{
+		height: auto !important;
+	}
+	#avatar h1 {
+		font-size: 33px;
+		text-align: center;
+		color: #2E3192;
+		text-transform: uppercase;
 	}
 }

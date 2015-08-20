@@ -13,7 +13,7 @@
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */
-wp_enqueue_style('croppic-css-main', get_stylesheet_directory_uri() . '/libs/croppic/css/main.css', array());
+//wp_enqueue_style('croppic-css-main', get_stylesheet_directory_uri() . '/libs/croppic/css/main.css', array());
 wp_enqueue_style('croppic-css', get_stylesheet_directory_uri() . '/libs/croppic/css/croppic.css', array());
 wp_enqueue_script('croppic-js', get_stylesheet_directory_uri() . '/libs/croppic/js/croppic.js', array('jquery'), false, true);
 wp_enqueue_script('mousewheel-js', get_stylesheet_directory_uri() . '/libs/croppic/js/jquery.mousewheel.min.js', array('jquery'), false, true);
@@ -29,10 +29,13 @@ get_header();
 </style>
 <div id="main-content" class="main-content container">
 	<div id="primary" class="content-area">		
-		<div id="avatar" class="row">									
+		<div id="avatar" class="row">
+			<?php while (have_posts()) : the_post(); ?>
+			<h1> <?php the_excerpt(); ?></h1>
+			<?php endwhile;?>
 			<div class="cropHeaderWrapper">
 				<div id="croppic"></div>
-				<span class="btn" id="cropContainerHeaderButton">click here to try it</span>
+				<span class="btn" id="cropContainerHeaderButton">Upload hình của bạn tại đây</span>
 				<input type="hidden" id="cropOutput" >
 			</div><!-- /col-lg-6 -->
 		</div>

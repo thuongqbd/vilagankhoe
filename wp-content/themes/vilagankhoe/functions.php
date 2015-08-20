@@ -131,8 +131,8 @@ function upload_avatar_function(){
 
 	$jpeg_quality = 100;
 
-	$output_filename = "croppedImg_".rand();
-
+	$output_filename = "avatar_".rand();
+	
 	$what = getimagesize($imgUrl);
 
 	switch(strtolower($what['mime']))
@@ -192,28 +192,33 @@ function upload_avatar_function(){
 //		imagepng($final_image, $upload_dir.$final_file, 0);
 		imagejpeg($final_image,$upload_dir.$final_file, $jpeg_quality);
 		
-		$watermarked_file = "watermark__".rand().$type;
+		$watermarked_file = "avatar_".rand().$type;
 		
 		
 		 
 		if(watermark_image($upload_dir.$final_file, $upload_dir.$watermarked_file)){
-			$pic_url = $upload_url.$watermarked_file;
-			
+			$pic_url = $upload_url.$watermarked_file;			
 		}else{
 			$pic_url = $upload_url.$final_file;
 		}
 		
-		$params = array(
-			'action'=>'download_avatar',
-			'pic_url' => $pic_url
-		);
 		$upload_avatar_page_id = get_option( 'upload_avatar_page_id', 1 );
-		add_post_meta($upload_avatar_page_id, 'avatars', $pic_url);
-		$response = Array(
-				"status" => 'success',
-				"url" => $pic_url,
-				"download_link" => admin_url('admin-ajax.php').'?'.  http_build_query($params)
+		$meta_id = add_post_meta($upload_avatar_page_id, 'avatars', $pic_url);
+		
+		if($meta_id !== false){
+			$response = Array(
+					"status" => 'success',
+					"url" => $pic_url,
+					"avatar_id" => $meta_id
+				);
+		}else{
+			unlink($upload_dir.$watermarked_file);
+			unlink($upload_dir.$final_file);
+			$response = Array(
+				"status" => 'error',
+				"message" => 'Can`t save cropped File'
 			);
+		}
 	}
 	print json_encode($response);
 	die;
@@ -244,76 +249,32 @@ function watermark_image($oldimage_name, $new_image_name){
 }
 
 // THE AJAX ADD ACTIONS
-add_action( 'wp_ajax_download_avatar', 'download_avatar_function' );
-add_action( 'wp_ajax_nopriv_download_avatar', 'download_avatar_function' ); // need this to serve non logged in users
-// THE FUNCTION
-function download_avatar_function(){
-	check_ajax_referer( 'vilagankhoe', 'security' );
-	$wp_upload_dir = wp_upload_dir();
-	$upload_dir = $wp_upload_dir['basedir']."/avatars/";
-	$upload_url = $wp_upload_dir['baseurl']."/avatars/";
-	
-	//get filedata
-	$file_url = $_GET['pic_url'];
-	$file_new_name = $_GET['new_name'];
+add_action( 'wp_ajax_remove_avatar', 'remove_avatar_function' );
+add_action( 'wp_ajax_nopriv_remove_avatar', 'remove_avatar_function' ); // need this to serve non logged in users
+function remove_avatar_function(){
+	if(!is_admin())
+		check_ajax_referer( 'vilagankhoe', 'security' );
 
-	//clean the fileurl
-	$file_url  = stripslashes(trim($file_url ));
-
-	//get filename
-	$file_name = basename($file_url );
-
-	//get fileextension
-	#$file_extension = pathinfo($file_name, PATHINFO_EXTENSION);
-	$file_extension = pathinfo($file_name);
-
-	//security check
-	$fileName = strtolower($file_url);
-//	var_dump($fileName,$file_url);die;
-	$whitelist = array('png', 'gif', 'tiff', 'jpeg', 'jpg','bmp','svg');
-	if(!in_array(end(explode('.', $fileName)), $whitelist))
-	{
-		exit('Invalid file!');
+	$result = 0;
+	if(isset($_POST['avatar_id'])){	
+		$avatar = get_metadata_by_mid('post', $_POST['avatar_id']);
+		if($avatar){
+			try {
+				$ex = explode('/', $avatar->meta_value);
+				$filename = array_pop($ex);
+				$wp_upload_dir = wp_upload_dir();
+				$upload_dir = $wp_upload_dir['basedir']."/avatars/";
+				unlink($upload_dir.$filename);
+				
+			} catch (Exception $exc) {
+				
+			}
+			$result = delete_meta($_POST['avatar_id']);
+		}
 	}
-	if(strpos( $file_url , '.php' ) == true)
-	{
-		die("Invalid file!");
-	}
-
-	//check if file exist
-	if(file_exists( $file_url  ) == false){
-		#exit("File Not Found!");
-	}
-
-	//rename                                                              //since 1.4
-	if(isset($file_new_name) and !empty($file_new_name))  {
-		$file_new_name = $file_new_name.".".$file_extension['extension'];
-	} else{
-		$file_new_name = $file_name;
-	}
-
-	//check filetype
-	switch( $file_extension['extension'] ) {
-			case "png": $content_type="image/png"; break;
-			case "gif": $content_type="image/gif"; break;
-			case "tiff": $content_type="image/tiff"; break;
-			case "jpeg":
-			case "jpg": $content_type="image/jpg"; break;
-			default: $content_type="application/force-download";
-	}
-	header("Expires: 0");
-	header("Cache-Control: no-cache, no-store, must-revalidate"); 
-	header('Cache-Control: pre-check=0, post-check=0, max-age=0', false); 
-	header("Pragma: no-cache");	
-	header("Content-type: {$content_type}");
-	header("Content-Disposition:attachment; filename={$file_new_name}");
-	header("Content-Type: application/force-download");
-	#header("Content-Type: application/download");
-	#header( "Content-Length: ". filesize($file_name) );
-	readfile("{$file_url}");
-	exit();
+	echo $result;
+	die;
 }
-
 /* ======================= them phan quan ly avatar ===================*/
 function render_meta_box_content() 
 {
@@ -322,24 +283,47 @@ function render_meta_box_content()
 	<div class='list-avatar'>
 		<?php
 		if($upload_avatar_page_id){
-			$list_avatars = get_post_meta ( $upload_avatar_page_id, 'avatars');
+			global $wpdb;
+			$list_avatars = $wpdb->get_results("
+				SELECT meta_id,meta_value FROM {$wpdb->postmeta}
+				WHERE meta_key = 'avatars' 
+				AND post_id = {$upload_avatar_page_id}
+				ORDER BY meta_id DESC
+			");
+
+			delete_post_meta_by_key($post_meta_key);
 			if($list_avatars){
 				wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/libs/slick/slick.css', array());
 				wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/libs/slick/slick-theme.css', array());
 				wp_enqueue_script('slick-js', get_stylesheet_directory_uri() . '/libs/slick/slick.min.js', array('jquery'), false, true);
+				wp_enqueue_style('lightbox-css', get_stylesheet_directory_uri() . '/libs/lightbox/css/lightbox.css', array());
+				wp_enqueue_script('lightbox-js', get_stylesheet_directory_uri() . '/libs/lightbox/js/lightbox.min.js', array('jquery'), false, true);
 				?>
 				<div class="slick-avatar">
-					<?php for ($i = count($list_avatars)-1; $i >= 0; $i--){?>
+					<?php foreach($list_avatars as $avatar){?>
 					<div class="slick-slide" style="padding: 10px;">
-						<img data-lazy="<?= $list_avatars[$i]?>" width="200">
+						<button class="remove_avatar notice-dismiss" data-value="<?= $avatar->meta_id?>" type="button"></button>
+						<a href="<?= $avatar->meta_value?>" data-lightbox="roadtrip">
+							<img data-lazy="<?= $avatar->meta_value?>" width="100">
+						</a>						
 					</div>			
 					<?php }?>				
 				</div>
+				<style>
+					.slick-initialized .slick-slide {
+						display: block;
+						position: relative;
+					}
+					button.remove_avatar{
+						padding: 0px;
+						right: -5px;
+					}
+				</style>
 				<script type="text/javascript">
 					jQuery(document).ready(function(){
-						jQuery('.slick-avatar').slick({
+						var slick_option = {
 							lazyLoad: 'ondemand',
-							slidesToShow: 3,
+							slidesToShow: 10,
 							responsive: [
 							  {
 								breakpoint: 768,
@@ -352,10 +336,26 @@ function render_meta_box_content()
 								breakpoint: 480,
 								settings: {
 								  arrows: false,
-								  slidesToShow: 3
+								  slidesToShow: 1
 								}
 							  }
 							]
+						};
+						jQuery('.slick-avatar').slick(slick_option);
+						jQuery('.remove_avatar').click(function(){
+							var button = jQuery(this);
+							if(button.data('value') && confirm('Remove this Avatar ?'))
+							var data = {
+								action: 'remove_avatar',
+								avatar_id:button.attr('data-value')
+							};
+							jQuery.post('<?= admin_url( 'admin-ajax.php' )?>', data, function (response) {
+								console.log(response);
+								if(response == 1){
+									button.closest('.slick-slide').remove();
+									jQuery('.slick-avatar').slick(slick_option);
+								}
+							},'text',{cache:false});
 						});
 					});
 				</script>
@@ -373,16 +373,28 @@ function myplugin_add_meta_box() {
 	if($post->ID == $upload_avatar_page_id){
 		add_meta_box( 
 				 'some_meta_box_name'
-				,__( 'Some Meta Box Headline')
+				,__( 'List avatar')
 				,'render_meta_box_content'
 				,'page' 
 				,'advanced'
 				,'high'
 			);
+		
+	}
+}
+function remove_editor() {
+	$upload_avatar_page_id = get_option( 'upload_avatar_page_id', 1 );
+	if(isset($_GET['post']) && $_GET['post'] == $upload_avatar_page_id){
+		remove_post_type_support('page', 'editor');
+		remove_post_type_support('page', 'custom-fields');
+		remove_post_type_support('page', 'comments');
+		remove_post_type_support('page', 'thumbnail');
+		remove_post_type_support('page', 'page-attributes');
 	}
 }
 
 if(is_admin()){
+	add_action('admin_init', 'remove_editor');
 	add_action( 'add_meta_boxes', 'myplugin_add_meta_box' );
 }
 /* ======================= ==================== ===================*/

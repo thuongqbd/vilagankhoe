@@ -2,7 +2,7 @@
 	width: 660px;  /* MANDATORY */
 	height: 598px; /* MANDATORY */
 	position: relative;  /* MANDATORY */
-
+	background-color: #f2f2f2;
 	margin: 50px 70px 20px;
 	border: 3px  solid #FFF;
 	box-sizing: content-box;
@@ -87,6 +87,10 @@
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
+}
+.cropControls i.cropControlDownloadCroppedImage a {
+    display: block;
+    width: 100%;
 }
 .cropControls i:last-child{
 	margin-right:none;
@@ -253,7 +257,21 @@
 
 /* some reset stlyes */
 			
-			
+#cropContainerHeaderButton {
+    color: #FFF;
+    margin: auto;
+    padding: 15px 50px;
+    width: 407px;
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    background: #2CE987;
+    text-transform: uppercase;
+    border-radius: 2px;
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+    font-size: 20px;
+	cursor: pointer;
+}			
 			
 			
 			

@@ -106,11 +106,15 @@ get_header();
 							wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/libs/slick/slick.css', array());
 							wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/libs/slick/slick-theme.css', array());
 							wp_enqueue_script('slick-js', get_stylesheet_directory_uri() . '/libs/slick/slick.min.js', array('jquery'), false, true);
+							wp_enqueue_style('lightbox-css', get_stylesheet_directory_uri() . '/libs/lightbox/css/lightbox.css', array());
+							wp_enqueue_script('lightbox-js', get_stylesheet_directory_uri() . '/libs/lightbox/js/lightbox.min.js', array('jquery'), false, true);
 							?>
 							<div class="slick-avatar">
 								<?php for ($i = count($list_avatars)-1; $i >= 0; $i--){?>
 								<div class="slick-slide" style="padding: 10px;">
-									<img data-lazy="<?= $list_avatars[$i]?>" width="100">
+									<a href="<?= $list_avatars[$i]?>" data-lightbox="roadtrip">
+										<img data-lazy="<?= $list_avatars[$i]?>" width="100">
+									</a>
 								</div>			
 								<?php }?>				
 							</div>
@@ -118,19 +122,17 @@ get_header();
 								jQuery(document).ready(function(){
 									jQuery('.slick-avatar').slick({
 										lazyLoad: 'ondemand',
-										slidesToShow: 3,
+										slidesToShow: 10,
 										responsive: [
 										  {
-											breakpoint: 768,
+											breakpoint: 769,
 											settings: {
-											  arrows: false,
 											  slidesToShow: 3
 											}
 										  },
 										  {
 											breakpoint: 480,
 											settings: {
-											  arrows: false,
 											  slidesToShow: 3
 											}
 										  }

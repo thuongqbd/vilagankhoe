@@ -691,8 +691,8 @@
                 that.obj.append('<img class="croppedImg" src="' + response.url + '">');
                 if (that.options.outputUrlId !== '') { 
 					$('#'+that.options.outputUrlId).val(response.url);
-					if(typeof response.download_link != 'undefined'){
-						$('#'+that.options.outputUrlId).attr('data-download-link',response.download_link);
+					if(typeof response.avatar_id != 'undefined'){
+						$('#'+that.options.outputUrlId).attr('data-avatar_id',response.avatar_id);
 					}
 				}
 
