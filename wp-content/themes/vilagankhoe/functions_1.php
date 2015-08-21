@@ -108,22 +108,144 @@ add_action( 'wp_ajax_upload_avatar', 'upload_avatar_function' );
 add_action( 'wp_ajax_nopriv_upload_avatar', 'upload_avatar_function' ); // need this to serve non logged in users
 // THE FUNCTION
 function upload_avatar_function(){
-//	check_ajax_referer( 'vilagankhoe', 'security' );
-	require_once 'crop.php';
-	$crop = new CropAvatar(
-		isset($_POST['avatar_src']) ? $_POST['avatar_src'] : null,
-		isset($_POST['avatar_data']) ? $_POST['avatar_data'] : null,
-		isset($_FILES['avatar_file']) ? $_FILES['avatar_file'] : null
-	);
+	check_ajax_referer( 'vilagankhoe', 'security' );
+	$wp_upload_dir = wp_upload_dir();
+	$upload_dir = $wp_upload_dir['basedir']."/avatars/";
+	$upload_url = $wp_upload_dir['baseurl']."/avatars/";
+	
+	$imgUrl = $_POST['imgUrl'];
+	// original sizes
+	$imgInitW = $_POST['imgInitW'];
+	$imgInitH = $_POST['imgInitH'];
+	// resized sizes
+	$imgW = $_POST['imgW'];
+	$imgH = $_POST['imgH'];
+	// offsets
+	$imgY1 = $_POST['imgY1'];
+	$imgX1 = $_POST['imgX1'];
+	// crop box
+	$cropW = $_POST['cropW'];
+	$cropH = $_POST['cropH'];
+	// rotation angle
+	$angle = $_POST['rotation'];
 
-	$response = array(
-		'state'  => 200,
-		'message' => $crop -> getMsg(),
-		'result' => $crop -> getResult()
-	);
+	$jpeg_quality = 100;
 
-	echo json_encode($response);
+	$output_filename = "avatar_".rand();
+	
+	$what = getimagesize($imgUrl);
+
+	switch(strtolower($what['mime']))
+	{
+		case 'image/png':
+			$img_r = imagecreatefrompng($imgUrl);
+			$source_image = imagecreatefrompng($imgUrl);
+			$type = '.png';
+			break;
+		case 'image/jpeg':
+			$img_r = imagecreatefromjpeg($imgUrl);
+			$source_image = imagecreatefromjpeg($imgUrl);
+			error_log("jpg");
+			$type = '.jpeg';
+			break;
+		case 'image/gif':
+			$img_r = imagecreatefromgif($imgUrl);
+			$source_image = imagecreatefromgif($imgUrl);
+			$type = '.gif';
+			break;
+		default: die('image type not supported');
+	}
+
+
+	//Check write Access to Directory
+
+	if(!is_writable(dirname($upload_dir.$output_filename))){
+		$response = Array(
+			"status" => 'error',
+			"message" => 'Can`t write cropped File'
+		);	
+	}else{
+
+		// resize the original image to size of editor
+		$resizedImage = imagecreatetruecolor($imgW, $imgH);
+		imagecopyresampled($resizedImage, $source_image, 0, 0, 0, 0, $imgW, $imgH, $imgInitW, $imgInitH);
+		// rotate the rezized image
+		$rotated_image = imagerotate($resizedImage, -$angle, 0);
+		// find new width & height of rotated image
+		$rotated_width = imagesx($rotated_image);
+		$rotated_height = imagesy($rotated_image);
+		// diff between rotated & original sizes
+		$dx = $rotated_width - $imgW;
+		$dy = $rotated_height - $imgH;
+		// crop rotated image to fit into original rezized rectangle
+		$cropped_rotated_image = imagecreatetruecolor($imgW, $imgH);
+		imagecolortransparent($cropped_rotated_image, imagecolorallocate($cropped_rotated_image, 0, 0, 0));
+		imagecopyresampled($cropped_rotated_image, $rotated_image, 0, 0, $dx / 2, $dy / 2, $imgW, $imgH, $imgW, $imgH);
+		// crop image into selected area
+		$final_image = imagecreatetruecolor($cropW, $cropH);
+		imagecolortransparent($final_image, imagecolorallocate($final_image, 0, 0, 0));
+		imagecopyresampled($final_image, $cropped_rotated_image, 0, 0, $imgX1, $imgY1, $cropW, $cropH, $cropW, $cropH);
+		// finally output png image
+		
+		$final_file = $output_filename.$type;
+	
+//		imagepng($final_image, $upload_dir.$final_file, 0);
+		imagejpeg($final_image,$upload_dir.$final_file, $jpeg_quality);
+		
+		$watermarked_file = "avatar_".rand().$type;
+		
+		
+		 
+		if(watermark_image($upload_dir.$final_file, $upload_dir.$watermarked_file)){
+			$pic_url = $upload_url.$watermarked_file;			
+		}else{
+			$pic_url = $upload_url.$final_file;
+		}
+		
+		$upload_avatar_page_id = get_option( 'upload_avatar_page_id', 1 );
+		$meta_id = add_post_meta($upload_avatar_page_id, 'avatars', $pic_url);
+		
+		if($meta_id !== false){
+			$response = Array(
+					"status" => 'success',
+					"url" => $pic_url,
+					"avatar_id" => $meta_id
+				);
+		}else{
+			unlink($upload_dir.$watermarked_file);
+			unlink($upload_dir.$final_file);
+			$response = Array(
+				"status" => 'error',
+				"message" => 'Can`t save cropped File'
+			);
+		}
+	}
+	print json_encode($response);
 	die;
+}
+
+function watermark_image($oldimage_name, $new_image_name){
+	$watermark_image = get_stylesheet_directory().'/images/watermark.jpg';
+	if(file_exists($watermark_image)){
+		list($owidth,$oheight) = getimagesize($oldimage_name);
+		$width = 660;
+		$height =598;    
+		$im = imagecreatetruecolor($width, $height);
+		$img_src = imagecreatefromjpeg($oldimage_name);
+		imagecopyresampled($im, $img_src, 0, 0, 0, 0, $width, $height, $owidth, $oheight);
+		$watermark = imagecreatefrompng($watermark_image);
+		list($w_width, $w_height) = getimagesize($watermark_image);        
+		$pos_x = $width - $w_width; 
+		$pos_y = $height - $w_height;
+		imagecopy($im, $watermark, $pos_x, $pos_y, 0, 0, $w_width, $w_height);
+		imagejpeg($im, $new_image_name, 100);
+		imagedestroy($im);
+		unlink($oldimage_name);
+		return true;
+	}else{
+		return false;
+	}
+    
 }
 
 // THE AJAX ADD ACTIONS
@@ -142,7 +264,7 @@ function remove_avatar_function(){
 				$filename = array_pop($ex);
 				$wp_upload_dir = wp_upload_dir();
 				$upload_dir = $wp_upload_dir['basedir']."/avatars/";
-				@unlink($upload_dir.$filename);
+				unlink($upload_dir.$filename);
 				
 			} catch (Exception $exc) {
 				

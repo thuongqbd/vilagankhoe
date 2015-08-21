@@ -390,7 +390,7 @@
 	}
 	header form#search {		
 		top: -48px;
-		z-index: 99999;
+		z-index: 1;
 	}
 	/*=======================================================
 	PAGE section:  footer
