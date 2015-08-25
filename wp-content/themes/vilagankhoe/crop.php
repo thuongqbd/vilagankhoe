@@ -78,8 +78,8 @@ class CropAvatar {
     }
   }
 
-	private function setDst() {
-		$this->dst_name = date('YmdHis') . '.png';
+	private function setDst($ext = '') {
+		$this->dst_name = date('YmdHis').$ext. '.png';
 		$this -> dst = $this->upload_dir. $this->dst_name;
 	}
 
@@ -196,22 +196,33 @@ class CropAvatar {
     //main watermark
     $image_path = get_stylesheet_directory().'/images/watermark.png';
     list($w_width,$w_height) = getimagesize($image_path);
-     
+    
+	//
+	$oldimage_name = $this->dst;
+    list($owidth,$oheight) = getimagesize($oldimage_name);
+	
+	//new watermark wifth and height
+	if($data -> width && $data -> height){
+		$new_w_width = $data -> width;
+		$new_w_height = $data -> height;
+	}else{
+		$new_w_width = $owidth;
+		$new_w_height = $oheight;
+	}
     // resize the original watermark image to size of editor
     $watermark_new = get_stylesheet_directory().'/images/waternew_'.date('YmdHis').'.png';
 	$watermark_src = imagecreatefrompng($image_path);
-    $watermark = imagecreatetruecolor($data -> width, $data -> height);
+    $watermark = imagecreatetruecolor($new_w_width, $new_w_height);
     imagealphablending($watermark, false);
     imagesavealpha($watermark,true);
     $transparent = imagecolorallocatealpha($watermark, 255, 255, 255, 127);
-    imagefilledrectangle($watermark, 0, 0, $data -> width, $data -> height, $transparent);
-    imagecopyresampled($watermark, $watermark_src, 0, 0, 0, 0, $data -> width, $data -> height, $w_width, $w_height);
+    imagefilledrectangle($watermark, 0, 0, $new_w_width, $new_w_height, $transparent);
+    imagecopyresampled($watermark, $watermark_src, 0, 0, 0, 0, $new_w_width, $new_w_height, $w_width, $w_height);
     imagepng($watermark,$watermark_new);
                       
-    $oldimage_name = $this->dst;
-    list($owidth,$oheight) = getimagesize($oldimage_name);
-	  $width = $data -> width;
-    $height = $data -> height;
+    
+	$width = $new_w_width;
+    $height = $new_w_height;
 	
     $im = imagecreatetruecolor($width, $height);
     $img_src = imagecreatefrompng($oldimage_name);
@@ -221,11 +232,11 @@ class CropAvatar {
     $pos_x = $width - $w_width; 
     $pos_y = $height - $w_height;
     imagecopy($im, $watermark, $pos_x, $pos_y, 0, 0, $w_width, $w_height);
-     $this->setDst();
+    $this->setDst('_new_avatar');
     imagejpeg($im, $this -> dst, 100);
     imagedestroy($im);
-    unlink($oldimage_name);
-	unlink($watermark);
+    @unlink($oldimage_name);
+	@unlink($watermark);
 	$upload_avatar_page_id = get_option( 'upload_avatar_page_id', 1 );
 	$meta_id = add_post_meta($upload_avatar_page_id, 'avatars', $this->getResult());
 		

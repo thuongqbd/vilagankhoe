@@ -103,7 +103,7 @@ jQuery(document).ready(function () {
 				delay: 5, // the delay time in ms
 				time: 500 // the speed time in ms
 			});
-		setTimeout(function(){ updateCounter(parseInt(jQuery('#concurred_count').text()),true);}, 1000);
+		//setTimeout(function(){ updateCounter(parseInt(jQuery('#concurred_count').text()),true);}, 1000);
 		
 		/*
 		if(jQuery('#concurred_count').text() == '0'){
@@ -134,51 +134,51 @@ jQuery(document).ready(function () {
 			jQuery(this).addClass('hover');
 		}
 	});
-	if(jQuery('#avatar').length){
-		var croppicHeaderOptions = {
-				// uploadUrl:'img_save_to_file.php',
-				cropData:{
-					action: 'upload_avatar',
-					security: MyAjax.security
-				},
-				cropUrl:MyAjax.ajaxurl,
-				customUploadButtonId:'cropContainerHeaderButton',
-				modal:false,
-				enableMousescroll:true,
-				processInline:true,
-				imgEyecandy:false,
-				outputUrlId:'cropOutput',
-				loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> ',
-//				onBeforeImgUpload: function(){ console.log('onBeforeImgUpload') },
-//				onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
-//				onImgDrag: function(){ console.log('onImgDrag') },
-//				onImgZoom: function(){ console.log('onImgZoom') },
-//				onBeforeImgCrop: function(){ console.log('onBeforeImgCrop') },
-				onAfterImgCrop:function(){
-					if(jQuery('#cropOutput').val())
-						this.cropControlsUpload.append('<i class="cropControlDownloadCroppedImage"><a href="'+jQuery('#cropOutput').val()+'" download="" target="_self">&nbsp;</a></i>');
-					jQuery('#cropOutput').val();
-				},
-				onError:function(errormessage){ alert('Lỗi:'+errormessage) }
-		}	
-		var croppic = new Croppic('croppic', croppicHeaderOptions);
-		
-		jQuery('#croppic').on('click','.cropControlRemoveCroppedImage',function(){
-			jQuery('#croppic .cropControlDownloadCroppedImage').remove();
-//			var cropOutput = jQuery('#cropOutput');
-//			console.log('click cropControlRemoveCroppedImage');
-//			if(cropOutput.data('avatar_id')){
-//				var data = {
-//					action: 'remove_avatar',
-//					security: MyAjax.security,
-//					avatar_id:jQuery('#cropOutput').attr('data-avatar_id')
-//				};
-//				jQuery.post(MyAjax.ajaxurl, data, function (response) {
-//					console.log(response);
-//				},'text',{cache:false});
-//			}
-		});
-	}
+//	if(jQuery('#avatar').length){
+//		var croppicHeaderOptions = {
+//				// uploadUrl:'img_save_to_file.php',
+//				cropData:{
+//					action: 'upload_avatar',
+//					security: MyAjax.security
+//				},
+//				cropUrl:MyAjax.ajaxurl,
+//				customUploadButtonId:'cropContainerHeaderButton',
+//				modal:false,
+//				enableMousescroll:true,
+//				processInline:true,
+//				imgEyecandy:false,
+//				outputUrlId:'cropOutput',
+//				loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> ',
+////				onBeforeImgUpload: function(){ console.log('onBeforeImgUpload') },
+////				onAfterImgUpload: function(){ console.log('onAfterImgUpload') },
+////				onImgDrag: function(){ console.log('onImgDrag') },
+////				onImgZoom: function(){ console.log('onImgZoom') },
+////				onBeforeImgCrop: function(){ console.log('onBeforeImgCrop') },
+//				onAfterImgCrop:function(){
+//					if(jQuery('#cropOutput').val())
+//						this.cropControlsUpload.append('<i class="cropControlDownloadCroppedImage"><a href="'+jQuery('#cropOutput').val()+'" download="" target="_self">&nbsp;</a></i>');
+//					jQuery('#cropOutput').val();
+//				},
+//				onError:function(errormessage){ alert('Lỗi:'+errormessage) }
+//		}	
+//		var croppic = new Croppic('croppic', croppicHeaderOptions);
+//		
+//		jQuery('#croppic').on('click','.cropControlRemoveCroppedImage',function(){
+//			jQuery('#croppic .cropControlDownloadCroppedImage').remove();
+////			var cropOutput = jQuery('#cropOutput');
+////			console.log('click cropControlRemoveCroppedImage');
+////			if(cropOutput.data('avatar_id')){
+////				var data = {
+////					action: 'remove_avatar',
+////					security: MyAjax.security,
+////					avatar_id:jQuery('#cropOutput').attr('data-avatar_id')
+////				};
+////				jQuery.post(MyAjax.ajaxurl, data, function (response) {
+////					console.log(response);
+////				},'text',{cache:false});
+////			}
+//		});
+//	}
 });
 function fbshareCurrentPage()
 {

@@ -59,7 +59,7 @@
     },
 
     addListener: function () {
-      this.$avatarView.on('click', $.proxy(this.click, this));
+      this.$avatarView.on('click','img', $.proxy(this.click, this));
       this.$avatarInput.on('change', $.proxy(this.change, this));
       this.$avatarForm.on('submit', $.proxy(this.submit, this));
       this.$avatarBtns.on('click', $.proxy(this.rotate, this));

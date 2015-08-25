@@ -153,6 +153,30 @@ function remove_avatar_function(){
 	echo $result;
 	die;
 }
+// THE AJAX ADD ACTIONS
+add_action( 'wp_ajax_remove_all_avatar', 'remove_all_avatar_function' );
+add_action( 'wp_ajax_nopriv_remove_all_avatar', 'remove_all_avatar_function' ); // need this to serve non logged in users
+function remove_all_avatar_function(){
+	if(!is_admin())
+		check_ajax_referer( 'vilagankhoe', 'security' );
+	$upload_avatar_page_id = get_option( 'upload_avatar_page_id', 1 );
+	$listAvatar = get_metadata('post', $upload_avatar_page_id, 'avatars');
+	$wp_upload_dir = wp_upload_dir();
+	foreach ($listAvatar as $avatar) {
+		try {
+			$ex = explode('/', $avatar->meta_value);
+			$filename = array_pop($ex);			
+			$upload_dir = $wp_upload_dir['basedir']."/avatars/";
+			@unlink($upload_dir.$filename);
+
+		} catch (Exception $exc) {
+
+		}
+	}
+	delete_post_meta_by_key('avatars');
+	echo 1;
+	die;
+}
 /* ======================= them phan quan ly avatar ===================*/
 function render_meta_box_content() 
 {
@@ -177,6 +201,7 @@ function render_meta_box_content()
 				wp_enqueue_style('lightbox-css', get_stylesheet_directory_uri() . '/libs/lightbox/css/lightbox.css', array());
 				wp_enqueue_script('lightbox-js', get_stylesheet_directory_uri() . '/libs/lightbox/js/lightbox.min.js', array('jquery'), false, true);
 				?>
+				<button id="remove_all_avatar" type="button">Xóa tất cả</button>
 				<div class="slick-avatar">
 					<?php foreach($list_avatars as $avatar){?>
 					<div class="slick-slide" style="padding: 10px;">
@@ -222,7 +247,7 @@ function render_meta_box_content()
 						jQuery('.slick-avatar').slick(slick_option);
 						jQuery('.remove_avatar').click(function(){
 							var button = jQuery(this);
-							if(button.data('value') && confirm('Remove this Avatar ?'))
+							if(button.data('value') && confirm('Xóa avatar này?'))
 							var data = {
 								action: 'remove_avatar',
 								avatar_id:button.attr('data-value')
@@ -232,6 +257,18 @@ function render_meta_box_content()
 								if(response == 1){
 									button.closest('.slick-slide').remove();
 									jQuery('.slick-avatar').slick(slick_option);
+								}
+							},'text',{cache:false});
+						});
+						jQuery('#remove_all_avatar').click(function(){
+							if(confirm('Xóa tất cả các avatar?'))
+							var data = {
+								action: 'remove_all_avatar',
+							};
+							jQuery.post('<?= admin_url( 'admin-ajax.php' )?>', data, function (response) {
+								console.log(response);
+								if(response == 1){
+									jQuery('.slick-avatar').remove();
 								}
 							},'text',{cache:false});
 						});
@@ -251,7 +288,7 @@ function myplugin_add_meta_box() {
 	if($post->ID == $upload_avatar_page_id){
 		add_meta_box( 
 				 'some_meta_box_name'
-				,__( 'List avatar')
+				,__( 'Danh sách avatar')
 				,'render_meta_box_content'
 				,'page' 
 				,'advanced'

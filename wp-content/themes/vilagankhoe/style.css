@@ -1110,11 +1110,11 @@ there.
 	/*=======================================================
 	PAGE: cam on Nghe si
 	=======================================================*/
-	#page.avatar, #page.avatar #main{
+	.page.page-template-avatar, .page.page-template-avatar #main{
 		height: auto !important;
 		overflow: visible !important;
 	}
-	#page.avatar h1 {
+	.page.page-template-avatar h1 {
 		font-size: 33px;
 		text-align: center;
 		color: #2E3192;
