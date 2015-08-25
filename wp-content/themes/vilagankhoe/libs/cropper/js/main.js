@@ -139,7 +139,10 @@
 
         if (files.length > 0) {
           file = files[0];
-
+		  if(file.size > 2000000){
+			  this.alert('Kích thước file vượt quá giới hạn cho phép, tối đa 2M.');
+			  return false;
+		  }
           if (this.isImageFile(file)) {
             if (this.url) {
               URL.revokeObjectURL(this.url); // Revoke the old one
@@ -151,7 +154,10 @@
         }
       } else {
         file = this.$avatarInput.val();
-
+		if(file.size > 2000000){
+			this.alert('Kích thước file vượt quá giới hạn cho phép, tối đa 2M.');
+			return false;
+		}
         if (this.isImageFile(file)) {
           this.syncUpload();
         }
@@ -160,6 +166,7 @@
 
     submit: function () {
       if (!this.$avatarSrc.val() && !this.$avatarInput.val()) {
+		  this.alert('Vui lòng upload một file hình.');
         return false;
       }
 
@@ -411,7 +418,7 @@
           this.alert(data.message);
         }
       } else {
-        this.alert('Failed to response');
+        this.alert('Đã xãy ra lỗi trong quá trình upload.');
       }
     },
 
